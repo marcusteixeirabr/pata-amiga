@@ -1,56 +1,128 @@
-# Welcome to your Expo app 👋
+# 🐾 Pata Amiga
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo Android que conecta **donos de pets** a **cuidadores, passeadores e petshops da vizinhança**, para que nenhum animal fique sem atenção enquanto o tutor está fora, no Vale do Itajaí e na Grande Florianópolis (SC).
 
-## Get started
+> 🚧 **Em desenvolvimento.** MVP acadêmico do Projeto Integrador _Hands-on Work VIII_ do curso de Análise e Desenvolvimento de Sistemas da **UNIVALI** (2026), desenvolvido com **TDD (Test-Driven Development)**. O escopo do MVP está sendo definido pela equipe.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🐶 O que o app faz
 
-2. Start the app
+Um serviço **comunitário e gratuito**: o app apenas **conecta** as pessoas. Não há intermediação, pagamento nem agendamento; tutor e parceiro combinam tudo diretamente.
 
-   ```bash
-   npx expo start
-   ```
+| Perfil       | Quem é                             | O que faz no app                                                    |
+| ------------ | ---------------------------------- | ------------------------------------------------------------------- |
+| **Tutor**    | Dono de cães e gatos               | Escolhe o serviço de que precisa e encontra parceiros na sua cidade |
+| **Parceiro** | Cuidador autônomo, petshop, ONG... | Cadastra-se e indica quais serviços oferece                         |
 
-In the output, you'll find options to open the app in a
+**Serviços:**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- 🦮 **Passeio**: o parceiro busca o pet para passear.
+- 🏠 **Visita**: o parceiro cuida do pet na casa do tutor.
+- 🛏️ **Hospedagem**: o pet fica na casa ou no estabelecimento do parceiro.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Histórias de usuário
 
-## Get a fresh project
+- **Como dono de pet**, quero encontrar no app um cuidador cadastrado próximo da minha residência para vir à minha casa diariamente e cuidar do(s) meu(s) pet(s) até eu voltar.
+- **Como cuidador**, quero me cadastrar para oferecer passeios periódicos de pets num raio de 5 km da minha residência.
+- **Como dono de petshop**, quero me cadastrar para oferecer meus serviços de hospedagem de pets.
 
-When you're ready, run:
+## 🎯 Escopo do MVP
 
-```bash
-npm run reset-project
+**Incluído:**
+
+- Perfil do **tutor**, sem login: os dados ficam salvos no próprio celular.
+- Foto do tutor e de até **dois pets**, tiradas com a **câmera** do aparelho.
+- Busca de parceiros **por cidade** e **por tipo de serviço**.
+- Botão que abre uma conversa no **WhatsApp** com o parceiro escolhido.
+- Regras de negócio desenvolvidas com **TDD**.
+
+**Limitação assumida:** nesta versão de demonstração, os parceiros vêm de uma **base de exemplo embutida no app**. Não há servidor. A tela de cadastro de parceiro aparece apenas como **prévia**, indicando que o cadastro chega na próxima versão.
+
+**Fora do escopo:** pagamentos, agendamentos, avaliações e verificação de parceiros.
+
+## 🗺️ Próximas versões
+
+- [ ] Backend real com **Supabase** e **cadastro de parceiros**: quem se cadastra aparece para todos os tutores
+- [ ] Busca por **raio de distância** ajustável, a partir do CEP
+- [ ] **Avaliações** e **verificação** dos parceiros, para dar mais confiança ao tutor
+
+---
+
+## 🧰 Stack
+
+|              |                                                     |
+| ------------ | --------------------------------------------------- |
+| Framework    | React Native 0.86 + Expo SDK 57                     |
+| Navegação    | Expo Router (cada arquivo em `src/app/` é uma tela) |
+| Linguagem    | TypeScript 6 (modo `strict`)                        |
+| Testes       | Jest + jest-expo                                    |
+| Build do APK | EAS Build                                           |
+| Ambiente     | Devcontainer (Node 24)                              |
+
+## 📁 Estrutura
+
+```
+src/
+  app/          → telas (somente telas: todo arquivo aqui vira uma rota)
+  regras/       → regras de negócio (funções puras, desenvolvidas com TDD)
+__tests__/      → testes automatizados, espelhando a estrutura de src/
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Os testes **espelham o caminho** do código que testam:
 
-### Other setup steps
+```
+src/regras/urgencia.ts   →   __tests__/regras/urgencia.test.ts
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## 🛠️ Rodando localmente
 
-## Learn more
+**Requisitos:** Node.js 24 LTS e o app **Expo Go** no celular Android. O repositório também traz um **devcontainer** (`.devcontainer/`) com o ambiente pronto.
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+git clone https://github.com/marcusteixeirabr/pata-amiga.git
+cd pata-amiga
+npm ci
+npm run check
+npx expo start --tunnel   # escaneie o QR code com o Expo Go
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## ✅ Testes e TDD
 
-## Join the community
+Cada regra de negócio nasce de um teste: **vermelho → verde → refatorar**.
 
-Join our community of developers creating universal apps.
+```bash
+npm run check        # typecheck + testes (rodar antes de cada commit)
+npm run test:watch   # modo TDD: reexecuta os testes a cada salvamento
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+O Jest não verifica tipos; por isso o `check` roda o `tsc` **e** os testes.
+
+## 🔀 Como contribuir
+
+1. **Ninguém mexe direto no `main`.** O `main` é a versão oficial do app.
+2. **Uma tarefa do Trello = um branch**, com nome no padrão `tipo/descricao-curta`:
+   - `feat/cadastro-animal` · `test/score-urgencia` · `fix/filtro-cidade` · `docs/readme-equipe`
+3. **Commits** no padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/):
+   - `feat:` funcionalidade · `test:` testes · `fix:` correção · `docs:` documentação · `chore:` configuração
+4. Antes de abrir o PR, rode `npm run check`: **tudo verde**.
+5. Abra um **Pull Request** para o `main`, com o link do card do Trello na descrição.
+6. Outro integrante revisa e faz o merge.
+
+## 👥 Equipe
+
+Cada integrante adiciona o próprio nome **por meio de um Pull Request**. É a nossa primeira tarefa no GitHub.
+
+- **Marcus Teixeira**: [@marcusteixeirabr](https://github.com/marcusteixeirabr)
+
+- _(seu nome aqui)_: _(seu @ do GitHub)_
+
+- _(seu nome aqui)_: _(seu @ do GitHub)_
+
+- _(seu nome aqui)_: _(seu @ do GitHub)_
+
+- _(seu nome aqui)_: _(seu @ do GitHub)_
+
+## 📄 Licença
+
+[MIT](LICENSE)
