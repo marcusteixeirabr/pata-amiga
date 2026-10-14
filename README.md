@@ -119,7 +119,7 @@ Cada integrante adiciona o próprio nome **por meio de um Pull Request**. É a n
 
 - **Carlos Martins Espinoza Filho**: [@carlosespinozagmm-bit] (https://github.com/carlosespinozagmc-bit)
 
-- _(seu nome aqui)_: _(seu @ do GitHub)_
+- **Guilherme Bobany Tavares de Oliveira**: [guilhermebobanytavares-cmyk](https://github.com/guilhermebobanytavares-cmyk)
 
 - _(seu nome aqui)_: _(seu @ do GitHub)_
 
