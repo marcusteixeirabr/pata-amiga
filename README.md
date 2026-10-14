@@ -117,7 +117,7 @@ Cada integrante adiciona o próprio nome **por meio de um Pull Request**. É a n
 
 - **Natasha Caroline da Silva Pereira**: [@NatashaPereira] (https://github.com/natashaPereira)
 
-- _(seu nome aqui)_: _(seu @ do GitHub)_
+- **Carlos Martins Espinoza Filho**: [@carlosespinozagmm] (https://github.com/carlosespinozagmc)
 
 - _(seu nome aqui)_: _(seu @ do GitHub)_
 
