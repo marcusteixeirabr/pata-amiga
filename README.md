@@ -121,7 +121,7 @@ Cada integrante adiciona o próprio nome **por meio de um Pull Request**. É a n
 
 - **Guilherme Bobany Tavares de Oliveira**: [guilhermebobanytavares-cmyk](https://github.com/guilhermebobanytavares-cmyk)
 
-- _(seu nome aqui)_: _(seu @ do GitHub)_
+- **José Agostinho Renner da Silva**: [@AgostinhoRenner](https://github.com/AgostinhoRenner)
 
 ## 📄 Licença
 
