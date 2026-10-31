@@ -3,7 +3,7 @@ import type { Tutor } from "@/modelos/tutor/contrato";
 describe("Tutores", () => {
   const exemploTutor: Tutor = {
     nome: "João Silva",
-    cidade: "São Paulo",
+    cidadeTutor: "Itajaí",
     fotoTutor: "https://example.com/foto.jpg",
     fotosPet: ["https://example.com/foto_pet.jpg"],
   };
@@ -11,7 +11,7 @@ describe("Tutores", () => {
   test("Aceita Outra cidade", () => {
     const tutorOutraCidade: Tutor = {
       ...exemploTutor,
-      cidade: "Outra",
+      cidadeTutor: "Outra",
     };
   });
 
