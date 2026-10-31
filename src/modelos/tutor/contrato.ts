@@ -4,5 +4,5 @@ export type Tutor = {
   nome: string;
   cidade: CidadeTutor;
   fotoTutor?: string;
-  fotosPet?: string[];
+  fotoPets: string[];
 };
