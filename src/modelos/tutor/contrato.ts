@@ -1,8 +1,8 @@
-import type { Cidade } from "@/modelos/cidade";
+import type { CidadeTutor } from "@/modelos/cidade";
 
 export type Tutor = {
   nome: string;
-  cidadeTutor: Cidade | "Outra";
+  cidade: CidadeTutor;
   fotoTutor?: string;
   fotosPet?: string[];
 };
