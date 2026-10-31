@@ -18,6 +18,15 @@ describe("Parceiros Mockados", () => {
     }
   });
 
+  test.each(parceiros)("$nome tem pelo menos um serviço", (parceiro) => {
+    expect(parceiro.servicos.length).toBeGreaterThan(0);
+  });
+
+  test.each(parceiros)("$nome não tem serviço duplicado", (parceiro) => {
+    const servicosUnicos = new Set(parceiro.servicos);
+    expect(servicosUnicos.size).toBe(parceiro.servicos.length);
+  });
+
   test.each(parceiros)("$nome tem nota média entre 0 e 5", (parceiro) => {
     expect(parceiro.notaMedia).toBeGreaterThanOrEqual(0);
     expect(parceiro.notaMedia).toBeLessThanOrEqual(5);
