@@ -10,3 +10,5 @@ export const CIDADES = [
 ] as const;
 
 export type Cidade = (typeof CIDADES)[number];
+
+export type CidadeTutor = Cidade | "Outra";
