@@ -66,6 +66,7 @@ Um serviço **comunitário e gratuito**: o app apenas **conecta** as pessoas. N�
 ```
 src/
   app/          → telas (somente telas: todo arquivo aqui vira uma rota)
+  dados/        → dados fixos do app (parceiros fictícios)
   modelos/      → contratos de dados (tipos e listas fixas)
   regras/       → regras de negócio (funções puras, desenvolvidas com TDD)
 ```
