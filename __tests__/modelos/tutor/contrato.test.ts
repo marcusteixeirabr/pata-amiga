@@ -5,7 +5,7 @@ describe("Tutores", () => {
     nome: "João Silva",
     cidade: "Itajaí",
     fotoTutor: "https://example.com/foto.jpg",
-    fotosPet: ["https://example.com/foto_pet.jpg"],
+    fotoPets: ["https://example.com/foto_pet.jpg"],
   };
 
   test("Aceita Outra cidade", () => {
@@ -19,14 +19,14 @@ describe("Tutores", () => {
     const tutorSemFoto: Tutor = {
       nome: "Pedro Silva",
       cidade: "Brusque",
-      fotosPet: ["https://example.com/foto_do_pet.jpg"],
+      fotoPets: ["https://example.com/foto_do_pet.jpg"],
     };
   });
 
   test("Aceita 3 fotos de Pet", () => {
     const tutorCom3Fotos: Tutor = {
       ...exemploTutor,
-      fotosPet: [
+      fotoPets: [
         "https://example.com/foto_pet1.jpg",
         "https://example.com/foto_pet2.jpg",
         "https://example.com/foto_pet3.jpg",
