@@ -2,7 +2,7 @@
 
 Aplicativo Android que conecta **donos de pets** a **cuidadores, passeadores e petshops da vizinhança**, para que nenhum animal fique sem atenção enquanto o tutor está fora, no Vale do Itajaí e na Grande Florianópolis (SC).
 
-> 🚧 **Em desenvolvimento.** MVP acadêmico do Projeto Integrador _Hands-on Work VIII_ do curso de Análise e Desenvolvimento de Sistemas da **UNIVALI** (2026), desenvolvido com **TDD (Test-Driven Development)**. O escopo do MVP está sendo definido pela equipe.
+> 🚧 **Em desenvolvimento.** MVP acadêmico do Projeto Integrador _Hands-on Work VIII_ do curso de Análise e Desenvolvimento de Sistemas da **UNIVALI** (2026), desenvolvido com **TDD (Test-Driven Development)**.
 
 ---
 
@@ -18,7 +18,7 @@ Um serviço **comunitário e gratuito**: o app apenas **conecta** as pessoas. N�
 **Serviços:**
 
 - 🦮 **Passeio**: o parceiro busca o pet para passear.
-- 🏠 **Visita**: o parceiro cuida do pet na casa do tutor.
+- 🏠 **Cuidados em casa**: o parceiro cuida do pet na casa do tutor.
 - 🛏️ **Hospedagem**: o pet fica na casa ou no estabelecimento do parceiro.
 
 ### Histórias de usuário
@@ -35,6 +35,7 @@ Um serviço **comunitário e gratuito**: o app apenas **conecta** as pessoas. N�
 - Foto do tutor e de até **dois pets**, tiradas com a **câmera** do aparelho.
 - Busca de parceiros **por cidade** e **por tipo de serviço**.
 - Botão que abre uma conversa no **WhatsApp** com o parceiro escolhido.
+- **Nota e selo fictícios** dos parceiros.
 - Regras de negócio desenvolvidas com **TDD**.
 
 **Limitação assumida:** nesta versão de demonstração, os parceiros vêm de uma **base de exemplo embutida no app**. Não há servidor. A tela de cadastro de parceiro aparece apenas como **prévia**, indicando que o cadastro chega na próxima versão.
@@ -45,7 +46,7 @@ Um serviço **comunitário e gratuito**: o app apenas **conecta** as pessoas. N�
 
 - [ ] Backend real com **Supabase** e **cadastro de parceiros**: quem se cadastra aparece para todos os tutores
 - [ ] Busca por **raio de distância** ajustável, a partir do CEP
-- [ ] **Avaliações** e **verificação** dos parceiros, para dar mais confiança ao tutor
+- [ ] **Avaliações** feitas pelos tutores e a **verificação real**
 
 ---
 
@@ -56,7 +57,7 @@ Um serviço **comunitário e gratuito**: o app apenas **conecta** as pessoas. N�
 | Framework    | React Native 0.86 + Expo SDK 57                     |
 | Navegação    | Expo Router (cada arquivo em `src/app/` é uma tela) |
 | Linguagem    | TypeScript 6 (modo `strict`)                        |
-| Testes       | Jest + jest-expo                                    |
+| Testes       | Jest + jest-expo + React Native Testing Library 14  |
 | Build do APK | EAS Build                                           |
 | Ambiente     | Devcontainer (Node 24)                              |
 
@@ -72,7 +73,7 @@ __tests__/      → testes automatizados, espelhando a estrutura de src/
 Os testes **espelham o caminho** do código que testam:
 
 ```
-src/regras/urgencia.ts   →   __tests__/regras/urgencia.test.ts
+src/regras/iniciais.ts   →   __tests__/regras/iniciais.test.ts
 ```
 
 ## 🛠️ Rodando localmente
@@ -90,6 +91,10 @@ npx expo start --tunnel   # escaneie o QR code com o Expo Go
 ## ✅ Testes e TDD
 
 Cada regra de negócio nasce de um teste: **vermelho → verde → refatorar**.
+
+- **Jest** (com o preset `jest-expo`): executa os testes. As regras de negócio são funções puras e são testadas só com ele.
+- **React Native Testing Library 14**: desenha as telas em memória, sem celular nem emulador, e permite buscar o que o usuário vê (textos, botões) e simular toques e digitação. Na versão 14, `render` e `fireEvent` são assíncronos: use `await`.
+- **test-renderer**: motor que a Testing Library usa por baixo. A versão acompanha a do React (React 19.2 → test-renderer 1.2); ao atualizar o React, atualize os dois juntos.
 
 ```bash
 npm run check        # typecheck + testes (rodar antes de cada commit)
@@ -115,11 +120,11 @@ Cada integrante adiciona o próprio nome **por meio de um Pull Request**. É a n
 
 - **Marcus Teixeira**: [@marcusteixeirabr](https://github.com/marcusteixeirabr)
 
-- **Natasha Caroline da Silva Pereira**: [@NatashaPereira] (https://github.com/natashaPereira)
+- **Natasha Caroline da Silva Pereira**: [@NatashaPereira](https://github.com/natashaPereira)
 
-- **Carlos Martins Espinoza Filho**: [@carlosespinozagmm-bit] (https://github.com/carlosespinozagmc-bit)
+- **Carlos Martins Espinoza Filho**: [@carlosespinozagmc-bit](https://github.com/carlosespinozagmc-bit)
 
-- **Guilherme Bobany Tavares de Oliveira**: [guilhermebobanytavares-cmyk](https://github.com/guilhermebobanytavares-cmyk)
+- **Guilherme Bobany Tavares de Oliveira**: [@guilhermebobanytavares-cmyk](https://github.com/guilhermebobanytavares-cmyk)
 
 - **José Agostinho Renner da Silva**: [@AgostinhoRenner](https://github.com/AgostinhoRenner)
 
