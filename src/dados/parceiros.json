@@ -1,0 +1,28 @@
+[
+  {
+    "id": "p01",
+    "nome": "Ana Luísa Souza",
+    "tipo": "Cuidador",
+    "servicos": ["passeio", "cuidados em casa"],
+    "cidade": "Itajaí",
+    "whatsapp": "(47) 90000-0001",
+    "horarioAtendimento": "Seg a sex, 8h às 18h",
+    "faixaPreco": "R$ 40 a R$ 60 por passeio",
+    "notaMedia": 4.8,
+    "quantidadeAvaliacoes": 12,
+    "verificado": true
+  },
+  {
+    "id": "p02",
+    "nome": "Pet Help",
+    "tipo": "ONG",
+    "servicos": ["hospedagem"],
+    "cidade": "Balneário Camboriú",
+    "whatsapp": "(47) 90000-0002",
+    "horarioAtendimento": "Seg a sab, 9h às 19h",
+    "faixaPreco": "R$ 80 a R$ 150 por sessão",
+    "notaMedia": 4.5,
+    "quantidadeAvaliacoes": 8,
+    "verificado": false
+  }
+]
