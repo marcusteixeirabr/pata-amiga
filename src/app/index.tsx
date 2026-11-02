@@ -1,18 +1,39 @@
+import React from "react";
 import { router } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image } from "expo-image";
+import { useEffect, useState } from "react";
+import { StyleSheet, Text, ActivityIndicator, View } from "react-native";
+import { TextTitle } from "../components/TextTitle";
 
 export default function Index() {
+  const [loading, setLoading] = useState(true);
+
   const navegarParaTutor = () => {
     router.push("./tutor");
   };
 
+  useEffect(() => {
+    setTimeout(() => navegarParaTutor(), 2000);
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo ao Pata Amiga</Text>
-
-      <TouchableOpacity style={styles.button} onPress={navegarParaTutor}>
-        <Text style={styles.buttonText}>Acessar via Botão</Text>
-      </TouchableOpacity>
+      {loading && <ActivityIndicator size="small" color="#fff" />}
+      <Image
+        source={require("../../assets/images/logo_pata.svg")}
+        style={{
+          width: 100,
+          height: 100,
+        }}
+        priority="high"
+        onLoadEnd={() => setLoading(false)}
+      />
+      {!loading && (
+        <>
+          <TextTitle style={styles.title}>Pata Amiga</TextTitle>
+          <Text style={styles.subtitle}>conectando pets e pessoas</Text>
+        </>
+      )}
     </View>
   );
 }
@@ -23,18 +44,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: "#fd802f",
+    color: "#fffaf2",
   },
   title: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: "400",
     marginBottom: 5,
-    color: "#333",
+    color: "#fffaf2",
   },
   subtitle: {
     fontSize: 16,
-    color: "#666",
-    marginBottom: 30,
+    fontFamily: "AndikaRegular",
+    color: "#fffaf2",
   },
   linkButton: {
     color: "#007AFF",
