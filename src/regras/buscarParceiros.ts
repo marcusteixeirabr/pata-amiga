@@ -5,7 +5,11 @@ import type { Servico } from "@/modelos/servico";
 export function buscarParceiros(
   parceiros: Parceiro[],
   cidade: Cidade,
-  servicos?: Servico[],
+  servico?: Servico,
 ): Parceiro[] {
-  return parceiros.filter((parceiro) => parceiro.cidade === cidade);
+  const parceirosFiltrados = parceiros.filter((p) => p.cidade === cidade);
+  if (servico) {
+    return parceirosFiltrados.filter((p) => p.servicos.includes(servico));
+  }
+  return parceirosFiltrados;
 }
