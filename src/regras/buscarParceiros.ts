@@ -10,6 +10,11 @@ export function buscarParceiros(
   // filtra os parceiros pela cidade
   const parceirosFiltrados = parceiros.filter((p) => p.cidade === cidade);
 
+  // ordena os parceiros por ordem alfabética do nome
+  parceirosFiltrados.sort((a, b) => {
+    return a.nome.localeCompare(b.nome, "pt-BR");
+  });
+
   // ordena os parceiros por quantidade de avaliações, do maior para o menor
   parceirosFiltrados.sort((a, b) => {
     return b.quantidadeAvaliacoes - a.quantidadeAvaliacoes;
