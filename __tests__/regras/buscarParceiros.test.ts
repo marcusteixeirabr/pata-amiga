@@ -148,4 +148,37 @@ describe("Buscar Parceiros", () => {
 
     expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p02", "p01", "p03"]);
   });
+
+  test("ordena os parceiros por quantidade de avaliações, do maior para o menor", () => {
+    const parceiros: Parceiro[] = [
+      {
+        ...exemploParceiro,
+        id: "p01",
+        cidade: "Itajaí",
+        quantidadeAvaliacoes: 10,
+      },
+      {
+        ...exemploParceiro,
+        id: "p02",
+        cidade: "Itajaí",
+        quantidadeAvaliacoes: 15,
+      },
+      {
+        ...exemploParceiro,
+        id: "p03",
+        cidade: "Itajaí",
+        quantidadeAvaliacoes: 5,
+      },
+      {
+        ...exemploParceiro,
+        id: "p04",
+        cidade: "Balneário Camboriú",
+        quantidadeAvaliacoes: 20,
+      },
+    ];
+
+    const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí");
+
+    expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p02", "p01", "p03"]);
+  });
 });
