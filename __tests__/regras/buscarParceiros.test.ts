@@ -15,6 +15,18 @@ describe("Buscar Parceiros", () => {
     quantidadeAvaliacoes: 12,
     verificado: true,
   };
+
+  test("cidade sem parceiros retorna lista vazia", () => {
+    const parceiros: Parceiro[] = [
+      { ...exemploParceiro, id: "p01", cidade: "Itajaí" },
+      { ...exemploParceiro, id: "p02", cidade: "Balneário Camboriú" },
+    ];
+
+    const parceirosFiltrados = buscarParceiros(parceiros, "Camboriú");
+
+    expect(parceirosFiltrados).toEqual([]);
+  });
+
   test("só aparecem parceiros da cidade escolhida", () => {
     const parceiros: Parceiro[] = [
       { ...exemploParceiro, id: "p01", cidade: "Itajaí" },
