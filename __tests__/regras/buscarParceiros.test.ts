@@ -115,4 +115,37 @@ describe("Buscar Parceiros", () => {
       "p01",
     ]);
   });
+
+  test("ordena os parceiros por nota média, do maior para o menor", () => {
+    const parceiros: Parceiro[] = [
+      {
+        ...exemploParceiro,
+        id: "p01",
+        cidade: "Itajaí",
+        notaMedia: 4.5,
+      },
+      {
+        ...exemploParceiro,
+        id: "p02",
+        cidade: "Itajaí",
+        notaMedia: 4.8,
+      },
+      {
+        ...exemploParceiro,
+        id: "p03",
+        cidade: "Itajaí",
+        notaMedia: 4.2,
+      },
+      {
+        ...exemploParceiro,
+        id: "p04",
+        cidade: "Balneário Camboriú",
+        notaMedia: 4.9,
+      },
+    ];
+
+    const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí");
+
+    expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p02", "p01", "p03"]);
+  });
 });
