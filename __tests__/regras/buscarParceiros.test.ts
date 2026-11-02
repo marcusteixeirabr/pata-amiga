@@ -59,9 +59,7 @@ describe("Buscar Parceiros", () => {
       { ...exemploParceiro, id: "p05", cidade: "Itajaí", servicos: [] },
     ];
 
-    const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí", [
-      "passeio",
-    ]);
+    const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí", "passeio");
 
     expect(parceirosFiltrados.map((p: Parceiro) => p.id)).toEqual([
       "p01",
