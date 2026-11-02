@@ -36,10 +36,7 @@ describe("Buscar Parceiros", () => {
 
     const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí");
 
-    expect(parceirosFiltrados.map((p: Parceiro) => p.id)).toEqual([
-      "p01",
-      "p03",
-    ]);
+    expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p01", "p03"]);
   });
 
   test("com serviço escolhido, só aparece quem oferece aquele serviço", () => {
@@ -73,13 +70,10 @@ describe("Buscar Parceiros", () => {
 
     const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí", "passeio");
 
-    expect(parceirosFiltrados.map((p: Parceiro) => p.id)).toEqual([
-      "p01",
-      "p03",
-    ]);
+    expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p01", "p03"]);
   });
 
-  test("ordena os parceiros por verificação", () => {
+  test("parceiros ordenados por verificação", () => {
     const parceiros: Parceiro[] = [
       {
         ...exemploParceiro,
@@ -109,14 +103,10 @@ describe("Buscar Parceiros", () => {
 
     const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí");
 
-    expect(parceirosFiltrados.map((p: Parceiro) => p.id)).toEqual([
-      "p02",
-      "p03",
-      "p01",
-    ]);
+    expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p02", "p03", "p01"]);
   });
 
-  test("ordena os parceiros por nota média, do maior para o menor", () => {
+  test("parceiros ordenados por nota média, do maior para o menor", () => {
     const parceiros: Parceiro[] = [
       {
         ...exemploParceiro,
@@ -149,7 +139,7 @@ describe("Buscar Parceiros", () => {
     expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p02", "p01", "p03"]);
   });
 
-  test("ordena os parceiros por quantidade de avaliações, do maior para o menor", () => {
+  test("parceiros ordenados por ordem alfabética do nome, do A ao Z", () => {
     const parceiros: Parceiro[] = [
       {
         ...exemploParceiro,
@@ -180,5 +170,38 @@ describe("Buscar Parceiros", () => {
     const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí");
 
     expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p02", "p01", "p03"]);
+  });
+
+  test("parceiros ordenados por ordem alfabética do nome, do A ao Z", () => {
+    const parceiros: Parceiro[] = [
+      {
+        ...exemploParceiro,
+        id: "p01",
+        cidade: "Itajaí",
+        nome: "Fábio Luís Souza",
+      },
+      {
+        ...exemploParceiro,
+        id: "p02",
+        cidade: "Itajaí",
+        nome: "Érica Henriques da Silva",
+      },
+      {
+        ...exemploParceiro,
+        id: "p03",
+        cidade: "Itajaí",
+        nome: "Carlos Eduardo Oliveira",
+      },
+      {
+        ...exemploParceiro,
+        id: "p04",
+        cidade: "Balneário Camboriú",
+        nome: "Daniela Martins Pereira",
+      },
+    ];
+
+    const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí");
+
+    expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p03", "p02", "p01"]);
   });
 });
