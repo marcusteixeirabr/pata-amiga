@@ -1,6 +1,8 @@
 import type { Tutor } from "@/modelos/tutor/contrato";
 
-export function telaInicial(perfil: Tutor | null): "painel" | "escolha" {
+export type TelaInicial = "painel" | "escolha";
+
+export function telaInicial(perfil: Tutor | null): TelaInicial {
   if (perfil) {
     return "painel";
   }
