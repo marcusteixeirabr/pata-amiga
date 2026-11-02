@@ -29,4 +29,43 @@ describe("Buscar Parceiros", () => {
       "p03",
     ]);
   });
+
+  test("com serviço escolhido, só aparece quem oferece aquele serviço", () => {
+    const parceiros: Parceiro[] = [
+      {
+        ...exemploParceiro,
+        id: "p01",
+        cidade: "Itajaí",
+        servicos: ["passeio"],
+      },
+      {
+        ...exemploParceiro,
+        id: "p02",
+        cidade: "Camboriú",
+        servicos: ["passeio"],
+      },
+      {
+        ...exemploParceiro,
+        id: "p03",
+        cidade: "Itajaí",
+        servicos: ["passeio", "cuidados em casa"],
+      },
+      {
+        ...exemploParceiro,
+        id: "p04",
+        cidade: "Itajaí",
+        servicos: ["cuidados em casa"],
+      },
+      { ...exemploParceiro, id: "p05", cidade: "Itajaí", servicos: [] },
+    ];
+
+    const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí", [
+      "passeio",
+    ]);
+
+    expect(parceirosFiltrados.map((p: Parceiro) => p.id)).toEqual([
+      "p01",
+      "p03",
+    ]);
+  });
 });
