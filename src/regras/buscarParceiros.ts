@@ -10,6 +10,11 @@ export function buscarParceiros(
   // filtra os parceiros pela cidade
   const parceirosFiltrados = parceiros.filter((p) => p.cidade === cidade);
 
+  // ordena os parceiros por nota média, do maior para o menor
+  parceirosFiltrados.sort((a, b) => {
+    return b.notaMedia - a.notaMedia;
+  });
+
   // ordena os parceiros por verificação, colocando os verificados primeiro
   parceirosFiltrados.sort((a, b) => {
     if (a.verificado && !b.verificado) {
