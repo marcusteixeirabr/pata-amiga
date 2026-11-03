@@ -7,9 +7,10 @@ export function linkWhatsApp(
   serviço?: string,
 ): string {
   const numeroLimpo = parceiro.whatsapp.replace(/\D/g, "");
-  const numeroWhatsApp = numeroLimpo.startsWith("55")
-    ? numeroLimpo
-    : `55${numeroLimpo}`;
+  const numeroWhatsApp =
+    numeroLimpo.startsWith("55") && numeroLimpo.length === 13
+      ? numeroLimpo
+      : `55${numeroLimpo}`;
   const serviçoTexto = serviço ? `de ${serviço} ` : "";
   const mensagem = `Olá, ${parceiro.nome}! Eu sou ${tutor.nome}, encontrei vocês no Pata Amiga. Vocês têm vaga ${serviçoTexto}para meu pet?`;
   return `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
