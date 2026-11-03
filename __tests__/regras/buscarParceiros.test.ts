@@ -139,7 +139,7 @@ describe("Buscar Parceiros", () => {
     expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p02", "p01", "p03"]);
   });
 
-  test("parceiros ordenados por ordem alfabética do nome, do A ao Z", () => {
+  test("parceiros ordenados por quantidade de avaliações, do maior para o menor", () => {
     const parceiros: Parceiro[] = [
       {
         ...exemploParceiro,
@@ -172,7 +172,7 @@ describe("Buscar Parceiros", () => {
     expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p02", "p01", "p03"]);
   });
 
-  test("parceiros ordenados por ordem alfabética do nome, do A ao Z", () => {
+  test("parceiros ordenados por ordem alfabética de nome, do A ao Z", () => {
     const parceiros: Parceiro[] = [
       {
         ...exemploParceiro,
@@ -203,5 +203,55 @@ describe("Buscar Parceiros", () => {
     const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí");
 
     expect(parceirosFiltrados.map((p) => p.id)).toEqual(["p03", "p02", "p01"]);
+  });
+
+  test("critérios empatados devem ser resolvidos na ordem de prioridade correta", () => {
+    const parceiros: Parceiro[] = [
+      {
+        ...exemploParceiro,
+        id: "p01",
+        cidade: "Itajaí",
+        nome: "Fábio Luís Souza",
+        quantidadeAvaliacoes: 10,
+        notaMedia: 4.0,
+        verificado: true,
+      },
+      {
+        ...exemploParceiro,
+        id: "p02",
+        cidade: "Itajaí",
+        nome: "Érica Henriques da Silva",
+        quantidadeAvaliacoes: 15,
+        notaMedia: 5.0,
+        verificado: false,
+      },
+      {
+        ...exemploParceiro,
+        id: "p03",
+        cidade: "Itajaí",
+        nome: "Carlos Eduardo Oliveira",
+        quantidadeAvaliacoes: 25,
+        notaMedia: 3.9,
+        verificado: true,
+      },
+      {
+        ...exemploParceiro,
+        id: "p04",
+        cidade: "Itajaí",
+        nome: "Daniela Martins Pereira",
+        quantidadeAvaliacoes: 15,
+        notaMedia: 5.0,
+        verificado: false,
+      },
+    ];
+
+    const parceirosFiltrados = buscarParceiros(parceiros, "Itajaí");
+
+    expect(parceirosFiltrados.map((p) => p.id)).toEqual([
+      "p01",
+      "p03",
+      "p04",
+      "p02",
+    ]);
   });
 });
