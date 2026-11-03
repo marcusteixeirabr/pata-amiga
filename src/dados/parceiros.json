@@ -1,11 +1,137 @@
 [
   {
-    "id": "p01",
+    "id": "c01",
+    "nome": "Ana Maria Silva",
+    "tipo": "cuidador",
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
+    "cidade": "Itajaí",
+    "whatsApp": "47999990001",
+    "horarioAtendimento": "Seg a sex, 8h às 18h",
+    "faixaPreco": "R$ 40 a R$ 60 por passeio",
+    "notaMedia": 4.9,
+    "quantidadeAvaliacoes": 25,
+    "seloVerificacao": true
+  },
+  {
+    "id": "c02",
+    "nome": "Petshop Cão Charmoso",
+    "tipo": "petshop",
+    "servicos": [
+      "hospedagem",
+      "passeio"
+    ],
+    "cidade": "Itajaí",
+    "whatsApp": "47999990002",
+    "horarioAtendimento": "Seg a sáb, 8h às 19h",
+    "faixaPreco": "R$ 80 a R$ 120 a diária",
+    "notaMedia": 4.8,
+    "quantidadeAvaliacoes": 40,
+    "seloVerificacao": true
+  },
+  {
+    "id": "c03",
+    "nome": "Associação Anjos de Quatro Patas",
+    "tipo": "ONG",
+    "servicos": [
+      "cuidados em casa",
+      "hospedagem"
+    ],
+    "cidade": "Itajaí",
+    "whatsApp": "47999990003",
+    "horarioAtendimento": "Todos os dias, 9h às 17h",
+    "faixaPreco": "Contribuição voluntária",
+    "notaMedia": 4.8,
+    "quantidadeAvaliacoes": 15,
+    "seloVerificacao": false
+  },
+  {
+    "id": "c04",
+    "nome": "João Pedro de Oliveira",
+    "tipo": "cuidador",
+    "servicos": [
+      "passeio"
+    ],
+    "cidade": "Itajaí",
+    "whatsApp": "47999990004",
+    "horarioAtendimento": "Seg a sex, 7h às 16h",
+    "faixaPreco": "R$ 35 por passeio",
+    "notaMedia": 4.5,
+    "quantidadeAvaliacoes": 10,
+    "seloVerificacao": false
+  },
+  {
+    "id": "c05",
+    "nome": "Mariana Gonçalves da Rosa",
+    "tipo": "cuidador",
+    "servicos": [
+      "cuidados em casa",
+      "hospedagem"
+    ],
+    "cidade": "Florianópolis",
+    "whatsApp": "48999990005",
+    "horarioAtendimento": "Seg a dom, 24h",
+    "faixaPreco": "R$ 90 a R$ 150 a diária",
+    "notaMedia": 5.0,
+    "quantidadeAvaliacoes": 32,
+    "seloVerificacao": true
+  },
+  {
+    "id": "c06",
+    "nome": "ONG Patinhas da Ilha",
+    "tipo": "ONG",
+    "servicos": [
+      "hospedagem"
+    ],
+    "cidade": "Florianópolis",
+    "whatsApp": "48999990006",
+    "horarioAtendimento": "Seg a sáb, 10h às 18h",
+    "faixaPreco": "R$ 50 taxa de apoio",
+    "notaMedia": 4.9,
+    "quantidadeAvaliacoes": 50,
+    "seloVerificacao": true
+  },
+  {
+    "id": "c07",
+    "nome": "Petshop Cantinho Pet",
+    "tipo": "petshop",
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
+    "cidade": "Florianópolis",
+    "whatsApp": "48999990007",
+    "horarioAtendimento": "Seg a sáb, 8h às 20h",
+    "faixaPreco": "R$ 50 por visita",
+    "notaMedia": 4.7,
+    "quantidadeAvaliacoes": 18,
+    "seloVerificacao": false
+  },
+  {
+    "id": "c08",
+    "nome": "Carlos Eduardo Santos",
+    "tipo": "cuidador",
+    "servicos": [
+      "passeio"
+    ],
+    "cidade": "Florianópolis",
+    "whatsApp": "48999990008",
+    "horarioAtendimento": "Seg a sex, 6h às 14h",
+    "faixaPreco": "R$ 40 por passeio",
+    "notaMedia": 4.7,
+    "quantidadeAvaliacoes": 12,
+    "seloVerificacao": false
+  },
+[
+  {
+    "id": "c09",
     "nome": "Ana Luísa Souza",
     "tipo": "Cuidador",
     "servicos": ["passeio", "cuidados em casa"],
     "cidade": "Itajaí",
-    "whatsapp": "(47) 90000-0001",
+    "whatsapp": "(47) 90000-0009",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 60 por passeio",
     "notaMedia": 4.8,
@@ -13,12 +139,12 @@
     "verificado": true
   },
   {
-    "id": "p02",
+    "id": "c10",
     "nome": "Pet Help",
     "tipo": "ONG",
     "servicos": ["hospedagem"],
     "cidade": "Balneário Camboriú",
-    "whatsapp": "(47) 90000-0002",
+    "whatsapp": "(47) 90000-0010",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
     "faixaPreco": "R$ 80 a R$ 150 por sessão",
     "notaMedia": 4.5,
