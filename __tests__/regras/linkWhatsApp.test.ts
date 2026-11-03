@@ -1,5 +1,6 @@
 import type { Parceiro } from "@/modelos/parceiro";
 import type { Tutor } from "@/modelos/tutor/contrato";
+import { linkWhatsApp } from "@/regras/linkWhatsApp";
 
 describe("Link do WhatsApp", () => {
   const exemploParceiro: Parceiro = {
@@ -31,6 +32,16 @@ describe("Link do WhatsApp", () => {
     expect(url.pathname).toBe("/5548900000000");
     expect(url.searchParams.get("text")).toBe(
       "Olá, Parceiro Teste! Eu sou Tutor Teste, encontrei vocês no Pata Amiga. Vocês têm vaga de passeio para meu pet?",
+    );
+  });
+
+  test("Deve retornar um link de WhatsApp válido mesmo sem o serviço", () => {
+    const linkTest = linkWhatsApp(exemploParceiro, exemploTutor);
+    const url = new URL(linkTest);
+    expect(url.hostname).toBe("wa.me");
+    expect(url.pathname).toBe("/5548900000000");
+    expect(url.searchParams.get("text")).toBe(
+      "Olá, Parceiro Teste! Eu sou Tutor Teste, encontrei vocês no Pata Amiga. Vocês têm vaga para meu pet?",
     );
   });
 });
