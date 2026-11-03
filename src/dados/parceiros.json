@@ -2,7 +2,7 @@
   {
     "id": "c01",
     "nome": "Ana Maria Silva",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa"
@@ -18,7 +18,7 @@
   {
     "id": "c02",
     "nome": "Itajaí Pet Shop",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "hospedagem",
@@ -50,7 +50,7 @@
   {
     "id": "c04",
     "nome": "Diego Farias",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -65,7 +65,7 @@
   {
     "id": "c05",
     "nome": "Central dos Bichos",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidados em casa"
@@ -81,7 +81,7 @@
   {
     "id": "c06",
     "nome": "Renata Duarte",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa",
@@ -113,7 +113,7 @@
   {
     "id": "c08",
     "nome": "Marcelo Ramos",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -128,7 +128,7 @@
   {
     "id": "c09",
     "nome": "Mundi Pet Itajaí",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "cuidados em casa"
@@ -144,7 +144,7 @@
   {
     "id": "c10",
     "nome": "Tatiane Souza",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "hospedagem"
@@ -160,7 +160,7 @@
   {
     "id": "c11",
     "nome": "Gabriela Antunes",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa"
@@ -176,7 +176,7 @@
   {
     "id": "c12",
     "nome": "BC Pet Center",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "hospedagem",
@@ -208,7 +208,7 @@
   {
     "id": "c14",
     "nome": "Rafael Moreira",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -223,7 +223,7 @@
   {
     "id": "c15",
     "nome": "Marina Pet Shop",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidados em casa"
@@ -239,7 +239,7 @@
   {
     "id": "c16",
     "nome": "Larissa Ribeiro",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa"
@@ -270,7 +270,7 @@
   {
     "id": "c18",
     "nome": "Bruno Correia",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "hospedagem"
@@ -286,7 +286,7 @@
   {
     "id": "c19",
     "nome": "Rei dos Pets BC",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "cuidados em casa"
@@ -302,7 +302,7 @@
   {
     "id": "c20",
     "nome": "Vanessa Carvalho",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa"
@@ -318,12 +318,12 @@
   {
     "id": "c21",
     "nome": "Beatriz Lima",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991001",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 35 a R$ 55 por passeio",
@@ -334,12 +334,12 @@
   {
     "id": "c22",
     "nome": "Pet Mania São José",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "hospedagem"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991002",
     "horarioAtendimento": "Seg a sáb, 9h às 19h",
     "faixaPreco": "R$ 55 a R$ 100 por diária",
@@ -354,7 +354,7 @@
     "servicos": [
       "cuidados em casa"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991003",
     "horarioAtendimento": "Seg a sex, 9h às 17h",
     "faixaPreco": "Serviços voluntários",
@@ -365,11 +365,11 @@
   {
     "id": "c24",
     "nome": "Thiago Mendes",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991004",
     "horarioAtendimento": "Seg a sex, 7h às 14h",
     "faixaPreco": "R$ 30 a R$ 45 por passeio",
@@ -380,11 +380,11 @@
   {
     "id": "c25",
     "nome": "Estética Animal Patas",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "cuidados em casa"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991005",
     "horarioAtendimento": "Seg a sáb, 8h às 18h",
     "faixaPreco": "R$ 45 a R$ 70 por visita",
@@ -395,13 +395,13 @@
   {
     "id": "c26",
     "nome": "Camila Rocha",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa",
       "hospedagem"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991006",
     "horarioAtendimento": "Seg a dom, 24h",
     "faixaPreco": "R$ 45 a R$ 85 por diária",
@@ -416,7 +416,7 @@
     "servicos": [
       "cuidados em casa"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991007",
     "horarioAtendimento": "Seg a sex, 10h às 16h",
     "faixaPreco": "Sob consulta",
@@ -427,11 +427,11 @@
   {
     "id": "c28",
     "nome": "Fernando Alves",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991008",
     "horarioAtendimento": "Seg a sáb, 8h às 12h",
     "faixaPreco": "R$ 35 a R$ 50 por passeio",
@@ -442,12 +442,12 @@
   {
     "id": "c29",
     "nome": "Casa do Bicho",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidados em casa"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991009",
     "horarioAtendimento": "Seg a sáb, 9h às 19h",
     "faixaPreco": "R$ 60 a R$ 110 por diária",
@@ -458,12 +458,12 @@
   {
     "id": "c30",
     "nome": "Patrícia Santos",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa"
     ],
-    "cidade": "São José",
+    "cidade": "Itapema",
     "whatsApp": "48999991010",
     "horarioAtendimento": "Seg a sex, 8h às 17h",
     "faixaPreco": "R$ 40 a R$ 60 por serviço",
@@ -474,7 +474,7 @@
   {
     "id": "c31",
     "nome": "Carlos Eduardo",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa"
@@ -490,7 +490,7 @@
   {
     "id": "c32",
     "nome": "Pet Shop Beira Mar",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "cuidados em casa",
@@ -522,7 +522,7 @@
   {
     "id": "c34",
     "nome": "Mariana Souza",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -537,7 +537,7 @@
   {
     "id": "c35",
     "nome": "Mundo Pet Ilha",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidados em casa"
@@ -553,7 +553,7 @@
   {
     "id": "c36",
     "nome": "Roberto Dias",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidados em casa",
@@ -585,7 +585,7 @@
   {
     "id": "c38",
     "nome": "Juliana Costa",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -600,7 +600,7 @@
   {
     "id": "c39",
     "nome": "Cão & Gato Store",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "cuidados em casa"
@@ -616,7 +616,7 @@
   {
     "id": "c40",
     "nome": "Lucas Martins",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "hospedagem"
