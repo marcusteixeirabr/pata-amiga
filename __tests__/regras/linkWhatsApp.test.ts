@@ -95,4 +95,14 @@ describe("Link do WhatsApp", () => {
     const linkTest = linkWhatsApp(exemploParceiro, exemploTutor);
     expect(linkTest).not.toContain(" ");
   });
+
+  test("Parceiro do Santa Maria-RS deve ter o DDD correto no link", () => {
+    const parceiroRS: Parceiro = {
+      ...exemploParceiro,
+      whatsapp: "55900000000", // DDD 55 para Santa Maria, RS
+    };
+    const linkTest = linkWhatsApp(parceiroRS, exemploTutor);
+    const url = new URL(linkTest);
+    expect(url.pathname).toBe("/5555900000000");
+  });
 });
