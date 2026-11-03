@@ -635,12 +635,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "produtos"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0041",
+    "whatsApp": "47990000041",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 80 por serviço",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 14,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c42",
@@ -648,12 +648,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0042",
+    "whatsApp": "47990000042",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
     "faixaPreco": "R$ 80 a R$ 150 por sessão",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 9,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c43",
@@ -661,12 +661,12 @@
     "tipo": "Cuidador",
     "servicos": ["hospedagem", "passeio"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0043",
+    "whatsApp": "47990000043",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 50 a R$ 90 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 19,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c44",
@@ -674,12 +674,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "acessórios"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0044",
+    "whatsApp": "47990000044",
     "horarioAtendimento": "Seg a sab, 8h às 17h",
     "faixaPreco": "R$ 35 a R$ 70 por serviço",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 7,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c45",
@@ -687,12 +687,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0045",
+    "whatsApp": "47990000045",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
     "faixaPreco": "R$ 70 a R$ 120 por sessão",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 31,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c46",
@@ -700,12 +700,12 @@
     "tipo": "Cuidador",
     "servicos": ["passeio"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0046",
+    "whatsApp": "47990000046",
     "horarioAtendimento": "Seg a sex, 7h às 19h",
     "faixaPreco": "R$ 40 a R$ 60 por passeio",
     "notaMedia": 4.4,
     "quantidadeAvaliacoes": 11,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c47",
@@ -713,12 +713,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem", "cuidados em casa"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0047",
+    "whatsApp": "47990000047",
     "horarioAtendimento": "Seg a sab, 8h às 18h",
     "faixaPreco": "R$ 80 a R$ 140 por sessão",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 16,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c48",
@@ -726,12 +726,12 @@
     "tipo": "Cuidador",
     "servicos": ["cuidados em casa", "passeio"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0048",
+    "whatsApp": "47990000048",
     "horarioAtendimento": "Seg a sex, 8h às 20h",
     "faixaPreco": "R$ 45 a R$ 75 por visita",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 25,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c49",
@@ -739,12 +739,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "veterinário"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0049",
+    "whatsApp": "47990000049",
     "horarioAtendimento": "Seg a sab, 9h às 17h",
     "faixaPreco": "R$ 50 a R$ 100 por serviço",
     "notaMedia": 4.3,
     "quantidadeAvaliacoes": 8,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c50",
@@ -752,12 +752,12 @@
     "tipo": "Cuidador",
     "servicos": ["passeio"],
     "cidade": "Blumenau",
-    "whatsapp": "(47) 99000-0050",
+    "whatsApp": "47990000050",
     "horarioAtendimento": "Seg a sex, 7h às 18h",
     "faixaPreco": "R$ 35 a R$ 50 por passeio",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 13,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c51",
@@ -765,12 +765,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "acessórios"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0051",
+    "whatsApp": "47990000051",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 80 por serviço",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 15,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c52",
@@ -778,12 +778,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0052",
+    "whatsApp": "47990000052",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
     "faixaPreco": "R$ 80 a R$ 150 por sessão",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 10,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c53",
@@ -791,12 +791,12 @@
     "tipo": "Cuidador",
     "servicos": ["hospedagem", "passeio"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0053",
+    "whatsApp": "47990000053",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 55 a R$ 100 por diária",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 18,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c54",
@@ -804,12 +804,12 @@
     "tipo": "Cuidador",
     "servicos": ["cuidados em casa"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0054",
+    "whatsApp": "47990000054",
     "horarioAtendimento": "Seg a sab, 8h às 17h",
     "faixaPreco": "R$ 40 a R$ 60 por visita",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 12,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c55",
@@ -817,12 +817,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem", "cuidados em casa"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0055",
+    "whatsApp": "47990000055",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
     "faixaPreco": "R$ 70 a R$ 130 por sessão",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 27,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c56",
@@ -830,12 +830,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "produtos"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0056",
+    "whatsApp": "47990000056",
     "horarioAtendimento": "Seg a sex, 8h às 19h",
     "faixaPreco": "R$ 45 a R$ 90 por serviço",
     "notaMedia": 4.4,
     "quantidadeAvaliacoes": 9,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c57",
@@ -843,12 +843,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0057",
+    "whatsApp": "47990000057",
     "horarioAtendimento": "Seg a sab, 8h às 18h",
     "faixaPreco": "R$ 80 a R$ 140 por sessão",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 21,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c58",
@@ -856,12 +856,12 @@
     "tipo": "Cuidador",
     "servicos": ["passeio"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0058",
+    "whatsApp": "47990000058",
     "horarioAtendimento": "Seg a sex, 7h às 18h",
     "faixaPreco": "R$ 35 a R$ 55 por passeio",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 14,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c59",
@@ -869,12 +869,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "rações"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0059",
+    "whatsApp": "47990000059",
     "horarioAtendimento": "Seg a sab, 9h às 17h",
     "faixaPreco": "R$ 35 a R$ 75 por serviço",
     "notaMedia": 4.3,
     "quantidadeAvaliacoes": 6,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c60",
@@ -882,12 +882,12 @@
     "tipo": "Cuidador",
     "servicos": ["cuidados em casa", "passeio"],
     "cidade": "Camboriú",
-    "whatsapp": "(47) 99000-0060",
+    "whatsApp": "47990000060",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 65 por visita",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 23,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c61",
@@ -895,12 +895,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "acessórios"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0061",
+    "whatsApp": "47990000061",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 80 por serviço",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 12,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c62",
@@ -908,12 +908,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0062",
+    "whatsApp": "47990000062",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
     "faixaPreco": "R$ 80 a R$ 150 por sessão",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 19,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c63",
@@ -921,12 +921,12 @@
     "tipo": "Cuidador",
     "servicos": ["hospedagem", "passeio"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0063",
+    "whatsApp": "47990000063",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 50 a R$ 95 por diária",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 16,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c64",
@@ -934,12 +934,12 @@
     "tipo": "Cuidador",
     "servicos": ["cuidados em casa"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0064",
+    "whatsApp": "47990000064",
     "horarioAtendimento": "Seg a sab, 8h às 17h",
     "faixaPreco": "R$ 35 a R$ 55 por visita",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 8,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c65",
@@ -947,12 +947,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem", "cuidados em casa"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0065",
+    "whatsApp": "47990000065",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
     "faixaPreco": "R$ 70 a R$ 125 por sessão",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 24,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c66",
@@ -960,12 +960,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "produtos"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0066",
+    "whatsApp": "47990000066",
     "horarioAtendimento": "Seg a sex, 8h às 19h",
     "faixaPreco": "R$ 40 a R$ 75 por serviço",
     "notaMedia": 4.4,
     "quantidadeAvaliacoes": 10,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c67",
@@ -973,12 +973,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0067",
+    "whatsApp": "47990000067",
     "horarioAtendimento": "Seg a sab, 8h às 18h",
     "faixaPreco": "R$ 80 a R$ 140 por sessão",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 15,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c68",
@@ -986,12 +986,12 @@
     "tipo": "Cuidador",
     "servicos": ["passeio"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0068",
+    "whatsApp": "47990000068",
     "horarioAtendimento": "Seg a sex, 7h às 18h",
     "faixaPreco": "R$ 35 a R$ 50 por passeio",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 11,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c69",
@@ -999,12 +999,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "veterinário"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0069",
+    "whatsApp": "47990000069",
     "horarioAtendimento": "Seg a sab, 9h às 17h",
     "faixaPreco": "R$ 45 a R$ 90 por serviço",
     "notaMedia": 4.3,
     "quantidadeAvaliacoes": 7,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c70",
@@ -1012,12 +1012,12 @@
     "tipo": "Cuidador",
     "servicos": ["cuidados em casa", "passeio"],
     "cidade": "Brusque",
-    "whatsapp": "(47) 99000-0070",
+    "whatsApp": "47990000070",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 60 por visita",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 22,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c71",
@@ -1025,12 +1025,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "acessórios"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0071",
+    "whatsApp": "47990000071",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 80 por serviço",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 16,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c72",
@@ -1038,12 +1038,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0072",
+    "whatsApp": "47990000072",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
     "faixaPreco": "R$ 80 a R$ 150 por sessão",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 9,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c73",
@@ -1051,12 +1051,12 @@
     "tipo": "Cuidador",
     "servicos": ["hospedagem", "passeio"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0073",
+    "whatsApp": "47990000073",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 60 a R$ 110 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 28,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c74",
@@ -1064,12 +1064,12 @@
     "tipo": "Cuidador",
     "servicos": ["cuidados em casa"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0074",
+    "whatsApp": "47990000074",
     "horarioAtendimento": "Seg a sab, 8h às 17h",
     "faixaPreco": "R$ 40 a R$ 60 por visita",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 13,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c75",
@@ -1077,12 +1077,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem", "cuidados em casa"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0075",
+    "whatsApp": "47990000075",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
     "faixaPreco": "R$ 70 a R$ 130 por sessão",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 17,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c76",
@@ -1090,12 +1090,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "produtos"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0076",
+    "whatsApp": "47990000076",
     "horarioAtendimento": "Seg a sex, 8h às 19h",
     "faixaPreco": "R$ 45 a R$ 85 por serviço",
     "notaMedia": 4.4,
     "quantidadeAvaliacoes": 8,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c77",
@@ -1103,12 +1103,12 @@
     "tipo": "ONG",
     "servicos": ["hospedagem"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0077",
+    "whatsApp": "47990000077",
     "horarioAtendimento": "Seg a sab, 8h às 18h",
     "faixaPreco": "R$ 80 a R$ 140 por sessão",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 20,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c78",
@@ -1116,12 +1116,12 @@
     "tipo": "Cuidador",
     "servicos": ["passeio"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0078",
+    "whatsApp": "47990000078",
     "horarioAtendimento": "Seg a sex, 7h às 18h",
     "faixaPreco": "R$ 35 a R$ 55 por passeio",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 12,
-    "verificado": true
+    "seloVerificacao": true
   },
   {
     "id": "c79",
@@ -1129,12 +1129,12 @@
     "tipo": "Petshop",
     "servicos": ["banho e tosa", "acessórios"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0079",
+    "whatsApp": "47990000079",
     "horarioAtendimento": "Seg a sab, 9h às 17h",
     "faixaPreco": "R$ 40 a R$ 75 por serviço",
     "notaMedia": 4.3,
     "quantidadeAvaliacoes": 5,
-    "verificado": false
+    "seloVerificacao": false
   },
   {
     "id": "c80",
@@ -1142,12 +1142,12 @@
     "tipo": "Cuidador",
     "servicos": ["cuidados em casa", "passeio"],
     "cidade": "Porto Belo",
-    "whatsapp": "(47) 99000-0080",
+    "whatsApp": "47990000080",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 65 por visita",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 25,
-    "verificado": true
+    "seloVerificacao": true
   }
   
 ]
