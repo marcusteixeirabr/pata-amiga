@@ -7,38 +7,24 @@ export function buscarParceiros(
   cidade: Cidade,
   servico?: Servico,
 ): Parceiro[] {
-  // filtra os parceiros pela cidade
-  const parceirosFiltrados = parceiros.filter((p) => p.cidade === cidade);
+  const parceirosFiltrados = parceiros.filter(
+    (p) => p.cidade === cidade && (!servico || p.servicos.includes(servico)),
+  );
+  return ordenarParceiros(parceirosFiltrados);
+}
 
-  // ordena os parceiros por ordem alfabética do nome
-  parceirosFiltrados.sort((a, b) => {
-    return a.nome.localeCompare(b.nome, "pt-BR");
+function ordenarParceiros(parceiros: Parceiro[]): Parceiro[] {
+  return parceiros.toSorted((a, b) => {
+    const ordenaVerificacao = Number(b.verificado) - Number(a.verificado);
+    const ordenaNotaMedia = b.notaMedia - a.notaMedia;
+    const ordenaQuantidadeAvaliacoes =
+      b.quantidadeAvaliacoes - a.quantidadeAvaliacoes;
+    const ordenaNomeAlfabetica = a.nome.localeCompare(b.nome, "pt-BR");
+    return (
+      ordenaVerificacao ||
+      ordenaNotaMedia ||
+      ordenaQuantidadeAvaliacoes ||
+      ordenaNomeAlfabetica
+    );
   });
-
-  // ordena os parceiros por quantidade de avaliações, do maior para o menor
-  parceirosFiltrados.sort((a, b) => {
-    return b.quantidadeAvaliacoes - a.quantidadeAvaliacoes;
-  });
-
-  // ordena os parceiros por nota média, do maior para o menor
-  parceirosFiltrados.sort((a, b) => {
-    return b.notaMedia - a.notaMedia;
-  });
-
-  // ordena os parceiros por verificação, colocando os verificados primeiro
-  parceirosFiltrados.sort((a, b) => {
-    if (a.verificado && !b.verificado) {
-      return -1;
-    }
-    if (!a.verificado && b.verificado) {
-      return 1;
-    }
-    return 0;
-  });
-
-  // filtra os parceiros pelo serviço, se fornecido
-  if (servico) {
-    return parceirosFiltrados.filter((p) => p.servicos.includes(servico));
-  }
-  return parceirosFiltrados;
 }
