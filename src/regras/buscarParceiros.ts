@@ -14,7 +14,7 @@ export function buscarParceiros(
 }
 
 function ordenarParceiros(parceiros: Parceiro[]): Parceiro[] {
-  return parceiros.toSorted((a, b) => {
+  return [...parceiros].sort((a, b) => {
     const ordenaVerificacao = Number(b.verificado) - Number(a.verificado);
     const ordenaNotaMedia = b.notaMedia - a.notaMedia;
     const ordenaQuantidadeAvaliacoes =
