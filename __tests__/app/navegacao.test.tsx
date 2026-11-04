@@ -1,4 +1,6 @@
+import TelaDetalhe from "@/app/detalhe/[id]";
 import TelaEscolha from "@/app/escolha";
+import TelaPainel from "@/app/painel";
 import TelaParceiro from "@/app/parceiro";
 import TelaTutor from "@/app/tutor";
 import { fireEvent, renderRouter, screen } from "expo-router/testing-library";
@@ -47,5 +49,21 @@ describe("Navegação", () => {
     expect(app.getPathname()).toBe("/escolha");
     await fireEvent.press(screen.getByText("Sou Tutor"));
     expect(app.getPathname()).toBe("/tutor");
+  });
+
+  test("da tela painel para a tela detalhe do parceiro", async () => {
+    const app = renderRouter(
+      {
+        painel: TelaPainel,
+        "detalhe/[id]": TelaDetalhe,
+      },
+      {
+        initialUrl: "/painel",
+      },
+    );
+    await app;
+    expect(app.getPathname()).toBe("/painel");
+    await fireEvent.press(screen.getByText("Buscar Parceiro"));
+    expect(app.getPathname()).toBe("/detalhe/p01");
   });
 });
