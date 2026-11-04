@@ -1,5 +1,6 @@
 import TelaDetalhe from "@/app/detalhe/[id]";
 import TelaEscolha from "@/app/escolha";
+import TelaMeuPerfil from "@/app/meuPerfil";
 import TelaPainel from "@/app/painel";
 import TelaParceiro from "@/app/parceiro";
 import TelaTutor from "@/app/tutor";
@@ -66,5 +67,21 @@ describe("Navegação", () => {
     await fireEvent.press(screen.getByText("Buscar Parceiro"));
     expect(app.getPathname()).toBe("/detalhe/p01");
     expect(screen.getByText("Detalhe do Parceiro p01")).toBeOnTheScreen();
+  });
+
+  test("da tela painel para a tela meu perfil", async () => {
+    const app = renderRouter(
+      {
+        painel: TelaPainel,
+        meuPerfil: TelaMeuPerfil,
+      },
+      {
+        initialUrl: "/painel",
+      },
+    );
+    await app;
+    expect(app.getPathname()).toBe("/painel");
+    await fireEvent.press(screen.getByText("Meu Perfil"));
+    expect(app.getPathname()).toBe("/meuPerfil");
   });
 });
