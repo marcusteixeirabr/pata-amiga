@@ -65,5 +65,6 @@ describe("Navegação", () => {
     expect(app.getPathname()).toBe("/painel");
     await fireEvent.press(screen.getByText("Buscar Parceiro"));
     expect(app.getPathname()).toBe("/detalhe/p01");
+    expect(screen.getByText("Detalhe do Parceiro p01")).toBeOnTheScreen();
   });
 });
