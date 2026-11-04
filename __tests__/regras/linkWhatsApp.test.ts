@@ -105,4 +105,23 @@ describe("Link do WhatsApp", () => {
     const url = new URL(linkTest);
     expect(url.pathname).toBe("/5555900000000");
   });
+
+  test("Parceiro com WahtsApp Business deve ter o DDD correto no link", () => {
+    const parceiroBusiness: Parceiro = {
+      ...exemploParceiro,
+      whatsapp: "+55 (48) 3000-0001", // DDD 48 para WhatsApp Business número fixo
+    };
+    const linkTest = linkWhatsApp(parceiroBusiness, exemploTutor);
+    const url = new URL(linkTest);
+    expect(url.pathname).toBe("/554830000001");
+  });
+
+  test("Serviço deve ser do tipo Servico", () => {
+    const linkTest = linkWhatsApp(
+      exemploParceiro,
+      exemploTutor,
+      // @ts-expect-error: Teste de tipo, não deve compilar se o tipo estiver errado
+      "serviço inválido",
+    );
+  });
 });
