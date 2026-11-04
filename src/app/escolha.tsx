@@ -8,6 +8,9 @@ export default function TelaEscolha() {
       <Link href="/parceiro">
         <Text>Sou Parceiro</Text>
       </Link>
+      <Link href="/tutor">
+        <Text>Sou Tutor</Text>
+      </Link>
     </View>
   );
 }
