@@ -106,7 +106,7 @@ describe("Link do WhatsApp", () => {
     expect(url.pathname).toBe("/5555900000000");
   });
 
-  test("Parceiro com WahtsApp Business deve ter o DDD correto no link", () => {
+  test("Parceiro com WhatsApp Business deve ter o DDD correto no link", () => {
     const parceiroBusiness: Parceiro = {
       ...exemploParceiro,
       whatsapp: "+55 (48) 3000-0001", // DDD 48 para WhatsApp Business número fixo
