@@ -1,5 +1,6 @@
 import parceiros from "@/dados/parceiros.json";
 import { CIDADES } from "@/modelos/cidade";
+import type { Parceiro } from "@/modelos/parceiro";
 import { SERVICOS } from "@/modelos/servico";
 import { TIPOS_PARCEIRO } from "@/modelos/tipoParceiro";
 
@@ -35,5 +36,30 @@ describe("Parceiros Mockados", () => {
   test("o id é único na lista de parceiros", () => {
     const parceirosIdUnicos = new Set(parceiros.map((parceiro) => parceiro.id));
     expect(parceirosIdUnicos.size).toBe(parceiros.length);
+  });
+
+  test.each(parceiros)(
+    "$nome tem exatamente os campos do contrato",
+    (parceiro) => {
+      const camposEsperados: Array<keyof Parceiro> = [
+        "id",
+        "nome",
+        "whatsapp",
+        "horarioAtendimento",
+        "faixaPreco",
+        "tipo",
+        "servicos",
+        "cidade",
+        "notaMedia",
+        "quantidadeAvaliacoes",
+        "verificado",
+      ];
+      expect(Object.keys(parceiro).sort()).toEqual(camposEsperados.sort());
+    },
+  );
+
+  test.each(parceiros)("$nome tem whatsapp válido", ({ whatsapp }) => {
+    const numeroLimpo = whatsapp.replace(/\D/g, "");
+    expect(numeroLimpo).toMatch(/^(?:55)?\d{10,11}$/);
   });
 });
