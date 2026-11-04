@@ -12,7 +12,7 @@ export function linkWhatsApp(
     numeroLimpo.length === 13 || numeroLimpo.length === 12
       ? numeroLimpo
       : `55${numeroLimpo}`;
-  const serviçoTexto = servico ? `de ${servico} ` : "";
-  const mensagem = `Olá, ${parceiro.nome}! Eu sou ${tutor.nome}, encontrei vocês no Pata Amiga. Vocês têm vaga ${serviçoTexto}para meu pet?`;
+  const serviçoTexto = servico ? `vaga de ${servico}` : "vaga";
+  const mensagem = `Olá, ${parceiro.nome}! Eu sou ${tutor.nome}, encontrei vocês no Pata Amiga. Vocês têm ${serviçoTexto} para meu pet?`;
   return `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 }
