@@ -4,6 +4,7 @@ import TelaMeuPerfil from "@/app/meuPerfil";
 import TelaPainel from "@/app/painel";
 import TelaParceiro from "@/app/parceiro";
 import TelaTutor from "@/app/tutor";
+import { router } from "expo-router";
 import { fireEvent, renderRouter, screen } from "expo-router/testing-library";
 
 describe("Navegação", () => {
@@ -100,5 +101,24 @@ describe("Navegação", () => {
     expect(app.getPathname()).toBe("/meuPerfil");
     await fireEvent.press(screen.getByText("Voltar"));
     expect(app.getPathname()).toBe("/painel");
+  });
+
+  test("da tela meu perfil, após apagar perfil, volta para a tela escolha", async () => {
+    const app = renderRouter(
+      {
+        painel: TelaPainel,
+        meuPerfil: TelaMeuPerfil,
+        escolha: TelaEscolha,
+      },
+      {
+        initialUrl: "/painel",
+      },
+    );
+    await app;
+    await fireEvent.press(screen.getByText("Meu Perfil"));
+    expect(app.getPathname()).toBe("/meuPerfil");
+    await fireEvent.press(screen.getByText("Apagar Perfil"));
+    expect(app.getPathname()).toBe("/escolha");
+    expect(router.canGoBack()).toBe(false);
   });
 });
