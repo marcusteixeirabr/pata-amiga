@@ -14,6 +14,9 @@ export default function TelaPainel() {
       >
         <Text>Buscar Parceiro</Text>
       </Link>
+      <Link href="/meuPerfil">
+        <Text>Meu Perfil</Text>
+      </Link>
     </View>
   );
 }
