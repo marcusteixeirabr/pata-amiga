@@ -84,4 +84,21 @@ describe("Navegação", () => {
     await fireEvent.press(screen.getByText("Meu Perfil"));
     expect(app.getPathname()).toBe("/meuPerfil");
   });
+
+  test("da tela meu perfil volta para a tela painel", async () => {
+    const app = renderRouter(
+      {
+        painel: TelaPainel,
+        meuPerfil: TelaMeuPerfil,
+      },
+      {
+        initialUrl: "/painel",
+      },
+    );
+    await app;
+    await fireEvent.press(screen.getByText("Meu Perfil"));
+    expect(app.getPathname()).toBe("/meuPerfil");
+    await fireEvent.press(screen.getByText("Voltar"));
+    expect(app.getPathname()).toBe("/painel");
+  });
 });
