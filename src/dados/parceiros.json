@@ -2,7 +2,7 @@
   {
     "id": "c01",
     "nome": "Ana Maria Silva",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -18,7 +18,7 @@
   {
     "id": "c02",
     "nome": "Itajaí Pet Shop",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "hospedagem",
@@ -27,7 +27,7 @@
     "cidade": "Itajaí",
     "whatsapp": "47999993002",
     "horarioAtendimento": "Seg a sab, 8h às 19h",
-    "faixaPreco": "R$ 60 a R$ 120 por diaria",
+    "faixaPreco": "R$ 60 a R$ 120 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 58,
     "verificado": true
@@ -50,7 +50,7 @@
   {
     "id": "c04",
     "nome": "Diego Farias",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -65,7 +65,7 @@
   {
     "id": "c05",
     "nome": "Central dos Bichos",
-    "tipo": "petshop",
+    "tipo": "Cuidador",
     "servicos": [
       "hospedagem",
       "cuidado em casa"
@@ -73,7 +73,7 @@
     "cidade": "Itajaí",
     "whatsapp": "47999993005",
     "horarioAtendimento": "Seg a sáb, 9h às 19h",
-    "faixaPreco": "R$ 65 a R$ 110 por diaria",
+    "faixaPreco": "R$ 65 a R$ 110 por diária",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 30,
     "verificado": true
@@ -81,7 +81,7 @@
   {
     "id": "c06",
     "nome": "Renata Duarte",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa",
@@ -113,7 +113,7 @@
   {
     "id": "c08",
     "nome": "Marcelo Ramos",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -128,7 +128,7 @@
   {
     "id": "c09",
     "nome": "Mundi Pet Itajaí",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -144,7 +144,7 @@
   {
     "id": "c10",
     "nome": "Tatiane Souza",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "hospedagem"
@@ -152,7 +152,7 @@
     "cidade": "Itajaí",
     "whatsapp": "47999993010",
     "horarioAtendimento": "Seg a dom, 8h às 20h",
-    "faixaPreco": "R$ 50 a R$ 85 por diaria",
+    "faixaPreco": "R$ 50 a R$ 85 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 33,
     "verificado": true
@@ -160,7 +160,7 @@
   {
     "id": "c11",
     "nome": "Gabriela Antunes",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -176,7 +176,7 @@
   {
     "id": "c12",
     "nome": "BC Pet Center",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "hospedagem",
@@ -208,7 +208,7 @@
   {
     "id": "c14",
     "nome": "Rafael Moreira",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -223,7 +223,7 @@
   {
     "id": "c15",
     "nome": "Marina Pet Shop",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidado em casa"
@@ -231,7 +231,7 @@
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992015",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
-    "faixaPreco": "R$ 70 a R$ 130 por diaria",
+    "faixaPreco": "R$ 70 a R$ 130 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 45,
     "verificado": true
@@ -239,7 +239,7 @@
   {
     "id": "c16",
     "nome": "Larissa Ribeiro",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -270,7 +270,7 @@
   {
     "id": "c18",
     "nome": "Bruno Correia",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "hospedagem"
@@ -286,7 +286,7 @@
   {
     "id": "c19",
     "nome": "Rei dos Pets BC",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -302,7 +302,7 @@
   {
     "id": "c20",
     "nome": "Vanessa Carvalho",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -318,7 +318,7 @@
   {
     "id": "c21",
     "nome": "Beatriz Lima",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -334,7 +334,7 @@
   {
     "id": "c22",
     "nome": "Pet Mania São José",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "hospedagem"
@@ -365,7 +365,7 @@
   {
     "id": "c24",
     "nome": "Thiago Mendes",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -380,7 +380,7 @@
   {
     "id": "c25",
     "nome": "Estética Animal Patas",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "cuidado em casa"
     ],
@@ -395,7 +395,7 @@
   {
     "id": "c26",
     "nome": "Camila Rocha",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa",
@@ -427,7 +427,7 @@
   {
     "id": "c28",
     "nome": "Fernando Alves",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -442,7 +442,7 @@
   {
     "id": "c29",
     "nome": "Casa do Bicho",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidado em casa"
@@ -458,7 +458,7 @@
   {
     "id": "c30",
     "nome": "Patrícia Santos",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -474,7 +474,7 @@
   {
     "id": "c31",
     "nome": "Carlos Eduardo",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -522,7 +522,7 @@
   {
     "id": "c34",
     "nome": "Mariana Souza",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -537,7 +537,7 @@
   {
     "id": "c35",
     "nome": "Mundo Pet Ilha",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidado em casa"
@@ -545,7 +545,7 @@
     "cidade": "Florianópolis",
     "whatsapp": "48999990035",
     "horarioAtendimento": "Seg a sab, 8h às 20h",
-    "faixaPreco": "R$ 70 a R$ 130 por diaria",
+    "faixaPreco": "R$ 70 a R$ 130 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 41,
     "verificado": true
@@ -553,7 +553,7 @@
   {
     "id": "c36",
     "nome": "Roberto Dias",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "cuidado em casa",
@@ -585,7 +585,7 @@
   {
     "id": "c38",
     "nome": "Juliana Costa",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio"
     ],
@@ -600,7 +600,7 @@
   {
     "id": "c39",
     "nome": "Cão & Gato Store",
-    "tipo": "petshop",
+    "tipo": "Petshop",
     "servicos": [
       "passeio",
       "cuidado em casa"
@@ -616,7 +616,7 @@
   {
     "id": "c40",
     "nome": "Lucas Martins",
-    "tipo": "cuidador",
+    "tipo": "Cuidador",
     "servicos": [
       "passeio",
       "hospedagem"
@@ -624,7 +624,7 @@
     "cidade": "Florianópolis",
     "whatsapp": "48999990040",
     "horarioAtendimento": "Seg a dom, 8h às 20h",
-    "faixaPreco": "R$ 50 a R$ 80 por diaria",
+    "faixaPreco": "R$ 50 a R$ 80 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 38,
     "verificado": true
