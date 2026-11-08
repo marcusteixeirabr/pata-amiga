@@ -64,7 +64,7 @@
   {
     "id": "g03",
     "nome": "Hotelzinho Canino Blumenau",
-    "tipo": "Cuidador",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "passeio"
@@ -218,7 +218,7 @@
   {
     "id": "g13",
     "nome": "Hotel Pet Camboriú",
-    "tipo": "Cuidador",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "passeio"
@@ -374,7 +374,7 @@
   {
     "id": "g23",
     "nome": "Hotel Canino Brusque",
-    "tipo": "Cuidador",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "passeio"
