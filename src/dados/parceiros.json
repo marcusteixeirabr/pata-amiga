@@ -3,7 +3,10 @@
     "id": "p01",
     "nome": "Ana Luísa Souza",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidados em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "(47) 90000-0001",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -16,7 +19,9 @@
     "id": "p02",
     "nome": "Pet Help",
     "tipo": "ONG",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "(47) 90000-0002",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
@@ -29,7 +34,10 @@
     "id": "g01",
     "nome": "Blumenau Pet Care",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidados em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0003",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -42,7 +50,9 @@
     "id": "g02",
     "nome": "Amigos de Quatro Patas Blumenau",
     "tipo": "ONG",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0004",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
@@ -55,7 +65,10 @@
     "id": "g03",
     "nome": "Hotelzinho Canino Blumenau",
     "tipo": "Cuidador",
-    "servicos": ["hospedagem", "passeio"],
+    "servicos": [
+      "hospedagem",
+      "passeio"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0005",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -68,7 +81,9 @@
     "id": "g04",
     "nome": "Patas & Focinhos",
     "tipo": "Cuidador",
-    "servicos": ["cuidados em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0006",
     "horarioAtendimento": "Seg a sab, 8h às 17h",
@@ -81,7 +96,9 @@
     "id": "g05",
     "nome": "Lar dos Pets Blumenau",
     "tipo": "ONG",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0007",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
@@ -94,7 +111,9 @@
     "id": "g06",
     "nome": "Cão & Cia Blumenau",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0008",
     "horarioAtendimento": "Seg a sex, 7h às 19h",
@@ -107,7 +126,10 @@
     "id": "g07",
     "nome": "Anjos de Patas Blumenau",
     "tipo": "ONG",
-    "servicos": ["hospedagem", "cuidados em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0009",
     "horarioAtendimento": "Seg a sab, 8h às 18h",
@@ -120,7 +142,10 @@
     "id": "g08",
     "nome": "Pet Sitter Blumenau Vip",
     "tipo": "Cuidador",
-    "servicos": ["cuidados em casa", "passeio"],
+    "servicos": [
+      "cuidados em casa",
+      "passeio"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0010",
     "horarioAtendimento": "Seg a sex, 8h às 20h",
@@ -133,7 +158,9 @@
     "id": "g09",
     "nome": "SOS Pets Blumenau",
     "tipo": "ONG",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0011",
     "horarioAtendimento": "Seg a sab, 9h às 17h",
@@ -146,7 +173,9 @@
     "id": "g10",
     "nome": "Caminhada Pet Blumenau",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 99000-0012",
     "horarioAtendimento": "Seg a sex, 7h às 18h",
@@ -159,7 +188,10 @@
     "id": "g11",
     "nome": "Camboriú Pet Care",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidados em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0013",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -172,7 +204,9 @@
     "id": "g12",
     "nome": "SOS Animais Camboriú",
     "tipo": "ONG",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0014",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
@@ -185,7 +219,10 @@
     "id": "g13",
     "nome": "Hotel Pet Camboriú",
     "tipo": "Cuidador",
-    "servicos": ["hospedagem", "passeio"],
+    "servicos": [
+      "hospedagem",
+      "passeio"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0015",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -198,7 +235,9 @@
     "id": "g14",
     "nome": "Focinhos Felizes Camboriú",
     "tipo": "Cuidador",
-    "servicos": ["cuidados em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0016",
     "horarioAtendimento": "Seg a sab, 8h às 17h",
@@ -211,7 +250,10 @@
     "id": "g15",
     "nome": "Amigos do Bem Camboriú",
     "tipo": "ONG",
-    "servicos": ["hospedagem", "cuidados em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0017",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
@@ -224,7 +266,10 @@
     "id": "g16",
     "nome": "Pet Sitter Costa Verde",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidados em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0018",
     "horarioAtendimento": "Seg a sex, 8h às 19h",
@@ -237,7 +282,9 @@
     "id": "g17",
     "nome": "Abrigo Esperança Camboriú",
     "tipo": "ONG",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0019",
     "horarioAtendimento": "Seg a sab, 8h às 18h",
@@ -250,7 +297,9 @@
     "id": "g18",
     "nome": "Passeios Caninos Camboriú",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0020",
     "horarioAtendimento": "Seg a sex, 7h às 18h",
@@ -263,7 +312,10 @@
     "id": "g19",
     "nome": "Proteção Animal Camboriú",
     "tipo": "ONG",
-    "servicos": ["hospedagem", "cuidados em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0021",
     "horarioAtendimento": "Seg a sab, 9h às 17h",
@@ -276,7 +328,10 @@
     "id": "g20",
     "nome": "Cantinho do Pet Camboriú",
     "tipo": "Cuidador",
-    "servicos": ["cuidados em casa", "passeio"],
+    "servicos": [
+      "cuidados em casa",
+      "passeio"
+    ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 99000-0022",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -289,7 +344,10 @@
     "id": "g21",
     "nome": "Brusque Pet Service",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidados em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0023",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -302,7 +360,9 @@
     "id": "g22",
     "nome": "Associação Protetora de Animais Brusque",
     "tipo": "ONG",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0024",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
@@ -315,7 +375,10 @@
     "id": "g23",
     "nome": "Hotel Canino Brusque",
     "tipo": "Cuidador",
-    "servicos": ["hospedagem", "passeio"],
+    "servicos": [
+      "hospedagem",
+      "passeio"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0025",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -328,7 +391,9 @@
     "id": "g24",
     "nome": "Patas & Afetos Brusque",
     "tipo": "Cuidador",
-    "servicos": ["cuidados em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0026",
     "horarioAtendimento": "Seg a sab, 8h às 17h",
@@ -341,7 +406,10 @@
     "id": "g25",
     "nome": "Lar Temporal Brusque",
     "tipo": "ONG",
-    "servicos": ["hospedagem", "cuidados em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0027",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
@@ -354,7 +422,10 @@
     "id": "g26",
     "nome": "Pet Sitter Brusque",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidados em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0028",
     "horarioAtendimento": "Seg a sex, 8h às 19h",
@@ -367,7 +438,9 @@
     "id": "g27",
     "nome": "Amor de Patas Brusque",
     "tipo": "ONG",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0029",
     "horarioAtendimento": "Seg a sab, 8h às 18h",
@@ -380,7 +453,9 @@
     "id": "g28",
     "nome": "Caminhada & Cia Brusque",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0030",
     "horarioAtendimento": "Seg a sex, 7h às 18h",
@@ -393,7 +468,10 @@
     "id": "g29",
     "nome": "SOS Animais Brusque",
     "tipo": "ONG",
-    "servicos": ["hospedagem", "cuidados em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0031",
     "horarioAtendimento": "Seg a sab, 9h às 17h",
@@ -406,7 +484,10 @@
     "id": "g30",
     "nome": "Cuidados Caninos Brusque",
     "tipo": "Cuidador",
-    "servicos": ["cuidados em casa", "passeio"],
+    "servicos": [
+      "cuidados em casa",
+      "passeio"
+    ],
     "cidade": "Brusque",
     "whatsapp": "(47) 99000-0032",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -414,15 +495,15 @@
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 22,
     "verificado": true
-  }
-]
-
-[
+  },
   {
     "id": "c01",
     "nome": "Ana Maria Silva",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999990001",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -435,7 +516,11 @@
     "id": "c02",
     "nome": "Itajaí Pet Shop",
     "tipo": "Petshop",
-    "servicos": ["passeio", "hospedagem", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999993002",
     "horarioAtendimento": "Seg a sab, 8h às 19h",
@@ -448,7 +533,9 @@
     "id": "c03",
     "nome": "Abrigo Amigo Itajaí",
     "tipo": "ONG",
-    "servicos": ["cuidado em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999993003",
     "horarioAtendimento": "Seg a sex, 9h às 17h",
@@ -461,7 +548,9 @@
     "id": "c04",
     "nome": "Diego Farias",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999993004",
     "horarioAtendimento": "Seg a sáb, 7h às 16h",
@@ -474,7 +563,10 @@
     "id": "c05",
     "nome": "Central dos Bichos",
     "tipo": "Cuidador",
-    "servicos": ["hospedagem", "cuidado em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999993005",
     "horarioAtendimento": "Seg a sáb, 9h às 19h",
@@ -487,7 +579,11 @@
     "id": "c06",
     "nome": "Renata Duarte",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidado em casa", "hospedagem"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa",
+      "hospedagem"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999993006",
     "horarioAtendimento": "Seg a dom, 24h",
@@ -500,7 +596,9 @@
     "id": "c07",
     "nome": "Protetores de Itajaí",
     "tipo": "ONG",
-    "servicos": ["cuidado em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999993007",
     "horarioAtendimento": "Seg a sex, 10h às 16h",
@@ -513,7 +611,9 @@
     "id": "c08",
     "nome": "Marcelo Ramos",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999993008",
     "horarioAtendimento": "Seg a sex, 13h às 19h",
@@ -526,7 +626,10 @@
     "id": "c09",
     "nome": "Mundi Pet Itajaí",
     "tipo": "Petshop",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999993009",
     "horarioAtendimento": "Seg a sáb, 9h às 18h",
@@ -539,7 +642,10 @@
     "id": "c10",
     "nome": "Tatiane Souza",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "hospedagem"],
+    "servicos": [
+      "passeio",
+      "hospedagem"
+    ],
     "cidade": "Itajaí",
     "whatsapp": "47999993010",
     "horarioAtendimento": "Seg a dom, 8h às 20h",
@@ -552,7 +658,10 @@
     "id": "c11",
     "nome": "Gabriela Antunes",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992011",
     "horarioAtendimento": "seg a sex, 8h às 18h",
@@ -565,7 +674,11 @@
     "id": "c12",
     "nome": "BC Pet Center",
     "tipo": "Petshop",
-    "servicos": ["passeio", "hospedagem", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992012",
     "horarioAtendimento": "Seg a dom, 8h às 20h",
@@ -578,7 +691,9 @@
     "id": "c13",
     "nome": "SOS Animal BC",
     "tipo": "ONG",
-    "servicos": ["cuidado em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992013",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
@@ -591,7 +706,9 @@
     "id": "c14",
     "nome": "Rafael Moreira",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992014",
     "horarioAtendimento": "Seg a sáb, 7h às 17h",
@@ -604,7 +721,10 @@
     "id": "c15",
     "nome": "Marina Pet Shop",
     "tipo": "Petshop",
-    "servicos": ["hospedagem", "cuidado em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992015",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
@@ -617,7 +737,10 @@
     "id": "c16",
     "nome": "Larissa Ribeiro",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992016",
     "horarioAtendimento": "Seg a sex, 9h às 19h",
@@ -630,7 +753,9 @@
     "id": "c17",
     "nome": "Patinhas do Atlântico",
     "tipo": "ONG",
-    "servicos": ["cuidado em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992017",
     "horarioAtendimento": "Seg a sex, 10h às 17h",
@@ -643,7 +768,10 @@
     "id": "c18",
     "nome": "Bruno Correia",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "hospedagem"],
+    "servicos": [
+      "passeio",
+      "hospedagem"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992018",
     "horarioAtendimento": "Seg a dom, 8h às 21h",
@@ -656,7 +784,10 @@
     "id": "c19",
     "nome": "Rei dos Pets BC",
     "tipo": "Petshop",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992019",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
@@ -669,7 +800,10 @@
     "id": "c20",
     "nome": "Vanessa Carvalho",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "47999992020",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -682,7 +816,10 @@
     "id": "c21",
     "nome": "Carlos Eduardo",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990021",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -695,7 +832,11 @@
     "id": "c22",
     "nome": "Pet Shop Beira Mar",
     "tipo": "Petshop",
-    "servicos": ["passeio", "cuidado em casa", "hospedagem"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa",
+      "hospedagem"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990022",
     "horarioAtendimento": "Seg a sab, 9h às 19h",
@@ -708,12 +849,14 @@
     "id": "c23",
     "nome": "Amigos dos Animais Floripa",
     "tipo": "ONG",
-    "servicos": ["cuidado em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990023",
     "horarioAtendimento": "Seg a sex, 9h às 17h",
     "faixaPreco": "Serviços gratuitos / Doação",
-    "notaMedia": 5.0,
+    "notaMedia": 5,
     "quantidadeAvaliacoes": 18,
     "verificado": true
   },
@@ -721,7 +864,9 @@
     "id": "c24",
     "nome": "Mariana Souza",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990024",
     "horarioAtendimento": "Ter a dom, 7h às 16h",
@@ -734,7 +879,10 @@
     "id": "c25",
     "nome": "Mundo Pet Ilha",
     "tipo": "Petshop",
-    "servicos": ["hospedagem", "cuidado em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990025",
     "horarioAtendimento": "Seg a sab, 8h às 20h",
@@ -747,7 +895,11 @@
     "id": "c26",
     "nome": "Roberto Dias",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidado em casa", "hospedagem"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa",
+      "hospedagem"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990026",
     "horarioAtendimento": "todos os dias, 24h",
@@ -760,7 +912,9 @@
     "id": "c27",
     "nome": "Resgate Animal Floripa",
     "tipo": "ONG",
-    "servicos": ["cuidado em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990027",
     "horarioAtendimento": "Seg a sex, 10h às 16h",
@@ -773,7 +927,9 @@
     "id": "c28",
     "nome": "Juliana Costa",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990028",
     "horarioAtendimento": "Seg a sex, 13h às 19h",
@@ -786,7 +942,10 @@
     "id": "c29",
     "nome": "Cão & Gato Store",
     "tipo": "Petshop",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990029",
     "horarioAtendimento": "Seg a sab, 9h às 18h",
@@ -799,7 +958,10 @@
     "id": "c30",
     "nome": "Lucas Martins",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "hospedagem"],
+    "servicos": [
+      "passeio",
+      "hospedagem"
+    ],
     "cidade": "Florianópolis",
     "whatsapp": "48999990030",
     "horarioAtendimento": "Seg a dom, 8h às 20h",
@@ -812,7 +974,11 @@
     "id": "c31",
     "nome": "Pet Care Itapema",
     "tipo": "Petshop",
-    "servicos": ["passeio", "cuidado em casa", "hospedagem"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa",
+      "hospedagem"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990031",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -825,7 +991,9 @@
     "id": "c32",
     "nome": "Camila Cuidadora de Pets",
     "tipo": "Cuidador",
-    "servicos": ["cuidado em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990032",
     "horarioAtendimento": "Seg a sab, 7h às 19h",
@@ -838,12 +1006,14 @@
     "id": "c33",
     "nome": "ONG Protetores de Itapema",
     "tipo": "ONG",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990033",
     "horarioAtendimento": "Seg a dom, 8h às 19h",
     "faixaPreco": "Doação voluntária",
-    "notaMedia": 5.0,
+    "notaMedia": 5,
     "quantidadeAvaliacoes": 35,
     "verificado": true
   },
@@ -851,7 +1021,9 @@
     "id": "c34",
     "nome": "Passeios Marítimos Pet",
     "tipo": "Cuidador",
-    "servicos": ["passeio"],
+    "servicos": [
+      "passeio"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990034",
     "horarioAtendimento": "Seg a sex, 6h às 11h e 16h às 19h",
@@ -864,7 +1036,10 @@
     "id": "c35",
     "nome": "Cantinho Animal Meia Praia",
     "tipo": "Petshop",
-    "servicos": ["hospedagem", "cuidado em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990035",
     "horarioAtendimento": "24h",
@@ -877,7 +1052,10 @@
     "id": "c36",
     "nome": "Espaço Pet Itapema",
     "tipo": "Petshop",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990036",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
@@ -890,7 +1068,10 @@
     "id": "c37",
     "nome": "Patas da Costa Esmeralda",
     "tipo": "ONG",
-    "servicos": ["hospedagem", "cuidado em casa"],
+    "servicos": [
+      "hospedagem",
+      "cuidados em casa"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990037",
     "horarioAtendimento": "Seg a sab, 9h às 17h",
@@ -903,7 +1084,10 @@
     "id": "c38",
     "nome": "Mateus Dog Walker",
     "tipo": "Cuidador",
-    "servicos": ["passeio", "cuidado em casa"],
+    "servicos": [
+      "passeio",
+      "cuidados em casa"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990038",
     "horarioAtendimento": "Seg a dom, 7h às 18h",
@@ -916,12 +1100,14 @@
     "id": "c39",
     "nome": "Resort Canino Beira-Mar",
     "tipo": "Petshop",
-    "servicos": ["hospedagem"],
+    "servicos": [
+      "hospedagem"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990039",
     "horarioAtendimento": "Seg a dom, 7h às 20h",
     "faixaPreco": "R$ 110 a R$ 180 por diária",
-    "notaMedia": 5.0,
+    "notaMedia": 5,
     "quantidadeAvaliacoes": 38,
     "verificado": true
   },
@@ -929,7 +1115,9 @@
     "id": "c40",
     "nome": "Juliana Pet Sitter",
     "tipo": "Cuidador",
-    "servicos": ["cuidado em casa"],
+    "servicos": [
+      "cuidados em casa"
+    ],
     "cidade": "Itapema",
     "whatsapp": "47999990040",
     "horarioAtendimento": "Ter a dom, 8h às 18h",
