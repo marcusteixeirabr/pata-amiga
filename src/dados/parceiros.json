@@ -5,15 +5,15 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999990001",
+    "whatsapp": "47999990001",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 60 por passeio",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 25,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c02",
@@ -22,30 +22,30 @@
     "servicos": [
       "passeio",
       "hospedagem",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999993002",
-    "horarioAtendimento": "Seg a sáb, 8h às 19h",
-    "faixaPreco": "R$ 60 a R$ 120 por diária",
+    "whatsapp": "47999993002",
+    "horarioAtendimento": "Seg a sab, 8h às 19h",
+    "faixaPreco": "R$ 60 a R$ 120 por diaria",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 58,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c03",
     "nome": "Abrigo Amigo Itajaí",
     "tipo": "ONG",
     "servicos": [
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999993003",
+    "whatsapp": "47999993003",
     "horarioAtendimento": "Seg a sex, 9h às 17h",
     "faixaPreco": "Apoio voluntário",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 42,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c04",
@@ -55,12 +55,12 @@
       "passeio"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999993004",
+    "whatsapp": "47999993004",
     "horarioAtendimento": "Seg a sáb, 7h às 16h",
     "faixaPreco": "R$ 35 a R$ 50 por passeio",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 14,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c05",
@@ -68,15 +68,15 @@
     "tipo": "petshop",
     "servicos": [
       "hospedagem",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999993005",
+    "whatsapp": "47999993005",
     "horarioAtendimento": "Seg a sáb, 9h às 19h",
-    "faixaPreco": "R$ 65 a R$ 110 por diária",
+    "faixaPreco": "R$ 65 a R$ 110 por diaria",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 30,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c06",
@@ -84,31 +84,31 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa",
+      "cuidado em casa",
       "hospedagem"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999993006",
+    "whatsapp": "47999993006",
     "horarioAtendimento": "Seg a dom, 24h",
-    "faixaPreco": "R$ 50 a R$ 90 por diária",
+    "faixaPreco": "R$ 50 a R$ 90 por diaria",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 46,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c07",
     "nome": "Protetores de Itajaí",
     "tipo": "ONG",
     "servicos": [
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999993007",
+    "whatsapp": "47999993007",
     "horarioAtendimento": "Seg a sex, 10h às 16h",
-    "faixaPreco": "Sob consulta",
+    "faixaPreco": "sob consulta",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 24,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c08",
@@ -118,12 +118,12 @@
       "passeio"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999993008",
+    "whatsapp": "47999993008",
     "horarioAtendimento": "Seg a sex, 13h às 19h",
     "faixaPreco": "R$ 35 a R$ 55 por passeio",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 17,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c09",
@@ -131,15 +131,15 @@
     "tipo": "petshop",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999993009",
+    "whatsapp": "47999993009",
     "horarioAtendimento": "Seg a sáb, 9h às 18h",
     "faixaPreco": "R$ 45 a R$ 80 por serviço",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 39,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c10",
@@ -150,12 +150,12 @@
       "hospedagem"
     ],
     "cidade": "Itajaí",
-    "whatsApp": "47999993010",
+    "whatsapp": "47999993010",
     "horarioAtendimento": "Seg a dom, 8h às 20h",
-    "faixaPreco": "R$ 50 a R$ 85 por diária",
+    "faixaPreco": "R$ 50 a R$ 85 por diaria",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 33,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c11",
@@ -163,15 +163,15 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992011",
-    "horarioAtendimento": "Seg a sex, 8h às 18h",
+    "whatsapp": "47999992011",
+    "horarioAtendimento": "seg a sex, 8h às 18h",
     "faixaPreco": "R$ 45 a R$ 70 por passeio",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 34,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c12",
@@ -180,30 +180,30 @@
     "servicos": [
       "passeio",
       "hospedagem",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992012",
+    "whatsapp": "47999992012",
     "horarioAtendimento": "Seg a dom, 8h às 20h",
     "faixaPreco": "R$ 80 a R$ 150 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 72,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c13",
     "nome": "SOS Animal BC",
     "tipo": "ONG",
     "servicos": [
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992013",
+    "whatsapp": "47999992013",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
     "faixaPreco": "Gratuito / Apoio",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 40,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c14",
@@ -213,12 +213,12 @@
       "passeio"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992014",
+    "whatsapp": "47999992014",
     "horarioAtendimento": "Seg a sáb, 7h às 17h",
     "faixaPreco": "R$ 40 a R$ 60 por passeio",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 21,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c15",
@@ -226,15 +226,15 @@
     "tipo": "petshop",
     "servicos": [
       "hospedagem",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992015",
-    "horarioAtendimento": "Seg a sáb, 9h às 19h",
-    "faixaPreco": "R$ 70 a R$ 130 por diária",
+    "whatsapp": "47999992015",
+    "horarioAtendimento": "Seg a sab, 9h às 19h",
+    "faixaPreco": "R$ 70 a R$ 130 por diaria",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 45,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c16",
@@ -242,30 +242,30 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992016",
+    "whatsapp": "47999992016",
     "horarioAtendimento": "Seg a sex, 9h às 19h",
     "faixaPreco": "R$ 45 a R$ 65 por serviço",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 31,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c17",
     "nome": "Patinhas do Atlântico",
     "tipo": "ONG",
     "servicos": [
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992017",
+    "whatsapp": "47999992017",
     "horarioAtendimento": "Seg a sex, 10h às 17h",
-    "faixaPreco": "Sob consulta",
+    "faixaPreco": "sob consulta",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 19,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c18",
@@ -276,12 +276,12 @@
       "hospedagem"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992018",
+    "whatsapp": "47999992018",
     "horarioAtendimento": "Seg a dom, 8h às 21h",
     "faixaPreco": "R$ 60 a R$ 100 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 25,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c19",
@@ -289,15 +289,15 @@
     "tipo": "petshop",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992019",
-    "horarioAtendimento": "Seg a sáb, 9h às 19h",
+    "whatsapp": "47999992019",
+    "horarioAtendimento": "Seg a sab, 9h às 19h",
     "faixaPreco": "R$ 50 a R$ 80 por serviço",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 33,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c20",
@@ -305,15 +305,15 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Balneário Camboriú",
-    "whatsApp": "47999992020",
+    "whatsapp": "47999992020",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 60 por passeio",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 37,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c21",
@@ -321,15 +321,15 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991021",
+    "whatsapp": "48999991021",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 35 a R$ 55 por passeio",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 20,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c22",
@@ -340,27 +340,27 @@
       "hospedagem"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991022",
-    "horarioAtendimento": "Seg a sáb, 9h às 19h",
-    "faixaPreco": "R$ 55 a R$ 100 por diária",
+    "whatsapp": "48999991022",
+    "horarioAtendimento": "Seg a sab, 9h às 19h",
+    "faixaPreco": "R$ 55 a R$ 100 por diaria",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 35,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c23",
     "nome": "Lar do Pet SJ",
     "tipo": "ONG",
     "servicos": [
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991023",
+    "whatsapp": "48999991023",
     "horarioAtendimento": "Seg a sex, 9h às 17h",
     "faixaPreco": "Serviços voluntários",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 29,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c24",
@@ -370,27 +370,27 @@
       "passeio"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991024",
+    "whatsapp": "48999991024",
     "horarioAtendimento": "Seg a sex, 7h às 14h",
     "faixaPreco": "R$ 30 a R$ 45 por passeio",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 12,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c25",
     "nome": "Estética Animal Patas",
     "tipo": "petshop",
     "servicos": [
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991025",
-    "horarioAtendimento": "Seg a sáb, 8h às 18h",
+    "whatsapp": "48999991025",
+    "horarioAtendimento": "Seg a sab, 8h às 18h",
     "faixaPreco": "R$ 45 a R$ 70 por visita",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 44,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c26",
@@ -398,31 +398,31 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa",
+      "cuidado em casa",
       "hospedagem"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991026",
+    "whatsapp": "48999991026",
     "horarioAtendimento": "Seg a dom, 24h",
     "faixaPreco": "R$ 45 a R$ 85 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 51,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c27",
     "nome": "Projeto Proteger SJ",
     "tipo": "ONG",
     "servicos": [
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991027",
+    "whatsapp": "48999991027",
     "horarioAtendimento": "Seg a sex, 10h às 16h",
-    "faixaPreco": "Sob consulta",
+    "faixaPreco": "sob consulta",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 16,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c28",
@@ -432,12 +432,12 @@
       "passeio"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991028",
-    "horarioAtendimento": "Seg a sáb, 8h às 12h",
+    "whatsapp": "48999991028",
+    "horarioAtendimento": "Seg a sab, 8h às 12h",
     "faixaPreco": "R$ 35 a R$ 50 por passeio",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 11,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c29",
@@ -445,15 +445,15 @@
     "tipo": "petshop",
     "servicos": [
       "hospedagem",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991029",
-    "horarioAtendimento": "Seg a sáb, 9h às 19h",
+    "whatsapp": "48999991029",
+    "horarioAtendimento": "Seg a sab, 9h às 19h",
     "faixaPreco": "R$ 60 a R$ 110 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 39,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c30",
@@ -461,15 +461,15 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "São José",
-    "whatsApp": "48999991030",
+    "whatsapp": "48999991030",
     "horarioAtendimento": "Seg a sex, 8h às 17h",
     "faixaPreco": "R$ 40 a R$ 60 por serviço",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 28,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c31",
@@ -477,15 +477,15 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990031",
+    "whatsapp": "48999990031",
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 40 a R$ 60 por passeio",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 32,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c32",
@@ -493,31 +493,31 @@
     "tipo": "petshop",
     "servicos": [
       "passeio",
-      "cuidados em casa",
+      "cuidado em casa",
       "hospedagem"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990032",
-    "horarioAtendimento": "Seg a sáb, 9h às 19h",
+    "whatsapp": "48999990032",
+    "horarioAtendimento": "Seg a sab, 9h às 19h",
     "faixaPreco": "R$ 60 a R$ 120 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 54,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c33",
     "nome": "Amigos dos Animais Floripa",
     "tipo": "ONG",
     "servicos": [
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990033",
+    "whatsapp": "48999990033",
     "horarioAtendimento": "Seg a sex, 9h às 17h",
     "faixaPreco": "Serviços gratuitos / Doação",
     "notaMedia": 5.0,
     "quantidadeAvaliacoes": 18,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c34",
@@ -527,12 +527,12 @@
       "passeio"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990034",
+    "whatsapp": "48999990034",
     "horarioAtendimento": "Ter a dom, 7h às 16h",
     "faixaPreco": "R$ 35 a R$ 50 por passeio",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 15,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c35",
@@ -540,15 +540,15 @@
     "tipo": "petshop",
     "servicos": [
       "hospedagem",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990035",
-    "horarioAtendimento": "Seg a sáb, 8h às 20h",
-    "faixaPreco": "R$ 70 a R$ 130 por diária",
+    "whatsapp": "48999990035",
+    "horarioAtendimento": "Seg a sab, 8h às 20h",
+    "faixaPreco": "R$ 70 a R$ 130 por diaria",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 41,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c36",
@@ -556,31 +556,31 @@
     "tipo": "cuidador",
     "servicos": [
       "passeio",
-      "cuidados em casa",
+      "cuidado em casa",
       "hospedagem"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990036",
-    "horarioAtendimento": "Todos os dias, 24h",
+    "whatsapp": "48999990036",
+    "horarioAtendimento": "todos os dias, 24h",
     "faixaPreco": "R$ 50 a R$ 90 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 60,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c37",
     "nome": "Resgate Animal Floripa",
     "tipo": "ONG",
     "servicos": [
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990037",
+    "whatsapp": "48999990037",
     "horarioAtendimento": "Seg a sex, 10h às 16h",
-    "faixaPreco": "Sob consulta",
+    "faixaPreco": "sob consulta",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 22,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c38",
@@ -590,12 +590,12 @@
       "passeio"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990038",
+    "whatsapp": "48999990038",
     "horarioAtendimento": "Seg a sex, 13h às 19h",
     "faixaPreco": "R$ 40 a R$ 55 por passeio",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 19,
-    "seloVerificacao": true
+    "verificado": true
   },
   {
     "id": "c39",
@@ -603,15 +603,15 @@
     "tipo": "petshop",
     "servicos": [
       "passeio",
-      "cuidados em casa"
+      "cuidado em casa"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990039",
-    "horarioAtendimento": "Seg a sáb, 9h às 18h",
+    "whatsapp": "48999990039",
+    "horarioAtendimento": "Seg a sab, 9h às 18h",
     "faixaPreco": "R$ 45 a R$ 75 por serviço",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 27,
-    "seloVerificacao": false
+    "verificado": false
   },
   {
     "id": "c40",
@@ -622,11 +622,11 @@
       "hospedagem"
     ],
     "cidade": "Florianópolis",
-    "whatsApp": "48999990040",
+    "whatsapp": "48999990040",
     "horarioAtendimento": "Seg a dom, 8h às 20h",
-    "faixaPreco": "R$ 50 a R$ 80 por diária",
+    "faixaPreco": "R$ 50 a R$ 80 por diaria",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 38,
-    "seloVerificacao": true
+    "verificado": true
   }
 ]
