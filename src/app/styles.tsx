@@ -1,0 +1,91 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+    backgroundColor: "#fd802f",
+    color: "#fffaf2",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "400",
+    marginBottom: 5,
+    color: "#fffaf2",
+    textAlign: "center",
+  },
+  subtitle: {
+    fontSize: 16,
+    fontFamily: "AndikaRegular",
+    color: "#fffaf2",
+  },
+  linkButton: {
+    color: "#007AFF",
+    fontSize: 16,
+    marginBottom: 15,
+    padding: 10,
+    fontWeight: "600",
+  },
+  button: {
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    backgroundColor: "#fd8932",
+    color: "#999591",
+    padding: 14,
+    borderRadius: 8,
+    alignItems: "center",
+    marginTop: 10,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#fd8932",
+    color: "#b9b5b1",
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 12,
+    fontSize: 16,
+  },
+  sucessoText: {
+    color: "green",
+    marginBottom: 10,
+    textAlign: "center",
+    fontWeight: "600",
+  },
+  erroText: {
+    color: "red",
+    marginBottom: 10,
+    textAlign: "center",
+    fontWeight: "600",
+  },
+});
+
+export const tutorStyles = StyleSheet.create({
+  container: {
+    ...styles.container,
+    backgroundColor: "#fcf4e8",
+    color: "#b9b5b1",
+    padding: 0,
+  },
+  input: {
+    ...styles.input,
+    color: "#b9b5b1",
+    fontFamily: 'AndikaRegular',
+    width: '80%',
+    minWidth: '50%',
+    minHeight: '5%'
+
+  },
+  title: {
+    ...styles.title,
+    color: "#161b4b",
+    fontWeight: 600,
+    fontFamily: 'Chewy'
+  }
+});
