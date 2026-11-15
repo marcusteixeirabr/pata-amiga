@@ -4,6 +4,7 @@ describe("Tutores", () => {
   const exemploTutor: Tutor = {
     nome: "João Silva",
     cidade: "Itajaí",
+    documento: "123.123.123-14",
     fotoTutor: "https://example.com/foto.jpg",
     fotoPets: ["https://example.com/foto_pet.jpg"],
   };
@@ -19,6 +20,7 @@ describe("Tutores", () => {
     const tutorSemFoto: Tutor = {
       nome: "Pedro Silva",
       cidade: "Brusque",
+      documento: "123.123.123-14",
       fotoPets: ["https://example.com/foto_do_pet.jpg"],
     };
   });

@@ -1,7 +1,7 @@
 // Arquivo: app/tutor.js
 import { useState } from "react";
 import * as ImagePicker from "expo-image-picker";
-import { Alert, Button, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 import { styles, tutorStyles } from "./styles";
 import { TutorService } from "@/modelos/tutor";
@@ -13,13 +13,13 @@ export default function TutorScreen() {
   const [mensagem, setMensagem] = useState("");
   const [erro, setErro] = useState("");
 
-  const [image, setImage] = useState<string | null>(null);
+  const [imagemTutor, setImagemTutor] = useState<string | undefined>(undefined);
 
-  const handleCadastrar = () => {
+  const handleCadastrar = async () => {
     setMensagem("");
     setErro("");
 
-    const resultado = new TutorService().cadastrar({ nome, cidade });
+    const resultado = await new TutorService().cadastrar({ nome, cidade, documento, fotoTutor: imagemTutor });
 
     if (resultado.sucesso) {
       setMensagem(String(resultado.mensagem));
@@ -31,11 +31,6 @@ export default function TutorScreen() {
   };
 
   const escolherImagem = async () => {
-    // No permissions request is necessary for launching the image library.
-    // Manually request permissions for videos on iOS when `allowsEditing` is set to `false`
-    // and `videoExportPreset` is `'Passthrough'` (the default), ideally before launching the picker
-    // so the app users aren't surprised by a system dialog after picking a video.
-    // See "Invoke permissions for videos" sub section for more details.
     const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
     if (!permissionResult.granted) {
@@ -53,14 +48,11 @@ export default function TutorScreen() {
     console.log(result);
 
     if (!result.canceled) {
-      setImage(result.assets[0].uri);
+      setImagemTutor(result.assets[0].uri);
     }
   };
 
   const tirarFoto = async () => {
-    // Camera access always requires the user's permission.
-    // Taking a photo also requires a device with a camera. The iOS Simulator
-    // does not have one, so use a physical device to test this button.
     const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
 
     if (!permissionResult.granted) {
@@ -77,7 +69,7 @@ export default function TutorScreen() {
     console.log(result);
 
     if (!result.canceled) {
-      setImage(result.assets[0].uri);
+      setImagemTutor(result.assets[0].uri);
     }
   };
 
