@@ -1,57 +1,41 @@
+import { Image } from "expo-image";
 import { router } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useEffect, useState } from "react";
+import { ActivityIndicator, Text, View } from "react-native";
 
-export default function Index() {
-  const navegarParaTutor = () => {
-    router.push("./tutor");
-  };
+import { carregarPerfil } from "@/armazenamento/perfil";
+import { TextTitle } from "@/components/TextTitle";
+import { styles } from "@/estilos";
+import { telaInicial } from "@/regras/telaInicial";
+
+const ROTAS = { escolha: "/escolha", painel: "/painel" } as const;
+
+export default function Abertura() {
+  const [carregando, setCarregando] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      const perfil = await carregarPerfil();
+      router.replace(ROTAS[telaInicial(perfil)]);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo ao Pata Amiga</Text>
-
-      <TouchableOpacity style={styles.button} onPress={navegarParaTutor}>
-        <Text style={styles.buttonText}>Acessar via Botão</Text>
-      </TouchableOpacity>
+      {carregando && <ActivityIndicator size="small" color="#fff" />}
+      <Image
+        source={require("../../assets/images/logo_pata_512.png")}
+        style={{ width: 200, height: 200 }}
+        priority="high"
+        onLoadEnd={() => setCarregando(false)}
+      />
+      {!carregando && (
+        <>
+          <TextTitle style={styles.title}>Pata Amiga</TextTitle>
+          <Text style={styles.subtitle}>conectando pets e pessoas</Text>
+        </>
+      )}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 20,
-    backgroundColor: "#fff",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 5,
-    color: "#333",
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#666",
-    marginBottom: 30,
-  },
-  linkButton: {
-    color: "#007AFF",
-    fontSize: 16,
-    marginBottom: 15,
-    padding: 10,
-    fontWeight: "600",
-  },
-  button: {
-    backgroundColor: "#007AFF",
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-});
