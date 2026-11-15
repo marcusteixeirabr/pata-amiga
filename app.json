@@ -4,9 +4,16 @@
     "slug": "pata-amiga",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "assets/images/logo_pata_512.png",
+    "icon": "./assets/images/logo_pata_1024.png",
     "scheme": "pataamiga",
     "userInterfaceStyle": "automatic",
+    "android": {
+      "package": "com.marcusteixeirabr.pataamiga",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo_pata_1024.png",
+        "backgroundColor": "#fd8932"
+      }
+    },
     "web": {
       "output": "static",
       "backgroundColor": "#fd8932"
@@ -17,22 +24,23 @@
       [
         "expo-splash-screen",
         {
-          "image": "assets/images/logo_pata_1024.png",
-          "imageWidth": 512,
+          "image": "./assets/images/logo_pata_1024.png",
+          "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#fd8932",
-          "dark": {
-            "image": "assets/images/logo_pata_1024.png",
-            "imageWidth": 512,
-            "resizeMode": "contain",
-            "backgroundColor": "#fd8932"
-          }
+          "backgroundColor": "#fd8932"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "823ad866-91fd-44c5-a5ad-8f8f352cdcf0"
+      }
+    },
+    "owner": "maev_labs"
   }
 }
