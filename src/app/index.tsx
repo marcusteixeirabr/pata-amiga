@@ -9,6 +9,7 @@ import { styles } from "@/estilos";
 import { telaInicial } from "@/regras/telaInicial";
 
 const ROTAS = { escolha: "/escolha", painel: "/painel" } as const;
+const TEMPO_ABERTURA = 3000;
 
 export default function Abertura() {
   const [carregando, setCarregando] = useState(true);
@@ -17,7 +18,7 @@ export default function Abertura() {
     const timer = setTimeout(async () => {
       const perfil = await carregarPerfil();
       router.replace(ROTAS[telaInicial(perfil)]);
-    }, 2000);
+    }, TEMPO_ABERTURA);
     return () => clearTimeout(timer);
   }, []);
 

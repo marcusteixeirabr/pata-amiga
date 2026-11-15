@@ -65,10 +65,13 @@ Um serviço **comunitário e gratuito**: o app apenas **conecta** as pessoas. N�
 
 ```
 src/
-  app/          → telas (somente telas: todo arquivo aqui vira uma rota)
-  dados/        → dados fixos do app (parceiros fictícios)
-  modelos/      → contratos de dados (tipos e listas fixas)
-  regras/       → regras de negócio (funções puras, desenvolvidas com TDD)
+  app/            → telas (somente telas: todo arquivo aqui vira uma rota)
+  armazenamento/  → leitura e gravação do perfil no celular
+  components/     → componentes visuais reutilizáveis
+  dados/          → dados fixos do app (parceiros fictícios)
+  estilos/        → estilos compartilhados entre as telas
+  modelos/        → contratos de dados (tipos e listas fixas)
+  regras/         → regras de negócio (funções puras, desenvolvidas com TDD)
 ```
 
 Os testes **espelham o caminho** do código que testam:
@@ -88,6 +91,32 @@ npm ci
 npm run check
 npx expo start --tunnel   # escaneie o QR code com o Expo Go
 ```
+
+## 📦 Gerando o APK
+
+O APK é gerado na nuvem pelo **EAS Build**. O perfil `preview` do `eas.json` gera um APK para instalar direto no celular.
+
+```bash
+npm install -g eas-cli
+eas whoami                                 # confere a conta
+eas build -p android --profile preview     # gera o APK (leva alguns minutos)
+```
+
+No fim, o EAS mostra um link e um QR code para baixar o APK.
+
+## 🧯 Problemas comuns
+
+**Expo Go: "Failed to download remote update".** O celular não alcança o computador. Rode `npx expo start --tunnel`, ou libere o Node.js no firewall do Windows (rede privada) e confira se os dois estão na mesma rede Wi-Fi.
+
+**`eas login` trava no devcontainer** (o botão de aprovar fica girando). O navegador não consegue devolver a resposta para dentro do container. Crie um token em expo.dev → Access tokens e use:
+
+```bash
+read -rs EXPO_TOKEN && export EXPO_TOKEN
+```
+
+Nunca coloque o token em arquivo do repositório público.
+
+**Aviso "missing the required default export".** Existe em `src/app/` um arquivo que não é tela. Mova-o para fora (por exemplo, `src/estilos/` ou `src/components/`).
 
 ## ✅ Testes e TDD
 
