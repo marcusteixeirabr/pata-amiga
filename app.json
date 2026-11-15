@@ -10,7 +10,7 @@
     "android": {
       "package": "com.marcusteixeirabr.pataamiga",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo_pata_1024.png",
+        "foregroundImage": "./assets/images/logo_pata_adaptativo.png",
         "backgroundColor": "#fd8932"
       }
     },
@@ -24,7 +24,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/logo_pata_1024.png",
+          "image": "./assets/images/logo_pata_adaptativo.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#fd8932"
