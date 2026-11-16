@@ -6,6 +6,10 @@ export default function TelaPainel() {
   return (
     <View>
       <Text>Tela Painel</Text>
+      <Text>
+        ⚠️ Os dados dos parceiros são fictícios, criados só para demonstração.
+      </Text>
+      <Text>Escolha uma cidade para ver os parceiros.</Text>
       <Link
         href={{
           pathname: "/detalhe/[id]",
