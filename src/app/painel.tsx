@@ -26,11 +26,6 @@ export default function TelaPainel() {
         </Link>
       </View>
 
-      {/* Provisório: sai no próximo ciclo, quando o cartão abrir o detalhe */}
-      <Link href={{ pathname: "/detalhe/[id]", params: { id: "p01" } }}>
-        <Text>Buscar Parceiro</Text>
-      </Link>
-
       <Text style={estilos.aviso}>
         ⚠️ Os dados dos parceiros são fictícios, criados só para demonstração.
       </Text>

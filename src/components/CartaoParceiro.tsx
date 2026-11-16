@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Link } from "expo-router";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 import { cores } from "@/estilos/cores";
 import type { Parceiro } from "@/modelos/parceiro";
@@ -7,15 +8,20 @@ export function CartaoParceiro({ parceiro }: { parceiro: Parceiro }) {
   const nota = parceiro.notaMedia.toFixed(1).replace(".", ",");
 
   return (
-    <View style={estilos.cartao}>
-      <Text testID="nome-parceiro" style={estilos.nome}>
-        {parceiro.nome}
-      </Text>
-      <Text style={estilos.info}>
-        {`${parceiro.tipo} · ★ ${nota} (${parceiro.quantidadeAvaliacoes} avaliações)`}
-      </Text>
-      {parceiro.verificado && <Text style={estilos.selo}>✓ Verificado</Text>}
-    </View>
+    <Link
+      href={{ pathname: "/detalhe/[id]", params: { id: parceiro.id } }}
+      asChild
+    >
+      <Pressable style={estilos.cartao}>
+        <Text testID="nome-parceiro" style={estilos.nome}>
+          {parceiro.nome}
+        </Text>
+        <Text style={estilos.info}>
+          {`${parceiro.tipo} · ★ ${nota} (${parceiro.quantidadeAvaliacoes} avaliações)`}
+        </Text>
+        {parceiro.verificado && <Text style={estilos.selo}>✓ Verificado</Text>}
+      </Pressable>
+    </Link>
   );
 }
 
