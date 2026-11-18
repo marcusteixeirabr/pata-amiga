@@ -10,6 +10,7 @@ import { cores } from "@/estilos/cores";
 import { CIDADES, type Cidade } from "@/modelos/cidade";
 import { SERVICOS, type Servico } from "@/modelos/servico";
 import { buscarParceiros } from "@/regras/buscarParceiros";
+import { capitalizar } from "@/regras/formatar";
 
 export default function TelaPainel() {
   const [cidade, setCidade] = useState<Cidade | null>(null);
@@ -76,10 +77,6 @@ export default function TelaPainel() {
       ))}
     </ScrollView>
   );
-}
-
-function capitalizar(texto: string) {
-  return texto.charAt(0).toUpperCase() + texto.slice(1);
 }
 
 const estilos = StyleSheet.create({

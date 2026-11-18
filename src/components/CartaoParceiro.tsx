@@ -3,10 +3,9 @@ import { Pressable, StyleSheet, Text } from "react-native";
 
 import { cores } from "@/estilos/cores";
 import type { Parceiro } from "@/modelos/parceiro";
+import { formatarAvaliacoes } from "@/regras/formatar";
 
 export function CartaoParceiro({ parceiro }: { parceiro: Parceiro }) {
-  const nota = parceiro.notaMedia.toFixed(1).replace(".", ",");
-
   return (
     <Link
       href={{ pathname: "/detalhe/[id]", params: { id: parceiro.id } }}
@@ -17,7 +16,7 @@ export function CartaoParceiro({ parceiro }: { parceiro: Parceiro }) {
           {parceiro.nome}
         </Text>
         <Text style={estilos.info}>
-          {`${parceiro.tipo} · ★ ${nota} (${parceiro.quantidadeAvaliacoes} avaliações)`}
+          {`${parceiro.tipo} · ${formatarAvaliacoes(parceiro)}`}
         </Text>
         {parceiro.verificado && <Text style={estilos.selo}>✓ Verificado</Text>}
       </Pressable>
