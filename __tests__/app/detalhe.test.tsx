@@ -1,8 +1,16 @@
-import { renderRouter, screen } from "expo-router/testing-library";
+import { fireEvent, renderRouter, screen } from "expo-router/testing-library";
+import { Linking } from "react-native";
 
 import TelaDetalhe from "@/app/detalhe/[id]";
 import { PARCEIROS } from "@/dados";
 import { Parceiro } from "@/modelos/parceiro";
+import { carregarPerfil } from "@/armazenamento/perfil";
+import { linkWhatsApp } from "@/regras/linkWhatsApp";
+import { Tutor } from "@/modelos/tutor/contrato";
+
+jest.mock("@/armazenamento/perfil", () => ({ carregarPerfil: jest.fn() }));
+
+const TUTOR: Tutor = { nome: "Marcus", cidade: "Itajaí", fotoPets: [] };
 
 function parceiro(id: string): Parceiro {
   const encontrado = PARCEIROS.find((p) => p.id === id);
@@ -13,6 +21,10 @@ function parceiro(id: string): Parceiro {
 function abrirDetalhe(url: string) {
   return renderRouter({ "detalhe/[id]": TelaDetalhe }, { initialUrl: url });
 }
+
+beforeEach(() => {
+  jest.mocked(carregarPerfil).mockResolvedValue(TUTOR);
+});
 
 describe("Detalhe do parceiro", () => {
   test("mostra os dados do parceiro (RF12)", async () => {
@@ -39,5 +51,44 @@ describe("Detalhe do parceiro", () => {
   test("id que não existe mostra uma mensagem", async () => {
     await abrirDetalhe("/detalhe/xyz");
     expect(screen.getByText("Parceiro não encontrado")).toBeOnTheScreen();
+  });
+
+  test("o botão abre o WhatsApp com o parceiro e o nome do tutor (RF13)", async () => {
+    const abrirLink = jest.spyOn(Linking, "openURL").mockResolvedValue(true);
+    await abrirDetalhe("/detalhe/p01");
+
+    await fireEvent.press(
+      await screen.findByRole("button", { name: "Chamar no WhatsApp" }),
+    );
+
+    expect(abrirLink).toHaveBeenCalledWith(
+      linkWhatsApp(parceiro("p01"), TUTOR),
+    );
+  });
+
+  test("com o serviço escolhido no painel, a mensagem cita o serviço", async () => {
+    const abrirLink = jest.spyOn(Linking, "openURL").mockResolvedValue(true);
+    await abrirDetalhe("/detalhe/p01?servico=passeio");
+
+    await fireEvent.press(
+      await screen.findByRole("button", { name: "Chamar no WhatsApp" }),
+    );
+
+    expect(abrirLink).toHaveBeenCalledWith(
+      linkWhatsApp(parceiro("p01"), TUTOR, "passeio"),
+    );
+  });
+
+  test("serviço desconhecido na URL fica fora da mensagem", async () => {
+    const abrirLink = jest.spyOn(Linking, "openURL").mockResolvedValue(true);
+    await abrirDetalhe("/detalhe/p01?servico=banho");
+
+    await fireEvent.press(
+      await screen.findByRole("button", { name: "Chamar no WhatsApp" }),
+    );
+
+    expect(abrirLink).toHaveBeenCalledWith(
+      linkWhatsApp(parceiro("p01"), TUTOR),
+    );
   });
 });
