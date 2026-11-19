@@ -67,9 +67,7 @@ describe("Painel de busca", () => {
     await app;
     await fireEvent.press(screen.getByRole("button", { name: "Itajaí" }));
     await fireEvent.press(screen.getByRole("button", { name: "Passeio" }));
-    await fireEvent.press(
-      screen.getByRole("button", { name: "Ana Luísa Souza" }),
-    );
+    await fireEvent.press(screen.getByText("Ana Luísa Souza"));
 
     expect(app.getPathname()).toBe("/detalhe/p01");
     expect(app.getSearchParams()).toEqual({ id: "p01", servico: "passeio" });
