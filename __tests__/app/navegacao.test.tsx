@@ -7,6 +7,10 @@ import TelaTutor from "@/app/tutor";
 import { router } from "expo-router";
 import { fireEvent, renderRouter, screen } from "expo-router/testing-library";
 
+jest.mock('@react-native-async-storage/async-storage', () =>
+  require('@react-native-async-storage/async-storage/jest/async-storage-mock')
+);
+
 describe("Navegação", () => {
   test("da tela de escolha vai para a tela parceiro", async () => {
     const app = renderRouter(

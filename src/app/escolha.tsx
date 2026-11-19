@@ -1,8 +1,10 @@
 import { Image } from "expo-image";
 import { Link } from "expo-router";
-import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import { TextTitle } from "@/components/TextTitle";
+import { router } from "expo-router";
+import { Text, View, Pressable, StyleSheet } from "react-native";
+
 import { cores } from "@/estilos/cores";
 
 export default function TelaEscolha() {
@@ -17,23 +19,23 @@ export default function TelaEscolha() {
       <TextTitle style={estilos.titulo}>Pata Amiga</TextTitle>
       <Text style={estilos.pergunta}>Como você quer usar o app?</Text>
 
-      <Link href="/tutor" asChild>
+      <Link
+        href="/tutor"
+        asChild
+      >
         <Pressable style={estilos.opcaoTutor}>
-          <Text style={[estilos.opcaoTitulo, estilos.textoClaro]}>
-            Sou Tutor
-          </Text>
-          <Text style={[estilos.opcaoDescricao, estilos.textoClaro]}>
-            Quero encontrar quem cuide do meu pet
-          </Text>
+          <Text style={[estilos.opcaoTitulo, estilos.textoClaro]}>Sou Tutor</Text>
+          <Text style={[estilos.opcaoDescricao, estilos.textoClaro]}>Quero encontrar quem cuide do meu pet</Text>
         </Pressable>
       </Link>
 
-      <Link href="/parceiro" asChild>
+      <Link
+        href="/parceiro"
+        asChild
+      >
         <Pressable style={estilos.opcaoParceiro}>
           <Text style={estilos.opcaoTitulo}>Sou Parceiro</Text>
-          <Text style={estilos.opcaoDescricao}>
-            Cuido de pets, tenho petshop ou ONG
-          </Text>
+          <Text style={estilos.opcaoDescricao}>Cuido de pets, tenho petshop ou ONG</Text>
         </Pressable>
       </Link>
     </View>
