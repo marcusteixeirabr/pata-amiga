@@ -19,7 +19,7 @@ describe("Tela de escolha (RF02)", () => {
 
 describe("Placeholder de parceiro (RF04)", () => {
   test("avisa que o cadastro de parceiros chega numa próxima versão", async () => {
-    await renderRouter({ escolha: TelaParceiro }, { initialUrl: "/parceiro" });
+    await renderRouter({ parceiro: TelaParceiro }, { initialUrl: "/parceiro" });
 
     expect(screen.getByText(/próxima versão/i)).toBeOnTheScreen();
     expect(screen.getByRole("button", { name: "Voltar" })).toBeOnTheScreen();
