@@ -1,14 +1,34 @@
 import { router, useLocalSearchParams } from "expo-router";
-import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { useEffect, useState } from "react";
+import {
+  Linking,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 import { PARCEIROS } from "@/dados";
 import { cores } from "@/estilos/cores";
 import { capitalizar, formatarAvaliacoes } from "@/regras/formatar";
 import { gerarIniciais } from "@/regras/gerarIniciais";
+import { Tutor } from "@/modelos/tutor/contrato";
+import { carregarPerfil } from "@/armazenamento/perfil";
+import { linkWhatsApp } from "@/regras/linkWhatsApp";
+import { Servico, SERVICOS } from "@/modelos/servico";
 
 export default function TelaDetalhe() {
-  const { id } = useLocalSearchParams<{ id: string }>();
+  const { id, servico } = useLocalSearchParams<{
+    id: string;
+    servico?: string;
+  }>();
   const parceiro = PARCEIROS.find((p) => p.id === id);
+  const [tutor, setTutor] = useState<Tutor | null>(null);
+
+  useEffect(() => {
+    carregarPerfil().then(setTutor);
+  }, []);
 
   if (!parceiro) {
     return (
@@ -47,8 +67,26 @@ export default function TelaDetalhe() {
       />
       <Linha rotulo="Faixa de preço" valor={parceiro.faixaPreco} />
       <Linha rotulo="Avaliações" valor={formatarAvaliacoes(parceiro)} />
+
+      {tutor && (
+        <Pressable
+          accessibilityRole="button"
+          style={estilos.whatsapp}
+          onPress={() =>
+            Linking.openURL(
+              linkWhatsApp(parceiro, tutor, servicoValido(servico)),
+            )
+          }
+        >
+          <Text style={estilos.whatsappTexto}>Chamar no WhatsApp</Text>
+        </Pressable>
+      )}
     </ScrollView>
   );
+}
+
+function servicoValido(valor?: string): Servico | undefined {
+  return SERVICOS.find((s) => s === valor);
 }
 
 function Voltar() {
@@ -94,6 +132,18 @@ const estilos = StyleSheet.create({
   },
   rotulo: { color: cores.cinza, fontFamily: "AndikaRegular", fontSize: 13 },
   valor: { color: cores.azul, fontFamily: "AndikaRegular", fontSize: 16 },
+  whatsapp: {
+    backgroundColor: cores.whatsapp,
+    borderRadius: 12,
+    padding: 16,
+    alignItems: "center",
+    marginTop: 8,
+  },
+  whatsappTexto: {
+    color: cores.branco,
+    fontFamily: "AndikaRegular",
+    fontSize: 18,
+  },
   mensagem: {
     color: cores.azul,
     fontFamily: "AndikaRegular",

@@ -73,7 +73,7 @@ export default function TelaPainel() {
       )}
 
       {parceiros.map((p) => (
-        <CartaoParceiro key={p.id} parceiro={p} />
+        <CartaoParceiro key={p.id} parceiro={p} servico={servico} />
       ))}
     </ScrollView>
   );
