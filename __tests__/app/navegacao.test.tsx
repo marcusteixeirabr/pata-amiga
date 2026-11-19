@@ -68,7 +68,7 @@ describe("Navegação", () => {
     await fireEvent.press(screen.getByRole("button", { name: "Itajaí" }));
     await fireEvent.press(screen.getByText("Ana Luísa Souza"));
     expect(app.getPathname()).toBe("/detalhe/p01");
-    expect(screen.getByText("Detalhe do Parceiro p01")).toBeOnTheScreen();
+    expect(screen.getByText("Horário de atendimento")).toBeOnTheScreen();
   });
 
   test("da tela painel para a tela meu perfil", async () => {

@@ -3,6 +3,7 @@ import { fireEvent, renderRouter, screen } from "expo-router/testing-library";
 import TelaPainel from "@/app/painel";
 import { PARCEIROS } from "@/dados";
 import { buscarParceiros } from "@/regras/buscarParceiros";
+import TelaDetalhe from "@/app/detalhe/[id]";
 
 function abrirPainel() {
   return renderRouter({ painel: TelaPainel }, { initialUrl: "/painel" });
@@ -56,5 +57,19 @@ describe("Painel de busca", () => {
       screen.getByText("Nenhum parceiro encontrado em Porto Belo."),
     ).toBeOnTheScreen();
     expect(nomesNaTela()).toHaveLength(0);
+  });
+
+  test("o cartão leva o serviço escolhido para o detalhe", async () => {
+    const app = renderRouter(
+      { painel: TelaPainel, "detalhe/[id]": TelaDetalhe },
+      { initialUrl: "/painel" },
+    );
+    await app;
+    await fireEvent.press(screen.getByRole("button", { name: "Itajaí" }));
+    await fireEvent.press(screen.getByRole("button", { name: "Passeio" }));
+    await fireEvent.press(screen.getByText("Ana Luísa Souza"));
+
+    expect(app.getPathname()).toBe("/detalhe/p01");
+    expect(app.getSearchParams()).toEqual({ id: "p01", servico: "passeio" });
   });
 });

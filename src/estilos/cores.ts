@@ -5,6 +5,7 @@ export const cores = {
   branco: "#ffffff",
   cinza: "#555555",
   verde: "#1a7f37",
+  whatsapp: "#25d366",
   avisoFundo: "#fff3cd",
   avisoTexto: "#7a5a00",
 } as const;
