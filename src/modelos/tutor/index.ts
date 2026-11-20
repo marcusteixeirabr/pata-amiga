@@ -1,15 +1,18 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { salvarFoto, retornaSucesso, retornaErro } from "@/utils";
+import { CidadeTutor } from "../cidade";
 
 export interface TutorDTO {
   nome: string;
-  cidade: string;
+  cidade: CidadeTutor;
   fotoTutor?: string;
 }
 
 export interface petDTO {
   nome: string;
-  uri_foto: string;
+  tipo: string | "cachorro" | "gato";
+  uri_foto_1?: string;
+  uri_foto_2?: string;
 }
 
 export interface MensagemRetorno {
@@ -69,36 +72,6 @@ export class TutorService {
       return retornaSucesso("sucesso");
     } catch (error: any) {
       return retornaErro("erro");
-    }
-  }
-
-  async excluirPet(): Promise<MensagemRetorno> {
-    try {
-      return retornaSucesso("sucesso");
-    } catch (error: any) {
-      return retornaErro("erro");
-    }
-  }
-
-  async cadastrarPet(dadosPet: petDTO): Promise<MensagemRetorno> {
-    try {
-      await AsyncStorage.setItem(dadosPet.nome, JSON.stringify(dadosPet));
-      return retornaSucesso("Dados do pet salvos com sucesso.");
-    } catch (error: any) {
-      return retornaErro(error.message);
-    }
-  }
-
-  async consultaPet(nomePet: string): Promise<MensagemRetorno> {
-    try {
-      const dadosPet = await AsyncStorage.getItem(nomePet);
-
-      if (!dadosPet)
-        throw new Error(`Não foi encontrado nenhum pet com nome: ${nomePet}`);
-
-      return retornaSucesso(dadosPet);
-    } catch (error: any) {
-      return retornaErro(error.message);
     }
   }
 }

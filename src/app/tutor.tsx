@@ -3,13 +3,17 @@ import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
 import * as ImagePicker from "expo-image-picker";
 
-import { Voltar } from "@/components/voltaBtn";
+import { CIDADES, CidadeTutor } from "@/modelos/cidade";
+
 import { MensagemRetorno, TutorDTO, TutorService } from "@/modelos/tutor";
+import { Voltar } from "@/components/voltaBtn";
+import { SelectDropdown } from "@/components/dropdown";
+
 import { styles, tutorStyles } from "@/estilos";
 
 export default function TutorScreen() {
   const [nome, setNome] = useState("");
-  const [cidade, setCidade] = useState("");
+  const [cidade, setCidade] = useState<CidadeTutor>("" as CidadeTutor);
   const [mensagem, setMensagem] = useState("");
   const [erro, setErro] = useState("");
 
@@ -121,12 +125,14 @@ export default function TutorScreen() {
           testID="input-nome"
         />
 
-        <TextInput
-          style={tutorStyles.input}
-          placeholder="Cidade"
+        <SelectDropdown<TutorDTO["cidade"]>
+          label="Cidade"
+          placeholder="Onde você mora?"
           value={cidade}
-          onChangeText={setCidade}
-          testID="input-cidade"
+          onChange={setCidade}
+          options={CIDADES.map((cidade) => {
+            return { label: cidade, value: cidade };
+          })}
         />
 
         <TouchableOpacity style={styles.button} onPress={escolherImagem}>

@@ -19,7 +19,7 @@ export default function TelaEscolha() {
       <Text style={estilos.pergunta}>Como você quer usar o app?</Text>
 
       <Link
-        href="/tutor"
+        href="/cadastro"
         asChild
       >
         <Pressable style={estilos.opcaoTutor}>
