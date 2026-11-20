@@ -33,9 +33,11 @@ export class TutorService {
       }
       await AsyncStorage.setItem("tutor", JSON.stringify(dados));
     } catch {
-      return retornaErro("Ocorreu um problema gravando suas informações. \\n Tente novamente.");
+      return retornaErro(
+        "Ocorreu um problema gravando suas informações. \\n Tente novamente.",
+      );
     }
-    return retornaSucesso(JSON.stringify(await this.consultar()));
+    return retornaSucesso("Tutor cadastrado com sucesso!");
   }
 
   async consultar(): Promise<MensagemRetorno> {
@@ -55,13 +57,15 @@ export class TutorService {
       const info = await this.cadastrar(dadosTutor);
       if (info.sucesso) retornaSucesso("Dados Atualizados com sucesso");
     } catch (error: any) {
-      return retornaErro("Ocorreu um problema atualizando suas informações. <br> Tente novamente.");
+      return retornaErro(
+        "Ocorreu um problema atualizando suas informações. <br> Tente novamente.",
+      );
     }
   }
 
   async excluirTutor(): Promise<MensagemRetorno> {
     try {
-      AsyncStorage.multiRemove(["tutor"]);
+      await AsyncStorage.multiRemove(["tutor"]);
       return retornaSucesso("sucesso");
     } catch (error: any) {
       return retornaErro("erro");
@@ -89,7 +93,8 @@ export class TutorService {
     try {
       const dadosPet = await AsyncStorage.getItem(nomePet);
 
-      if (!dadosPet) throw new Error(`Não foi encontrado nenhum pet com nome: ${nomePet}`);
+      if (!dadosPet)
+        throw new Error(`Não foi encontrado nenhum pet com nome: ${nomePet}`);
 
       return retornaSucesso(dadosPet);
     } catch (error: any) {

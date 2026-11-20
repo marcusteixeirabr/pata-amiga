@@ -1,5 +1,13 @@
-import { router, useLocalSearchParams } from "expo-router";
-import { Image, Pressable, Text, ScrollView, View, StyleSheet } from "react-native";
+import { router } from "expo-router";
+import { useEffect, useState } from "react";
+import {
+  Image,
+  Pressable,
+  Text,
+  ScrollView,
+  View,
+  StyleSheet,
+} from "react-native";
 
 import { File } from "expo-file-system";
 
@@ -12,19 +20,24 @@ import { Voltar } from "@/components/voltaBtn";
 import { Linha } from "@/components/linha";
 
 export default function TelaMeuPerfil() {
-  const params = useLocalSearchParams();
-  console.log("Params ---> ", params);
-  const tutor: TutorDTO = params.tutor ? JSON.parse(params.tutor as string) : null;
+  const [tutor, setTutor] = useState<TutorDTO | null>(null);
 
-  function apagarPerfil() {
-    new TutorService().excluirTutor();
+  useEffect(() => {
+    new TutorService().consultar().then((resultado) => {
+      if (resultado.sucesso && resultado.mensagem) {
+        setTutor(JSON.parse(resultado.mensagem));
+      }
+    });
+  }, []);
+
+  async function apagarPerfil() {
+    await new TutorService().excluirTutor();
+    router.dismissAll();
+    router.replace("/escolha");
   }
 
   return (
-    <ScrollView
-      style={estilos.tela}
-      contentContainerStyle={estilos.conteudo}
-    >
+    <ScrollView style={estilos.tela} contentContainerStyle={estilos.conteudo}>
       <Voltar />
       <View style={estilos.cabecalho}>
         <View style={estilos.avatar}>
@@ -35,39 +48,20 @@ export default function TelaMeuPerfil() {
               resizeMode="cover"
             />
           ) : (
-            <Text style={estilos.iniciais}>{gerarIniciais(tutor?.nome ?? "Sem Nome")}</Text>
+            <Text style={estilos.iniciais}>
+              {gerarIniciais(tutor?.nome ?? "Sem Nome")}
+            </Text>
           )}
         </View>
         <View style={estilos.identificacao}>
           <Text style={estilos.nome}>{tutor?.nome ?? "Sem Nome"}</Text>
         </View>
-        <Pressable
-          style={styles.button}
-          onPress={() => {
-            apagarPerfil();
-            router.dismissAll();
-            router.replace("/escolha");
-          }}
-        >
+        <Pressable style={styles.button} onPress={apagarPerfil}>
           <Text>Apagar Perfil</Text>
         </Pressable>
       </View>
-      <Linha
-        rotulo="Cidade"
-        valor={tutor?.cidade ?? "Sem Cidade"}
-      />
-      <Linha
-        rotulo={"dados do pet"}
-        valor={"dados do pet"}
-      />
-      <View>
-        <Image
-          source={{ uri: tutor.fotoTutor }}
-          style={{ width: 120, height: 120 }}
-        />
-        <Text> {tutor.fotoTutor}</Text>
-        <Text> {new File(tutor.fotoTutor as string).exists ? "existe" : "nao existe"}</Text>
-      </View>
+      <Linha rotulo="Cidade" valor={tutor?.cidade ?? "Sem Cidade"} />
+      <Linha rotulo={"dados do pet"} valor={"dados do pet"} />
     </ScrollView>
   );
 }

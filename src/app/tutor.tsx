@@ -20,14 +20,7 @@ export default function TutorScreen() {
       if (dadosSalvos?.erro) return;
 
       const dadosTutor: TutorDTO = JSON.parse(dadosSalvos?.mensagem ?? "{}");
-      if (dadosTutor?.nome)
-        console.log('DadosTutor ---> ', dadosTutor)
-        router.replace({
-          pathname: "/meuPerfil",
-          params: {
-            tutor: JSON.stringify(dadosTutor),
-          },
-        });
+      if (dadosTutor?.nome) router.replace("/meuPerfil");
     });
   }, []);
 
@@ -35,28 +28,31 @@ export default function TutorScreen() {
     setMensagem("");
     setErro("");
 
-    const resultado = await new TutorService().cadastrar({ nome, cidade, fotoTutor: imagemTutor });
+    const resultado = await new TutorService().cadastrar({
+      nome,
+      cidade,
+      fotoTutor: imagemTutor,
+    });
 
     if (resultado.sucesso) {
       setMensagem(String(resultado.mensagem));
       setNome("");
       setCidade("");
-      setTimeout(() => router.replace({
-          pathname: "/meuPerfil",
-          params: {
-            tutor: resultado.mensagem,
-          },
-        }), 1000);
+      setTimeout(() => router.replace("/meuPerfil"), 1000);
     } else {
       setErro(String(resultado.erro));
     }
   };
 
   const escolherImagem = async () => {
-    const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    const permissionResult =
+      await ImagePicker.requestMediaLibraryPermissionsAsync();
 
     if (!permissionResult.granted) {
-      Alert.alert("Permissão necessária", "É necessário fornecer acesso aos arquivos de mídia.");
+      Alert.alert(
+        "Permissão necessária",
+        "É necessário fornecer acesso aos arquivos de mídia.",
+      );
       return;
     }
 
@@ -75,7 +71,10 @@ export default function TutorScreen() {
     const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
 
     if (!permissionResult.granted) {
-      Alert.alert("Permissão necessária", "É necessário fornecer acesso à camera para tirar fotos.");
+      Alert.alert(
+        "Permissão necessária",
+        "É necessário fornecer acesso à camera para tirar fotos.",
+      );
       return;
     }
 
@@ -90,8 +89,22 @@ export default function TutorScreen() {
   };
 
   return (
-    <View style={{ borderColor: "#000", borderWidth: 1, height: "100%", width: "100%", paddingVertical: 20 }}>
-      <View style={{ ...tutorStyles.container, alignItems: "flex-end", paddingHorizontal: 40 }}>
+    <View
+      style={{
+        borderColor: "#000",
+        borderWidth: 1,
+        height: "100%",
+        width: "100%",
+        paddingVertical: 20,
+      }}
+    >
+      <View
+        style={{
+          ...tutorStyles.container,
+          alignItems: "flex-end",
+          paddingHorizontal: 40,
+        }}
+      >
         <Voltar />
       </View>
       <View style={tutorStyles.container}>
@@ -116,17 +129,11 @@ export default function TutorScreen() {
           testID="input-cidade"
         />
 
-        <TouchableOpacity
-          style={styles.button}
-          onPress={escolherImagem}
-        >
+        <TouchableOpacity style={styles.button} onPress={escolherImagem}>
           <Text style={styles.buttonText}>Escolha uma imagem</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.button}
-          onPress={tirarFoto}
-        >
+        <TouchableOpacity style={styles.button} onPress={tirarFoto}>
           <Text style={styles.buttonText}>Tire uma foto</Text>
         </TouchableOpacity>
       </View>
