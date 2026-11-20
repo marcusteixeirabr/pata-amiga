@@ -2,7 +2,6 @@ import { Image } from "expo-image";
 import { Link } from "expo-router";
 
 import { TextTitle } from "@/components/TextTitle";
-import { router } from "expo-router";
 import { Text, View, Pressable, StyleSheet } from "react-native";
 
 import { cores } from "@/estilos/cores";

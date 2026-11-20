@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { salvaImgTutorDocument, retornaSucesso, retornaErro } from "@/utils";
+import { salvarFoto, retornaSucesso, retornaErro } from "@/utils";
 
 export interface TutorDTO {
   nome: string;
@@ -29,13 +29,13 @@ export class TutorService {
 
     try {
       if (dados.fotoTutor) {
-        await salvaImgTutorDocument(dados.fotoTutor);
+        dados.fotoTutor = await salvarFoto(dados.fotoTutor);
       }
       await AsyncStorage.setItem("tutor", JSON.stringify(dados));
     } catch {
-      return retornaErro("Ocorreu um problema gravando suas informações. <br> Tente novamente.");
+      return retornaErro("Ocorreu um problema gravando suas informações. \\n Tente novamente.");
     }
-    return retornaSucesso("Tutor cadastrado com sucesso!");
+    return retornaSucesso(JSON.stringify(await this.consultar()));
   }
 
   async consultar(): Promise<MensagemRetorno> {

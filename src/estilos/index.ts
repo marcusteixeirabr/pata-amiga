@@ -67,9 +67,11 @@ export const styles = StyleSheet.create({
     backgroundColor: "#3caaaa",
     color: "#0e1a33",
     padding: 14,
-    borderRadius: 8,
-    alignItems: "center",
     marginTop: 10,
+    borderRadius: 8,
+
+    alignItems: "center",
+    fontFamily: "AndikaRegular",
   },
   buttonText: {
     color: "#fff",

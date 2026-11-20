@@ -3,6 +3,7 @@ import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
 import * as ImagePicker from "expo-image-picker";
 
+import { Voltar } from "@/components/voltaBtn";
 import { MensagemRetorno, TutorDTO, TutorService } from "@/modelos/tutor";
 import { styles, tutorStyles } from "@/estilos";
 
@@ -19,7 +20,14 @@ export default function TutorScreen() {
       if (dadosSalvos?.erro) return;
 
       const dadosTutor: TutorDTO = JSON.parse(dadosSalvos?.mensagem ?? "{}");
-      if (dadosTutor?.nome) router.push("/meuPerfil");
+      if (dadosTutor?.nome)
+        console.log('DadosTutor ---> ', dadosTutor)
+        router.replace({
+          pathname: "/meuPerfil",
+          params: {
+            tutor: JSON.stringify(dadosTutor),
+          },
+        });
     });
   }, []);
 
@@ -33,7 +41,12 @@ export default function TutorScreen() {
       setMensagem(String(resultado.mensagem));
       setNome("");
       setCidade("");
-      setTimeout(() => router.replace("/meuPerfil"), 2000);
+      setTimeout(() => router.replace({
+          pathname: "/meuPerfil",
+          params: {
+            tutor: resultado.mensagem,
+          },
+        }), 1000);
     } else {
       setErro(String(resultado.erro));
     }
@@ -79,13 +92,7 @@ export default function TutorScreen() {
   return (
     <View style={{ borderColor: "#000", borderWidth: 1, height: "100%", width: "100%", paddingVertical: 20 }}>
       <View style={{ ...tutorStyles.container, alignItems: "flex-end", paddingHorizontal: 40 }}>
-        <TouchableOpacity
-          style={styles.buttonSecondary}
-          onPress={() => router.back()}
-          testID="btn-voltar"
-        >
-          <Text style={styles.buttonText}>Voltar</Text>
-        </TouchableOpacity>
+        <Voltar />
       </View>
       <View style={tutorStyles.container}>
         <Text style={tutorStyles.title}>Cadastre-se</Text>
