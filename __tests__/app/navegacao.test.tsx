@@ -7,10 +7,6 @@ import { router } from "expo-router";
 import { fireEvent, renderRouter, screen } from "expo-router/testing-library";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-jest.mock('@react-native-async-storage/async-storage', () =>
-  require('@react-native-async-storage/async-storage/jest/async-storage-mock')
-);
-
 describe("Navegação", () => {
   test("da tela de escolha vai para a tela parceiro", async () => {
     const app = renderRouter(
@@ -114,7 +110,7 @@ describe("Navegação", () => {
       JSON.stringify({
         nome: "Tutor Teste",
         cidade: "Itajaí",
-        petFotos: [null, null],
+        fotoPets: [null, null],
         fotoTutor: null,
       }),
     );

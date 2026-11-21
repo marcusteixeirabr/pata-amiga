@@ -6,7 +6,7 @@ export interface TutorDTO {
   nome: string;
   cidade: CidadeTutor | null;
   fotoTutor?: string | null;
-  petFotos?: [string | null, string | null];
+  fotoPets?: [string | null, string | null];
 }
 
 export interface MensagemRetorno {

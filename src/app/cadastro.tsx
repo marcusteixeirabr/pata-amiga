@@ -25,7 +25,7 @@ export default function CreateProfileScreen() {
   const [nome, setNome] = useState<TutorDTO["nome"]>("");
   const [cidade, setCidade] = useState<TutorDTO["cidade"]>(null);
   const [imagemTutor, setImagemTutor] = useState<TutorDTO["fotoTutor"]>(null);
-  const [petFotos, setPetFotos] = useState<TutorDTO["petFotos"]>([null, null]);
+  const [fotoPets, setFotoPets] = useState<TutorDTO["fotoPets"]>([null, null]);
 
   const [mensagem, setMensagem] = useState<string>("");
   const [erro, setErro] = useState<string>("");
@@ -43,7 +43,7 @@ export default function CreateProfileScreen() {
         setNome(dadosTutor.nome);
         setCidade(dadosTutor.cidade);
         setImagemTutor(dadosTutor.fotoTutor);
-        setPetFotos(dadosTutor.petFotos);
+        setFotoPets(dadosTutor.fotoPets);
       }
     });
   }, []);
@@ -109,7 +109,7 @@ export default function CreateProfileScreen() {
     const resultado = await new TutorService().cadastrar({
       nome,
       cidade,
-      petFotos,
+      fotoPets,
       fotoTutor: imagemTutor,
     });
 
@@ -152,7 +152,7 @@ export default function CreateProfileScreen() {
 
   const setPhotoAtSlot = (slotIndex: 0 | 1, uri: string | null) => {
     if (!uri) return;
-    setPetFotos((prev) => {
+    setFotoPets((prev) => {
       const next: [string | null, string | null] = [prev?.[0] ?? null, prev?.[1] ?? null];
       next[slotIndex] = uri;
       return next;
@@ -242,8 +242,8 @@ export default function CreateProfileScreen() {
         <Text style={styles.fieldLabel}>SEUS PETS (ATÉ 2)</Text>
         <View style={styles.petsRow}>
           {([0, 1] as const).map((slotIndex) => {
-            if (!petFotos) return;
-            const photoUri = petFotos[slotIndex];
+            if (!fotoPets) return;
+            const photoUri = fotoPets[slotIndex];
 
             return (
               <Pressable

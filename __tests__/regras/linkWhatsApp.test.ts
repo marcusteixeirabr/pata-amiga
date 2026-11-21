@@ -1,5 +1,5 @@
 import type { Parceiro } from "@/modelos/parceiro";
-import type { Tutor } from "@/modelos/tutor/contrato";
+import { TutorDTO } from "@/modelos/tutor";
 import { linkWhatsApp } from "@/regras/linkWhatsApp";
 
 describe("Link do WhatsApp", () => {
@@ -16,7 +16,7 @@ describe("Link do WhatsApp", () => {
     quantidadeAvaliacoes: 10,
     verificado: true,
   };
-  const exemploTutor: Tutor = {
+  const exemploTutor: TutorDTO = {
     nome: "Tutor Teste",
     cidade: "Florianópolis",
     fotoTutor: "https://example.com/foto-tutor.jpg",
@@ -46,7 +46,7 @@ describe("Link do WhatsApp", () => {
   });
 
   test("Nome do Tutor com acentos deve ser codificado corretamente no link", () => {
-    const tutorComAcentos: Tutor = {
+    const tutorComAcentos: TutorDTO = {
       ...exemploTutor,
       nome: "Tutor Teste ÁÉÍÓÚ",
     };

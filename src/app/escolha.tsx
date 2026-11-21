@@ -13,7 +13,6 @@ export default function TelaEscolha() {
 
   useEffect(() => {
     new TutorService().hasTutor().then((data) => {
-      console.warn(data);
       setHastutor(data);
     });
   }, []);

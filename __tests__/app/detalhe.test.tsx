@@ -8,7 +8,7 @@ import { linkWhatsApp } from "@/regras/linkWhatsApp";
 import { TutorDTO, TutorService } from "@/modelos/tutor";
 
 jest.mock("@/modelos/tutor", () => {
-  return { TutorService: jest.fn() };
+  return require("../../__mocks__/testMocks");
 });
 
 const TUTOR: TutorDTO = { nome: "Marcus", cidade: "Itajaí" };

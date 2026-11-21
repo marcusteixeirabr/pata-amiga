@@ -3,7 +3,10 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupFilesAfterEnv": [
+      "<rootDir>/__mocks__/setup.ts"
+    ]
   },
   "dependencies": {
     "@expo/ui": "~57.0.26",

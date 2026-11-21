@@ -1,12 +1,11 @@
-import type { Tutor } from "@/modelos/tutor/contrato";
+import { TutorDTO } from "@/modelos/tutor";
 import { telaInicial } from "@/regras/telaInicial";
 
 describe("Tela Inicial", () => {
   test("Com perfil de tutor salvo, o app abre direto o painel", () => {
-    const perfil: Tutor = {
+    const perfil: TutorDTO = {
       nome: "João",
       cidade: "Balneário Camboriú",
-      fotoPets: [],
     };
     expect(telaInicial(perfil)).toBe("painel");
   });

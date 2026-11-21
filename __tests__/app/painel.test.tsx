@@ -5,10 +5,6 @@ import { PARCEIROS } from "@/dados";
 import { buscarParceiros } from "@/regras/buscarParceiros";
 import TelaDetalhe from "@/app/detalhe/[id]";
 
-jest.mock("@react-native-async-storage/async-storage", () =>
-  require("@react-native-async-storage/async-storage/jest/async-storage-mock"),
-);
-
 function abrirPainel() {
   return renderRouter({ painel: TelaPainel }, { initialUrl: "/painel" });
 }
