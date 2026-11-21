@@ -1,11 +1,11 @@
 import TelaDetalhe from "@/app/detalhe/[id]";
 import TelaEscolha from "@/app/escolha";
-import TelaMeuPerfil from "@/app/meuPerfil";
 import TelaPainel from "@/app/painel";
 import TelaParceiro from "@/app/parceiro";
-import TelaTutor from "@/app/tutor";
+import TelaTutor from "@/app/cadastro";
 import { router } from "expo-router";
 import { fireEvent, renderRouter, screen } from "expo-router/testing-library";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 jest.mock('@react-native-async-storage/async-storage', () =>
   require('@react-native-async-storage/async-storage/jest/async-storage-mock')
@@ -45,7 +45,7 @@ describe("Navegação", () => {
     const app = renderRouter(
       {
         escolha: TelaEscolha,
-        tutor: TelaTutor,
+        cadastro: TelaTutor,
       },
       {
         initialUrl: "/escolha",
@@ -54,7 +54,7 @@ describe("Navegação", () => {
     await app;
     expect(app.getPathname()).toBe("/escolha");
     await fireEvent.press(screen.getByText("Sou Tutor"));
-    expect(app.getPathname()).toBe("/tutor");
+    expect(app.getPathname()).toBe("/cadastro");
   });
 
   test("da tela painel para a tela detalhe do parceiro", async () => {
@@ -79,7 +79,7 @@ describe("Navegação", () => {
     const app = renderRouter(
       {
         painel: TelaPainel,
-        meuPerfil: TelaMeuPerfil,
+        cadastro: TelaTutor,
       },
       {
         initialUrl: "/painel",
@@ -87,32 +87,41 @@ describe("Navegação", () => {
     );
     await app;
     expect(app.getPathname()).toBe("/painel");
-    await fireEvent.press(screen.getByText("Meu Perfil"));
-    expect(app.getPathname()).toBe("/meuPerfil");
+    await fireEvent.press(screen.getByText("<- Meu Perfil"));
+    expect(app.getPathname()).toBe("/cadastro");
   });
 
   test("da tela meu perfil volta para a tela painel", async () => {
     const app = renderRouter(
       {
         painel: TelaPainel,
-        meuPerfil: TelaMeuPerfil,
+        cadastro: TelaTutor,
       },
       {
         initialUrl: "/painel",
       },
     );
     await app;
-    await fireEvent.press(screen.getByText("Meu Perfil"));
-    expect(app.getPathname()).toBe("/meuPerfil");
+    await fireEvent.press(screen.getByText("<- Meu Perfil"));
+    expect(app.getPathname()).toBe("/cadastro");
     await fireEvent.press(screen.getByText("Voltar"));
     expect(app.getPathname()).toBe("/painel");
   });
 
   test("da tela meu perfil, após apagar perfil, volta para a tela escolha", async () => {
+    await AsyncStorage.setItem(
+      "tutor",
+      JSON.stringify({
+        nome: "Tutor Teste",
+        cidade: "Itajaí",
+        petFotos: [null, null],
+        fotoTutor: null,
+      }),
+    );
     const app = renderRouter(
       {
         painel: TelaPainel,
-        meuPerfil: TelaMeuPerfil,
+        cadastro: TelaTutor,
         escolha: TelaEscolha,
       },
       {
@@ -120,9 +129,10 @@ describe("Navegação", () => {
       },
     );
     await app;
-    await fireEvent.press(screen.getByText("Meu Perfil"));
-    expect(app.getPathname()).toBe("/meuPerfil");
+    await fireEvent.press(screen.getByText("<- Meu Perfil"));
+    expect(app.getPathname()).toBe("/cadastro");
     await fireEvent.press(screen.getByText("Apagar Perfil"));
+    await fireEvent.press(screen.getByText(" Sim "));
     expect(app.getPathname()).toBe("/escolha");
     expect(router.canGoBack()).toBe(false);
   });

@@ -4,7 +4,8 @@ import { Alert, Image, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput
 import { Link, router } from "expo-router";
 import * as ImagePicker from "expo-image-picker";
 
-import { SelectDropdown } from "@/components/dropdown";
+import { SelectDropdown } from "@/components/Dropdown";
+
 import { gerarIniciais } from "@/regras/gerarIniciais";
 import { TutorDTO, MensagemRetorno } from "@/modelos/tutor";
 import { styles as estilo } from "@/estilos";
@@ -12,6 +13,7 @@ import { cores } from "@/estilos/cores";
 import { CIDADES, type CidadeTutor } from "@/modelos/cidade";
 
 import { TutorService } from "@/modelos/tutor";
+import { Voltar } from "@/components/BtnVoltar";
 
 type CidadeOption = { label: string; value: CidadeTutor };
 
@@ -180,6 +182,7 @@ export default function CreateProfileScreen() {
       contentContainerStyle={styles.scrollContent}
       keyboardShouldPersistTaps="handled"
     >
+      <Voltar />
       {editMode ? (
         <View style={styles.header}>
           <Text style={styles.title}>Cadastre seu perfil</Text>

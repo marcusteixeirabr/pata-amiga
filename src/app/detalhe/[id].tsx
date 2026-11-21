@@ -10,8 +10,9 @@ import { TutorDTO } from "@/modelos/tutor";
 import { linkWhatsApp } from "@/regras/linkWhatsApp";
 import { TutorService } from "@/modelos/tutor";
 import { Servico, SERVICOS } from "@/modelos/servico";
-import { Linha } from "@/components/linha";
-import { Voltar } from "@/components/btnVoltar";
+import { Linha } from "@/components/Linha";
+import { Voltar } from "@/components/BtnVoltar";
+
 
 export default function TelaDetalhe() {
   const { id, servico } = useLocalSearchParams<{
@@ -25,8 +26,10 @@ export default function TelaDetalhe() {
     new TutorService()
       .consultar()
       .then((dados) => {
-        if (!!dados) throw new Error("Não foram encontrados dados para o tutor");
-        setTutor(dados);
+        if (!dados.sucesso || !dados.mensagem) {
+          throw new Error("Não foram encontrados dados para o tutor");
+        }
+        setTutor(JSON.parse(dados.mensagem) as TutorDTO);
       })
       .catch((_) => {
         console.error("Ocorreu um problema consultando tutor");
