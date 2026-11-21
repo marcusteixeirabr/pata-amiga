@@ -1,18 +1,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { salvarFoto, retornaSucesso, retornaErro } from "@/utils";
-import { CidadeTutor } from "../cidade";
+import type { CidadeTutor } from "@/modelos/cidade";
 
 export interface TutorDTO {
   nome: string;
-  cidade: CidadeTutor;
-  fotoTutor?: string;
-}
-
-export interface petDTO {
-  nome: string;
-  tipo: string | "cachorro" | "gato";
-  uri_foto_1?: string;
-  uri_foto_2?: string;
+  cidade: CidadeTutor | null;
+  fotoTutor?: string | null;
+  petFotos?: [string | null, string | null];
 }
 
 export interface MensagemRetorno {
@@ -36,9 +30,7 @@ export class TutorService {
       }
       await AsyncStorage.setItem("tutor", JSON.stringify(dados));
     } catch {
-      return retornaErro(
-        "Ocorreu um problema gravando suas informações. \\n Tente novamente.",
-      );
+      return retornaErro("Ocorreu um problema gravando suas informações. \\n Tente novamente.");
     }
     return retornaSucesso("Tutor cadastrado com sucesso!");
   }
@@ -55,14 +47,22 @@ export class TutorService {
     }
   }
 
+  async hasTutor(): Promise<boolean> {
+    try {
+      const tutor = await AsyncStorage.getItem("tutor");
+      return !!tutor;
+    } catch (error) {
+      console.error("Ocorreu erro verificando ");
+      return false;
+    }
+  }
+
   async editarTutor(dadosTutor: TutorDTO) {
     try {
       const info = await this.cadastrar(dadosTutor);
       if (info.sucesso) retornaSucesso("Dados Atualizados com sucesso");
     } catch (error: any) {
-      return retornaErro(
-        "Ocorreu um problema atualizando suas informações. <br> Tente novamente.",
-      );
+      return retornaErro("Ocorreu um problema atualizando suas informações. <br> Tente novamente.");
     }
   }
 

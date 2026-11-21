@@ -6,12 +6,12 @@ import { PARCEIROS } from "@/dados";
 import { cores } from "@/estilos/cores";
 import { capitalizar, formatarAvaliacoes } from "@/regras/formatar";
 import { gerarIniciais } from "@/regras/gerarIniciais";
-import { Tutor } from "@/modelos/tutor/contrato";
-import { carregarPerfil } from "@/armazenamento/perfil";
+import { TutorDTO } from "@/modelos/tutor";
 import { linkWhatsApp } from "@/regras/linkWhatsApp";
+import { TutorService } from "@/modelos/tutor";
 import { Servico, SERVICOS } from "@/modelos/servico";
 import { Linha } from "@/components/linha";
-import { Voltar } from "@/components/voltaBtn";
+import { Voltar } from "@/components/btnVoltar";
 
 export default function TelaDetalhe() {
   const { id, servico } = useLocalSearchParams<{
@@ -19,10 +19,18 @@ export default function TelaDetalhe() {
     servico?: string;
   }>();
   const parceiro = PARCEIROS.find((p) => p.id === id);
-  const [tutor, setTutor] = useState<Tutor | null>(null);
+  const [tutor, setTutor] = useState<TutorDTO | null>(null);
 
   useEffect(() => {
-    carregarPerfil().then(setTutor);
+    new TutorService()
+      .consultar()
+      .then((dados) => {
+        if (!!dados) throw new Error("Não foram encontrados dados para o tutor");
+        setTutor(dados);
+      })
+      .catch((_) => {
+        console.error("Ocorreu um problema consultando tutor");
+      });
   }, []);
 
   if (!parceiro) {
