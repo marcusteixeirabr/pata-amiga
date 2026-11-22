@@ -10,7 +10,7 @@ import { TutorDTO } from "@/modelos/tutor";
 import { linkWhatsApp } from "@/regras/linkWhatsApp";
 import { TutorService } from "@/modelos/tutor";
 import { Servico, SERVICOS } from "@/modelos/servico";
-import { Linha } from "@/components/Linha";
+import { Linha } from "@/components/linha";
 import { Voltar } from "@/components/BtnVoltar";
 
 

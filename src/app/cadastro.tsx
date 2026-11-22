@@ -4,7 +4,7 @@ import { Alert, Image, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput
 import { Link, router } from "expo-router";
 import * as ImagePicker from "expo-image-picker";
 
-import { SelectDropdown } from "@/components/Dropdown";
+import { SelectDropdown } from "@/components/dropdown";
 
 import { gerarIniciais } from "@/regras/gerarIniciais";
 import { TutorDTO, MensagemRetorno } from "@/modelos/tutor";
