@@ -2,12 +2,26 @@ import { Image } from "expo-image";
 import { Link } from "expo-router";
 
 import { TextTitle } from "@/components/TextTitle";
-import { router } from "expo-router";
 import { Text, View, Pressable, StyleSheet } from "react-native";
 
 import { cores } from "@/estilos/cores";
+import { useEffect, useState } from "react";
+import { TutorService } from "@/modelos/tutor";
 
 export default function TelaEscolha() {
+  const [hasTutor, setHastutor] = useState(false);
+
+  useEffect(() => {
+    new TutorService().hasTutor().then((data) => {
+      setHastutor(data);
+    });
+  }, []);
+
+  const hrefTutor = () => {
+    if (hasTutor) return "/painel";
+    else return "/cadastro";
+  };
+
   return (
     <View style={estilos.tela}>
       <Image
@@ -20,7 +34,7 @@ export default function TelaEscolha() {
       <Text style={estilos.pergunta}>Como você quer usar o app?</Text>
 
       <Link
-        href="/tutor"
+        href={hrefTutor()}
         asChild
       >
         <Pressable style={estilos.opcaoTutor}>

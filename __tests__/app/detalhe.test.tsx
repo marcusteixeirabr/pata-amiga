@@ -4,13 +4,14 @@ import { Linking } from "react-native";
 import TelaDetalhe from "@/app/detalhe/[id]";
 import { PARCEIROS } from "@/dados";
 import { Parceiro } from "@/modelos/parceiro";
-import { carregarPerfil } from "@/armazenamento/perfil";
 import { linkWhatsApp } from "@/regras/linkWhatsApp";
-import { Tutor } from "@/modelos/tutor/contrato";
+import { TutorDTO, TutorService } from "@/modelos/tutor";
 
-jest.mock("@/armazenamento/perfil", () => ({ carregarPerfil: jest.fn() }));
+jest.mock("@/modelos/tutor", () => {
+  return require("../../__mocks__/testMocks");
+});
 
-const TUTOR: Tutor = { nome: "Marcus", cidade: "Itajaí", fotoPets: [] };
+const TUTOR: TutorDTO = { nome: "Marcus", cidade: "Itajaí" };
 
 function parceiro(id: string): Parceiro {
   const encontrado = PARCEIROS.find((p) => p.id === id);
@@ -23,7 +24,14 @@ function abrirDetalhe(url: string) {
 }
 
 beforeEach(() => {
-  jest.mocked(carregarPerfil).mockResolvedValue(TUTOR);
+  jest.mocked(TutorService).mockImplementation(
+    () =>
+      ({
+        consultar: jest
+          .fn()
+          .mockResolvedValue({ sucesso: true, mensagem: JSON.stringify(TUTOR) }),
+      }) as unknown as TutorService,
+  );
 });
 
 describe("Detalhe do parceiro", () => {

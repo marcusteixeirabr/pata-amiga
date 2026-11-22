@@ -1,15 +1,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { salvaImgTutorDocument, retornaSucesso, retornaErro } from "@/utils";
+import { salvarFoto, retornaSucesso, retornaErro } from "@/utils";
+import type { CidadeTutor } from "@/modelos/cidade";
 
 export interface TutorDTO {
   nome: string;
-  cidade: string;
-  fotoTutor?: string;
-}
-
-export interface petDTO {
-  nome: string;
-  uri_foto: string;
+  cidade: CidadeTutor | null;
+  fotoTutor?: string | null;
+  fotoPets?: [string | null, string | null];
 }
 
 export interface MensagemRetorno {
@@ -29,11 +26,11 @@ export class TutorService {
 
     try {
       if (dados.fotoTutor) {
-        await salvaImgTutorDocument(dados.fotoTutor);
+        dados.fotoTutor = await salvarFoto(dados.fotoTutor);
       }
       await AsyncStorage.setItem("tutor", JSON.stringify(dados));
     } catch {
-      return retornaErro("Ocorreu um problema gravando suas informações. <br> Tente novamente.");
+      return retornaErro("Ocorreu um problema gravando suas informações. \\n Tente novamente.");
     }
     return retornaSucesso("Tutor cadastrado com sucesso!");
   }
@@ -50,6 +47,16 @@ export class TutorService {
     }
   }
 
+  async hasTutor(): Promise<boolean> {
+    try {
+      const tutor = await AsyncStorage.getItem("tutor");
+      return !!tutor;
+    } catch (error) {
+      console.error("Ocorreu erro verificando ");
+      return false;
+    }
+  }
+
   async editarTutor(dadosTutor: TutorDTO) {
     try {
       const info = await this.cadastrar(dadosTutor);
@@ -61,39 +68,10 @@ export class TutorService {
 
   async excluirTutor(): Promise<MensagemRetorno> {
     try {
-      AsyncStorage.multiRemove(["tutor"]);
+      await AsyncStorage.multiRemove(["tutor"]);
       return retornaSucesso("sucesso");
     } catch (error: any) {
       return retornaErro("erro");
-    }
-  }
-
-  async excluirPet(): Promise<MensagemRetorno> {
-    try {
-      return retornaSucesso("sucesso");
-    } catch (error: any) {
-      return retornaErro("erro");
-    }
-  }
-
-  async cadastrarPet(dadosPet: petDTO): Promise<MensagemRetorno> {
-    try {
-      await AsyncStorage.setItem(dadosPet.nome, JSON.stringify(dadosPet));
-      return retornaSucesso("Dados do pet salvos com sucesso.");
-    } catch (error: any) {
-      return retornaErro(error.message);
-    }
-  }
-
-  async consultaPet(nomePet: string): Promise<MensagemRetorno> {
-    try {
-      const dadosPet = await AsyncStorage.getItem(nomePet);
-
-      if (!dadosPet) throw new Error(`Não foi encontrado nenhum pet com nome: ${nomePet}`);
-
-      return retornaSucesso(dadosPet);
-    } catch (error: any) {
-      return retornaErro(error.message);
     }
   }
 }

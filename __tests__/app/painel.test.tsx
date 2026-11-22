@@ -10,24 +10,18 @@ function abrirPainel() {
 }
 
 function nomesNaTela() {
-  return screen
-    .queryAllByTestId("nome-parceiro")
-    .map((nome) => nome.props.children);
+  return screen.queryAllByTestId("nome-parceiro").map((nome) => nome.props.children);
 }
 
 describe("Painel de busca", () => {
   test("avisa que os dados dos parceiros são fictícios", async () => {
     await abrirPainel();
-    expect(
-      screen.getByText(/os dados dos parceiros são fictícios/i),
-    ).toBeOnTheScreen();
+    expect(screen.getByText(/os dados dos parceiros são fictícios/i)).toBeOnTheScreen();
   });
 
   test("sem cidade escolhida, pede para escolher uma cidade", async () => {
     await abrirPainel();
-    expect(
-      screen.getByText("Escolha uma cidade para ver os parceiros."),
-    ).toBeOnTheScreen();
+    expect(screen.getByText("Escolha uma cidade para ver os parceiros.")).toBeOnTheScreen();
   });
 
   test("ao escolher a cidade, lista os parceiros dela na ordem de busca", async () => {
@@ -53,17 +47,12 @@ describe("Painel de busca", () => {
   test("cidade sem parceiros mostra uma mensagem em vez de lista vazia", async () => {
     await abrirPainel();
     await fireEvent.press(screen.getByRole("button", { name: "Porto Belo" }));
-    expect(
-      screen.getByText("Nenhum parceiro encontrado em Porto Belo."),
-    ).toBeOnTheScreen();
+    expect(screen.getByText("Nenhum parceiro encontrado em Porto Belo.")).toBeOnTheScreen();
     expect(nomesNaTela()).toHaveLength(0);
   });
 
   test("o cartão leva o serviço escolhido para o detalhe", async () => {
-    const app = renderRouter(
-      { painel: TelaPainel, "detalhe/[id]": TelaDetalhe },
-      { initialUrl: "/painel" },
-    );
+    const app = renderRouter({ painel: TelaPainel, "detalhe/[id]": TelaDetalhe }, { initialUrl: "/painel" });
     await app;
     await fireEvent.press(screen.getByRole("button", { name: "Itajaí" }));
     await fireEvent.press(screen.getByRole("button", { name: "Passeio" }));

@@ -8,12 +8,8 @@ describe("Tela de escolha (RF02)", () => {
     await renderRouter({ escolha: TelaEscolha }, { initialUrl: "/escolha" });
 
     expect(screen.getByText("Como você quer usar o app?")).toBeOnTheScreen();
-    expect(
-      screen.getByRole("link", { name: /sou tutor.*cuide do meu pet/i }),
-    ).toBeOnTheScreen();
-    expect(
-      screen.getByRole("link", { name: /sou parceiro.*petshop ou ONG/i }),
-    ).toBeOnTheScreen();
+    expect(screen.getByRole("link", { name: /sou tutor.*cuide do meu pet/i })).toBeOnTheScreen();
+    expect(screen.getByRole("link", { name: /sou parceiro.*petshop ou ONG/i })).toBeOnTheScreen();
   });
 });
 

@@ -1,22 +1,18 @@
-import { router, useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
-import {
-  Linking,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { PARCEIROS } from "@/dados";
 import { cores } from "@/estilos/cores";
 import { capitalizar, formatarAvaliacoes } from "@/regras/formatar";
 import { gerarIniciais } from "@/regras/gerarIniciais";
-import { Tutor } from "@/modelos/tutor/contrato";
-import { carregarPerfil } from "@/armazenamento/perfil";
+import { TutorDTO } from "@/modelos/tutor";
 import { linkWhatsApp } from "@/regras/linkWhatsApp";
+import { TutorService } from "@/modelos/tutor";
 import { Servico, SERVICOS } from "@/modelos/servico";
+import { Linha } from "@/components/linha";
+import { Voltar } from "@/components/BtnVoltar";
+
 
 export default function TelaDetalhe() {
   const { id, servico } = useLocalSearchParams<{
@@ -24,10 +20,20 @@ export default function TelaDetalhe() {
     servico?: string;
   }>();
   const parceiro = PARCEIROS.find((p) => p.id === id);
-  const [tutor, setTutor] = useState<Tutor | null>(null);
+  const [tutor, setTutor] = useState<TutorDTO | null>(null);
 
   useEffect(() => {
-    carregarPerfil().then(setTutor);
+    new TutorService()
+      .consultar()
+      .then((dados) => {
+        if (!dados.sucesso || !dados.mensagem) {
+          throw new Error("Não foram encontrados dados para o tutor");
+        }
+        setTutor(JSON.parse(dados.mensagem) as TutorDTO);
+      })
+      .catch((_) => {
+        console.error("Ocorreu um problema consultando tutor");
+      });
   }, []);
 
   if (!parceiro) {
@@ -40,7 +46,10 @@ export default function TelaDetalhe() {
   }
 
   return (
-    <ScrollView style={estilos.tela} contentContainerStyle={estilos.conteudo}>
+    <ScrollView
+      style={estilos.tela}
+      contentContainerStyle={estilos.conteudo}
+    >
       <Voltar />
 
       <View style={estilos.cabecalho}>
@@ -50,9 +59,7 @@ export default function TelaDetalhe() {
         <View style={estilos.identificacao}>
           <Text style={estilos.nome}>{parceiro.nome}</Text>
           <Text style={estilos.tipo}>{parceiro.tipo}</Text>
-          {parceiro.verificado && (
-            <Text style={estilos.selo}>✓ Verificado</Text>
-          )}
+          {parceiro.verificado && <Text style={estilos.selo}>✓ Verificado</Text>}
         </View>
       </View>
 
@@ -60,23 +67,28 @@ export default function TelaDetalhe() {
         rotulo="Serviços"
         valor={capitalizar(parceiro.servicos.join(", "))}
       />
-      <Linha rotulo="Cidade" valor={parceiro.cidade} />
+      <Linha
+        rotulo="Cidade"
+        valor={parceiro.cidade}
+      />
       <Linha
         rotulo="Horário de atendimento"
         valor={parceiro.horarioAtendimento}
       />
-      <Linha rotulo="Faixa de preço" valor={parceiro.faixaPreco} />
-      <Linha rotulo="Avaliações" valor={formatarAvaliacoes(parceiro)} />
+      <Linha
+        rotulo="Faixa de preço"
+        valor={parceiro.faixaPreco}
+      />
+      <Linha
+        rotulo="Avaliações"
+        valor={formatarAvaliacoes(parceiro)}
+      />
 
       {tutor && (
         <Pressable
           accessibilityRole="button"
           style={estilos.whatsapp}
-          onPress={() =>
-            Linking.openURL(
-              linkWhatsApp(parceiro, tutor, servicoValido(servico)),
-            )
-          }
+          onPress={() => Linking.openURL(linkWhatsApp(parceiro, tutor, servicoValido(servico)))}
         >
           <Text style={estilos.whatsappTexto}>Chamar no WhatsApp</Text>
         </Pressable>
@@ -87,23 +99,6 @@ export default function TelaDetalhe() {
 
 function servicoValido(valor?: string): Servico | undefined {
   return SERVICOS.find((s) => s === valor);
-}
-
-function Voltar() {
-  return (
-    <Pressable accessibilityRole="button" onPress={() => router.back()}>
-      <Text style={estilos.voltar}>Voltar</Text>
-    </Pressable>
-  );
-}
-
-function Linha({ rotulo, valor }: { rotulo: string; valor: string }) {
-  return (
-    <View style={estilos.linha}>
-      <Text style={estilos.rotulo}>{rotulo}</Text>
-      <Text style={estilos.valor}>{valor}</Text>
-    </View>
-  );
 }
 
 const estilos = StyleSheet.create({

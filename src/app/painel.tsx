@@ -19,17 +19,35 @@ export default function TelaPainel() {
   const parceiros = cidade ? buscarParceiros(PARCEIROS, cidade, servico) : [];
 
   return (
-    <ScrollView style={estilos.tela} contentContainerStyle={estilos.conteudo}>
+    <ScrollView
+      style={estilos.tela}
+      contentContainerStyle={estilos.conteudo}
+    >
       <View style={estilos.cabecalho}>
         <TextTitle style={estilos.titulo}>Encontre um parceiro</TextTitle>
-        <Link href="/meuPerfil">
-          <Text style={estilos.link}>Meu Perfil</Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: cores.ciano,
+          width: 100,
+          padding: 5,
+          alignItems: "center",
+          borderRadius: 50,
+        }}
+      >
+        <Link href="/cadastro">
+          <Text
+            style={{
+              color: cores.creme,
+              fontFamily: "AndikaRegular",
+            }}
+          >
+           {"<- Meu Perfil"}
+          </Text>
         </Link>
       </View>
 
-      <Text style={estilos.aviso}>
-        ⚠️ Os dados dos parceiros são fictícios, criados só para demonstração.
-      </Text>
+      <Text style={estilos.aviso}>⚠️ Os dados dos parceiros são fictícios, criados só para demonstração.</Text>
 
       <Text style={estilos.rotulo}>Cidade</Text>
       <View style={estilos.chips}>
@@ -60,20 +78,18 @@ export default function TelaPainel() {
         ))}
       </View>
 
-      {cidade === null && (
-        <Text style={estilos.mensagem}>
-          Escolha uma cidade para ver os parceiros.
-        </Text>
-      )}
+      {cidade === null && <Text style={estilos.mensagem}>Escolha uma cidade para ver os parceiros.</Text>}
 
       {cidade !== null && parceiros.length === 0 && (
-        <Text style={estilos.mensagem}>
-          {`Nenhum parceiro encontrado em ${cidade}.`}
-        </Text>
+        <Text style={estilos.mensagem}>{`Nenhum parceiro encontrado em ${cidade}.`}</Text>
       )}
 
       {parceiros.map((p) => (
-        <CartaoParceiro key={p.id} parceiro={p} servico={servico} />
+        <CartaoParceiro
+          key={p.id}
+          parceiro={p}
+          servico={servico}
+        />
       ))}
     </ScrollView>
   );

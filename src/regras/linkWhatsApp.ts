@@ -1,10 +1,10 @@
 import type { Parceiro } from "@/modelos/parceiro";
 import type { Servico } from "@/modelos/servico";
-import type { Tutor } from "@/modelos/tutor/contrato";
+import { TutorDTO } from "@/modelos/tutor";
 
 export function linkWhatsApp(
   parceiro: Parceiro,
-  tutor: Tutor,
+  tutor: TutorDTO,
   servico?: Servico,
 ): string {
   const numeroLimpo = parceiro.whatsapp.replace(/\D/g, "");
