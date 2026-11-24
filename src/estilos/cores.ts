@@ -8,5 +8,6 @@ export const cores = {
   whatsapp: "#25d366",
   avisoFundo: "#fff3cd",
   avisoTexto: "#7a5a00",
-  ciano: "#3caaaa"
+  ciano: "#3caaaa",
+  vermelho: "#c62828",
 } as const;
