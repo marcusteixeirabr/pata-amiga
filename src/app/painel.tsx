@@ -7,6 +7,7 @@ import { Chip } from "@/components/Chip";
 import { Tela } from "@/components/Tela";
 import { TextTitle } from "@/components/TextTitle";
 import { PARCEIROS } from "@/dados";
+import { useVoltarDuasVezesParaSair } from "@/hooks/useVoltarDuasVezesParaSair";
 import { cores } from "@/estilos/cores";
 import { CIDADES, type Cidade } from "@/modelos/cidade";
 import { SERVICOS, type Servico } from "@/modelos/servico";
@@ -16,6 +17,8 @@ import { capitalizar } from "@/regras/formatar";
 export default function TelaPainel() {
   const [cidade, setCidade] = useState<Cidade | null>(null);
   const [servico, setServico] = useState<Servico | undefined>(undefined);
+
+  useVoltarDuasVezesParaSair();
 
   const parceiros = cidade ? buscarParceiros(PARCEIROS, cidade, servico) : [];
 
