@@ -1,5 +1,8 @@
-import { useRef, useState } from "react";
-import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from "react-native";
+
+import { Folha } from "@/components/Folha";
+import { cores } from "@/estilos/cores";
 
 export interface DropdownOption<T extends string> {
   label: string;
@@ -12,189 +15,157 @@ interface SelectDropdownProps<T extends string> {
   options: DropdownOption<T>[];
   value: T | null;
   onChange: (value: T) => void;
+  desabilitado?: boolean;
 }
 
-interface TriggerLayout {
-  top: number;
-  left: number;
-  width: number;
-}
-
+/**
+ * Campo de escolha. As opções abrem numa folha que sobe de baixo, com
+ * rolagem e altura máxima: em tela pequena ou com fonte grande, todas as
+ * opções continuam alcançáveis (bug do CT05).
+ */
 export function SelectDropdown<T extends string>({
   label,
   placeholder = "Selecione uma opção",
   options,
   value,
   onChange,
+  desabilitado = false,
 }: SelectDropdownProps<T>) {
-  const [open, setOpen] = useState<boolean>(false);
-  const [layout, setLayout] = useState<TriggerLayout>({ top: 0, left: 0, width: 0 });
-  const triggerRef = useRef<View>(null);
+  const [aberto, setAberto] = useState(false);
+  const { height } = useWindowDimensions();
 
-  const selectedOption = options.find((opt) => opt.value === value);
+  const selecionada = options.find((opcao) => opcao.value === value);
 
-  const handleOpen = () => {
-    triggerRef.current?.measureInWindow((x, y, width, height) => {
-      setLayout({
-        top: y + height + 6,
-        left: x,
-        width,
-      });
-      setOpen(true);
-    });
-  };
-
-  const handleSelect = (newValue: T) => {
-    onChange(newValue);
-    setOpen(false);
-  };
+  function escolher(novoValor: T) {
+    onChange(novoValor);
+    setAberto(false);
+  }
 
   return (
     <View style={styles.container}>
       {label ? <Text style={styles.label}>{label}</Text> : null}
 
-      <View
-        ref={triggerRef}
-        collapsable={false}
+      <Pressable
+        onPress={() => setAberto(true)}
+        disabled={desabilitado}
+        accessibilityRole="combobox"
+        accessibilityLabel={label}
+        accessibilityState={{ expanded: aberto, disabled: desabilitado }}
+        style={({ pressed }) => [
+          styles.campo,
+          desabilitado && styles.campoDesabilitado,
+          pressed && styles.pressionado,
+        ]}
       >
-        <Pressable
-          onPress={handleOpen}
-          accessibilityRole="combobox"
-          accessibilityState={{ expanded: open }}
-          style={({ pressed }) => [styles.trigger, open && styles.triggerOpen, pressed && styles.pressed]}
-        >
-          <Text style={[styles.triggerText, !selectedOption && styles.placeholder]}>
-            {selectedOption ? selectedOption.label : placeholder}
-          </Text>
-          <Text style={styles.chevron}>{open ? "▲" : "▼"}</Text>
-        </Pressable>
-      </View>
+        <Text style={[styles.campoTexto, !selecionada && styles.placeholder]}>
+          {selecionada ? selecionada.label : placeholder}
+        </Text>
+        {!desabilitado && <Text style={styles.seta}>▼</Text>}
+      </Pressable>
 
-      <Modal
-        visible={open}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setOpen(false)}
+      <Folha
+        visivel={aberto}
+        titulo={label ?? placeholder}
+        aoFechar={() => setAberto(false)}
       >
-        <Pressable
-          style={styles.backdrop}
-          onPress={() => setOpen(false)}
+        <ScrollView
+          testID="lista-opcoes"
+          style={{ maxHeight: height * 0.5 }}
         >
-          <View
-            style={[
-              styles.menu,
-              {
-                top: layout.top,
-                left: layout.left,
-                width: layout.width,
-              },
-            ]}
-          >
-            {options.map((option, index) => {
-              const isSelected = option.value === value;
-              const isLast = index === options.length - 1;
+          {options.map((opcao, indice) => {
+            const marcada = opcao.value === value;
+            const ultima = indice === options.length - 1;
 
-              return (
-                <Pressable
-                  key={option.value}
-                  onPress={() => handleSelect(option.value)}
-                  style={({ pressed }) => [
-                    styles.menuItem,
-                    !isLast && styles.menuItemBorder,
-                    isSelected && styles.menuItemSelected,
-                    pressed && styles.pressed,
-                  ]}
-                >
-                  <Text style={[styles.menuItemText, isSelected && styles.menuItemTextSelected]}>{option.label}</Text>
-                  {isSelected ? <Text style={styles.check}>✓</Text> : null}
-                </Pressable>
-              );
-            })}
-          </View>
-        </Pressable>
-      </Modal>
+            return (
+              <Pressable
+                key={opcao.value}
+                onPress={() => escolher(opcao.value)}
+                accessibilityRole="radio"
+                accessibilityState={{ checked: marcada }}
+                style={({ pressed }) => [
+                  styles.opcao,
+                  !ultima && styles.opcaoBorda,
+                  marcada && styles.opcaoMarcada,
+                  pressed && styles.pressionado,
+                ]}
+              >
+                <Text style={[styles.opcaoTexto, marcada && styles.opcaoTextoMarcada]}>
+                  {opcao.label}
+                </Text>
+                {marcada ? <Text style={styles.check}>✓</Text> : null}
+              </Pressable>
+            );
+          })}
+        </ScrollView>
+      </Folha>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    gap: 6,
+    gap: 8,
   },
   label: {
-    fontSize: 14,
-    fontWeight: "600",
-    color: "#1F2937",
+    fontSize: 12,
+    fontWeight: "700",
+    color: "#52525B",
+    letterSpacing: 0.6,
+    textTransform: "uppercase",
   },
-  trigger: {
+  campo: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: cores.branco,
     borderWidth: 1,
-    borderColor: "#D1D5DB",
-    borderRadius: 10,
+    borderColor: "#E5E7EB",
+    borderRadius: 12,
     paddingHorizontal: 14,
-    paddingVertical: 12,
+    paddingVertical: 13,
   },
-  triggerOpen: {
-    borderColor: "#2563EB",
+  campoDesabilitado: {
+    backgroundColor: "transparent",
   },
-  triggerText: {
+  campoTexto: {
     fontSize: 15,
     color: "#111827",
   },
   placeholder: {
     color: "#9CA3AF",
   },
-  chevron: {
+  seta: {
     fontSize: 11,
     color: "#6B7280",
   },
-  pressed: {
+  pressionado: {
     opacity: 0.8,
   },
-  backdrop: {
-    flex: 1,
-  },
-  menu: {
-    position: "absolute",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "#E5E7EB",
-    elevation: 6,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.12,
-    shadowRadius: 8,
-    overflow: "hidden",
-  },
-  menuItem: {
+  opcao: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 14,
-    paddingVertical: 12,
+    paddingVertical: 14,
   },
-  menuItemBorder: {
+  opcaoBorda: {
     borderBottomWidth: 1,
     borderBottomColor: "#F3F4F6",
   },
-  menuItemSelected: {
-    backgroundColor: "#EFF6FF",
+  opcaoMarcada: {
+    backgroundColor: "#FFF1E6",
   },
-  menuItemText: {
-    fontSize: 15,
+  opcaoTexto: {
+    fontSize: 16,
     color: "#374151",
   },
-  menuItemTextSelected: {
+  opcaoTextoMarcada: {
     fontWeight: "600",
-    color: "#1D4ED8",
+    color: cores.laranja,
   },
   check: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: "700",
-    color: "#1D4ED8",
+    color: cores.laranja,
   },
 });

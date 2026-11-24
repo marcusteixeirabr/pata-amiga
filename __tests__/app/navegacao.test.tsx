@@ -33,7 +33,7 @@ describe("Navegação", () => {
     await app;
     await fireEvent.press(screen.getByText("Sou Parceiro"));
     expect(app.getPathname()).toBe("/parceiro");
-    await fireEvent.press(screen.getByText("Voltar"));
+    await fireEvent.press(screen.getByRole("button", { name: "Voltar" }));
     expect(app.getPathname()).toBe("/escolha");
   });
 
@@ -83,7 +83,7 @@ describe("Navegação", () => {
     );
     await app;
     expect(app.getPathname()).toBe("/painel");
-    await fireEvent.press(screen.getByText("<- Meu Perfil"));
+    await fireEvent.press(screen.getByRole("link", { name: "Meu perfil" }));
     expect(app.getPathname()).toBe("/cadastro");
   });
 
@@ -98,9 +98,9 @@ describe("Navegação", () => {
       },
     );
     await app;
-    await fireEvent.press(screen.getByText("<- Meu Perfil"));
+    await fireEvent.press(screen.getByRole("link", { name: "Meu perfil" }));
     expect(app.getPathname()).toBe("/cadastro");
-    await fireEvent.press(screen.getByText("Voltar"));
+    await fireEvent.press(screen.getByRole("button", { name: "Voltar" }));
     expect(app.getPathname()).toBe("/painel");
   });
 
@@ -125,10 +125,10 @@ describe("Navegação", () => {
       },
     );
     await app;
-    await fireEvent.press(screen.getByText("<- Meu Perfil"));
+    await fireEvent.press(screen.getByRole("link", { name: "Meu perfil" }));
     expect(app.getPathname()).toBe("/cadastro");
-    await fireEvent.press(screen.getByText("Apagar Perfil"));
-    await fireEvent.press(screen.getByText(" Sim "));
+    await fireEvent.press(screen.getByRole("button", { name: "Apagar perfil" }));
+    await fireEvent.press(screen.getByText("Sim, apagar"));
     expect(app.getPathname()).toBe("/escolha");
     expect(router.canGoBack()).toBe(false);
   });

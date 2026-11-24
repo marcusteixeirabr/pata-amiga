@@ -1,33 +1,39 @@
-import { StyleSheet, Pressable, Text } from "react-native";
 import { router } from "expo-router";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 import { cores } from "@/estilos/cores";
 
+/** Voltar padrão do app: "← Voltar" em texto laranja, no topo da tela. */
 export function Voltar() {
+  function voltar() {
+    if (router.canGoBack()) router.back();
+    else router.replace("/");
+  }
+
   return (
     <Pressable
       accessibilityRole="button"
-      onPress={() => router.back()}
-      style={estilos.button}
+      accessibilityLabel="Voltar"
+      onPress={voltar}
+      hitSlop={12}
+      style={({ pressed }) => [estilos.botao, pressed && estilos.pressionado]}
     >
-      <Text style={estilos.voltar}>Voltar</Text>
+      <Text style={estilos.texto}>← Voltar</Text>
     </Pressable>
   );
 }
 
 const estilos = StyleSheet.create({
-  voltar: {
-    color: cores.creme,
+  botao: {
+    alignSelf: "flex-start",
+    paddingVertical: 4,
+  },
+  pressionado: {
+    opacity: 0.6,
+  },
+  texto: {
+    color: cores.laranja,
     fontFamily: "AndikaRegular",
     fontSize: 16,
   },
-  button: {
-    backgroundColor: cores.ciano,
-    borderRadius: 8,
-    minWidth: 70,
-    minHeight: 50,
-
-    alignItems: "center",
-    justifyContent: "center",
-  }
 });

@@ -1,9 +1,12 @@
-import { fireEvent, renderRouter, screen } from "expo-router/testing-library";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { router } from "expo-router";
+import { act, fireEvent, renderRouter, screen, waitFor } from "expo-router/testing-library";
 
 import TelaPainel from "@/app/painel";
 import { PARCEIROS } from "@/dados";
 import { buscarParceiros } from "@/regras/buscarParceiros";
 import TelaDetalhe from "@/app/detalhe/[id]";
+import TelaCadastro from "@/app/cadastro";
 
 function abrirPainel() {
   return renderRouter({ painel: TelaPainel }, { initialUrl: "/painel" });
@@ -60,5 +63,66 @@ describe("Painel de busca", () => {
 
     expect(app.getPathname()).toBe("/detalhe/p01");
     expect(app.getSearchParams()).toEqual({ id: "p01", servico: "passeio" });
+  });
+});
+
+async function salvarTutor(cidade: string) {
+  await AsyncStorage.setItem(
+    "tutor",
+    JSON.stringify({ nome: "Marcus", cidade, fotoTutor: null, fotoPets: [null, null] }),
+  );
+}
+
+function chip(nome: string) {
+  return screen.getByRole("button", { name: nome });
+}
+
+describe("Painel abre com a cidade do tutor", () => {
+  beforeEach(async () => {
+    await AsyncStorage.clear();
+  });
+
+  test("com a cidade do perfil na lista, já abre com ela selecionada e mostra os parceiros", async () => {
+    await salvarTutor("Itajaí");
+    await abrirPainel();
+
+    await waitFor(() => expect(chip("Itajaí")).toBeSelected());
+    const esperados = buscarParceiros(PARCEIROS, "Itajaí").map((p) => p.nome);
+    expect(nomesNaTela()).toEqual(esperados);
+  });
+
+  test("com a cidade Outra, continua pedindo para escolher a cidade", async () => {
+    await salvarTutor("Outra");
+    await abrirPainel();
+    await act(async () => {});
+
+    expect(screen.getByText("Escolha uma cidade para ver os parceiros.")).toBeOnTheScreen();
+  });
+
+  test("a cidade escolhida no painel vale mais que a do perfil", async () => {
+    await salvarTutor("Itajaí");
+    await abrirPainel();
+    await waitFor(() => expect(chip("Itajaí")).toBeSelected());
+
+    await fireEvent.press(chip("Blumenau"));
+
+    expect(chip("Blumenau")).toBeSelected();
+    expect(chip("Itajaí")).not.toBeSelected();
+  });
+
+  test("trocar a cidade no Meu perfil atualiza o painel ao voltar", async () => {
+    await salvarTutor("Itajaí");
+    await renderRouter({ painel: TelaPainel, cadastro: TelaCadastro }, { initialUrl: "/painel" });
+    await waitFor(() => expect(chip("Itajaí")).toBeSelected());
+
+    await act(() => router.push("/cadastro"));
+    await fireEvent.press(await screen.findByRole("button", { name: "Editar perfil" }));
+    await fireEvent.press(screen.getByRole("combobox", { name: "Cidade" }));
+    await fireEvent.press(screen.getByRole("radio", { name: "Brusque" }));
+    await fireEvent.press(screen.getByRole("button", { name: "Salvar perfil" }));
+    await screen.findByText("Perfil atualizado!");
+    await fireEvent.press(screen.getByRole("button", { name: "Voltar" }));
+
+    await waitFor(() => expect(chip("Brusque")).toBeSelected());
   });
 });

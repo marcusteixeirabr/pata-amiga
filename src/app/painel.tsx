@@ -1,49 +1,69 @@
-import { Link } from "expo-router";
-import { useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Link, useFocusEffect } from "expo-router";
+import { useCallback, useRef, useState } from "react";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import { CartaoParceiro } from "@/components/CartaoParceiro";
 import { Chip } from "@/components/Chip";
+import { Tela } from "@/components/Tela";
 import { TextTitle } from "@/components/TextTitle";
 import { PARCEIROS } from "@/dados";
+import { useVoltarDuasVezesParaSair } from "@/hooks/useVoltarDuasVezesParaSair";
 import { cores } from "@/estilos/cores";
 import { CIDADES, type Cidade } from "@/modelos/cidade";
 import { SERVICOS, type Servico } from "@/modelos/servico";
+import { TutorService, type TutorDTO } from "@/modelos/tutor";
 import { buscarParceiros } from "@/regras/buscarParceiros";
+import { cidadeInicialDoPainel } from "@/regras/cidadeInicial";
 import { capitalizar } from "@/regras/formatar";
 
 export default function TelaPainel() {
   const [cidade, setCidade] = useState<Cidade | null>(null);
   const [servico, setServico] = useState<Servico | undefined>(undefined);
 
+  // Enquanto o tutor não escolher uma cidade no painel, vale a cidade do perfil.
+  const escolheuNoPainel = useRef(false);
+
+  useVoltarDuasVezesParaSair();
+
+  // Relê o perfil sempre que o painel aparece: pega a troca feita no Meu perfil.
+  useFocusEffect(
+    useCallback(() => {
+      if (escolheuNoPainel.current) return;
+      let ativo = true;
+
+      new TutorService().consultar().then((resultado) => {
+        if (!ativo || !resultado.sucesso || !resultado.mensagem) return;
+        const tutor: TutorDTO = JSON.parse(resultado.mensagem);
+        setCidade(cidadeInicialDoPainel(tutor.cidade));
+      });
+
+      return () => {
+        ativo = false;
+      };
+    }, []),
+  );
+
+  function escolherCidade(nova: Cidade) {
+    escolheuNoPainel.current = true;
+    setCidade(nova);
+  }
+
   const parceiros = cidade ? buscarParceiros(PARCEIROS, cidade, servico) : [];
 
   return (
-    <ScrollView
-      style={estilos.tela}
-      contentContainerStyle={estilos.conteudo}
-    >
+    <Tela estiloConteudo={estilos.conteudo}>
       <View style={estilos.cabecalho}>
         <TextTitle style={estilos.titulo}>Encontre um parceiro</TextTitle>
-      </View>
-      <View
-        style={{
-          backgroundColor: cores.ciano,
-          width: 100,
-          padding: 5,
-          alignItems: "center",
-          borderRadius: 50,
-        }}
-      >
-        <Link href="/cadastro">
-          <Text
-            style={{
-              color: cores.creme,
-              fontFamily: "AndikaRegular",
-            }}
+        <Link
+          href="/cadastro"
+          asChild
+        >
+          <Pressable
+            hitSlop={8}
+            style={({ pressed }) => [estilos.meuPerfil, pressed && estilos.pressionado]}
           >
-           {"<- Meu Perfil"}
-          </Text>
+            <Text style={estilos.meuPerfilTexto}>Meu perfil</Text>
+          </Pressable>
         </Link>
       </View>
 
@@ -56,7 +76,7 @@ export default function TelaPainel() {
             key={c}
             rotulo={c}
             selecionado={c === cidade}
-            onPress={() => setCidade(c)}
+            onPress={() => escolherCidade(c)}
           />
         ))}
       </View>
@@ -91,20 +111,29 @@ export default function TelaPainel() {
           servico={servico}
         />
       ))}
-    </ScrollView>
+    </Tela>
   );
 }
 
 const estilos = StyleSheet.create({
-  tela: { flex: 1, backgroundColor: cores.creme },
-  conteudo: { padding: 20, paddingTop: 56, gap: 12 },
+  conteudo: { gap: 12 },
   cabecalho: {
     flexDirection: "row",
+    flexWrap: "wrap",
     justifyContent: "space-between",
     alignItems: "center",
+    gap: 8,
   },
-  titulo: { fontSize: 26, color: cores.azul },
-  link: { color: cores.laranja, fontFamily: "AndikaRegular", fontSize: 16 },
+  titulo: { fontSize: 26, color: cores.azul, flexShrink: 1 },
+  meuPerfil: {
+    borderWidth: 1,
+    borderColor: cores.laranja,
+    borderRadius: 16,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+  },
+  meuPerfilTexto: { color: cores.laranja, fontFamily: "AndikaRegular", fontSize: 15 },
+  pressionado: { opacity: 0.6 },
   aviso: {
     backgroundColor: cores.avisoFundo,
     color: cores.avisoTexto,

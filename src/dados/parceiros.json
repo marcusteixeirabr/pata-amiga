@@ -24,15 +24,15 @@
     ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "(47) 9000-0002",
-    "horarioAtendimento": "Seg a sab, 9h às 19h",
-    "faixaPreco": "R$ 80 a R$ 150 por sessão",
+    "horarioAtendimento": "Seg a sáb, 9h às 19h",
+    "faixaPreco": "R$ 80 a R$ 150 por diária",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 8,
     "verificado": false
   },
   {
     "id": "g01",
-    "nome": "Blumenau Pet Care",
+    "nome": "João Luís Becker",
     "tipo": "Cuidador",
     "servicos": [
       "passeio",
@@ -55,8 +55,8 @@
     ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 9000-0004",
-    "horarioAtendimento": "Seg a sab, 9h às 19h",
-    "faixaPreco": "R$ 80 a R$ 150 por sessão",
+    "horarioAtendimento": "Seg a sáb, 9h às 19h",
+    "faixaPreco": "Gratuito (aceita doação de ração)",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 9,
     "verificado": false
@@ -79,18 +79,18 @@
   },
   {
     "id": "g04",
-    "nome": "Patas & Focinhos",
+    "nome": "Érica Schmitt",
     "tipo": "Cuidador",
     "servicos": [
       "cuidados em casa"
     ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 9000-0006",
-    "horarioAtendimento": "Seg a sab, 8h às 17h",
+    "horarioAtendimento": "Seg a sáb, 8h às 17h",
     "faixaPreco": "R$ 35 a R$ 55 por visita",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 7,
-    "verificado": true
+    "verificado": false
   },
   {
     "id": "g05",
@@ -102,14 +102,14 @@
     "cidade": "Blumenau",
     "whatsapp": "(47) 9000-0007",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
-    "faixaPreco": "R$ 70 a R$ 120 por sessão",
+    "faixaPreco": "R$ 70 a R$ 120 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 31,
     "verificado": true
   },
   {
     "id": "g06",
-    "nome": "Cão & Cia Blumenau",
+    "nome": "Otávio Krüger",
     "tipo": "Cuidador",
     "servicos": [
       "passeio"
@@ -118,29 +118,29 @@
     "whatsapp": "(47) 9000-0009",
     "horarioAtendimento": "Seg a sex, 7h às 19h",
     "faixaPreco": "R$ 40 a R$ 60 por passeio",
-    "notaMedia": 4.4,
-    "quantidadeAvaliacoes": 11,
+    "notaMedia": 3.6,
+    "quantidadeAvaliacoes": 5,
     "verificado": false
   },
   {
     "id": "g07",
-    "nome": "Anjos de Patas Blumenau",
-    "tipo": "ONG",
+    "nome": "Bicho Mimado Petshop",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidados em casa"
     ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 9000-0009",
-    "horarioAtendimento": "Seg a sab, 8h às 18h",
-    "faixaPreco": "R$ 80 a R$ 140 por sessão",
+    "horarioAtendimento": "Seg a sáb, 8h às 18h",
+    "faixaPreco": "R$ 80 a R$ 140 por diária",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 16,
-    "verificado": true
+    "verificado": false
   },
   {
     "id": "g08",
-    "nome": "Pet Sitter Blumenau Vip",
+    "nome": "Heloísa Wagner",
     "tipo": "Cuidador",
     "servicos": [
       "cuidados em casa",
@@ -163,16 +163,16 @@
     ],
     "cidade": "Blumenau",
     "whatsapp": "(47) 9000-0001",
-    "horarioAtendimento": "Seg a sab, 9h às 17h",
-    "faixaPreco": "R$ 75 a R$ 130 por sessão",
-    "notaMedia": 4.3,
+    "horarioAtendimento": "Seg a sáb, 9h às 17h",
+    "faixaPreco": "R$ 75 a R$ 130 por diária",
+    "notaMedia": 3.9,
     "quantidadeAvaliacoes": 8,
     "verificado": false
   },
   {
     "id": "g10",
-    "nome": "Caminhada Pet Blumenau",
-    "tipo": "Cuidador",
+    "nome": "Petshop Rua XV",
+    "tipo": "Petshop",
     "servicos": [
       "passeio"
     ],
@@ -182,11 +182,11 @@
     "faixaPreco": "R$ 35 a R$ 50 por passeio",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 13,
-    "verificado": true
+    "verificado": false
   },
   {
     "id": "g11",
-    "nome": "Camboriú Pet Care",
+    "nome": "Maria Eduarda Silva",
     "tipo": "Cuidador",
     "servicos": [
       "passeio",
@@ -202,17 +202,17 @@
   },
   {
     "id": "g12",
-    "nome": "SOS Animais Camboriú",
-    "tipo": "ONG",
+    "nome": "PetMania Camboriú",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem"
     ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 9000-0004",
-    "horarioAtendimento": "Seg a sab, 9h às 19h",
-    "faixaPreco": "R$ 80 a R$ 150 por sessão",
-    "notaMedia": 4.5,
-    "quantidadeAvaliacoes": 10,
+    "horarioAtendimento": "Seg a sáb, 9h às 19h",
+    "faixaPreco": "R$ 80 a R$ 150 por diária",
+    "notaMedia": 4.9,
+    "quantidadeAvaliacoes": 52,
     "verificado": false
   },
   {
@@ -233,18 +233,18 @@
   },
   {
     "id": "g14",
-    "nome": "Focinhos Felizes Camboriú",
+    "nome": "Rogério Tavares",
     "tipo": "Cuidador",
     "servicos": [
       "cuidados em casa"
     ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 9000-0006",
-    "horarioAtendimento": "Seg a sab, 8h às 17h",
+    "horarioAtendimento": "Seg a sáb, 8h às 17h",
     "faixaPreco": "R$ 40 a R$ 60 por visita",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 12,
-    "verificado": true
+    "verificado": false
   },
   {
     "id": "g15",
@@ -257,14 +257,14 @@
     "cidade": "Camboriú",
     "whatsapp": "(47) 9000-0007",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
-    "faixaPreco": "R$ 70 a R$ 130 por sessão",
+    "faixaPreco": "R$ 70 a R$ 130 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 27,
     "verificado": true
   },
   {
     "id": "g16",
-    "nome": "Pet Sitter Costa Verde",
+    "nome": "Letícia Andrade",
     "tipo": "Cuidador",
     "servicos": [
       "passeio",
@@ -274,8 +274,8 @@
     "whatsapp": "(47) 9000-0009",
     "horarioAtendimento": "Seg a sex, 8h às 19h",
     "faixaPreco": "R$ 45 a R$ 70 por serviço",
-    "notaMedia": 4.4,
-    "quantidadeAvaliacoes": 9,
+    "notaMedia": 3.4,
+    "quantidadeAvaliacoes": 4,
     "verificado": false
   },
   {
@@ -287,15 +287,15 @@
     ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 9000-0009",
-    "horarioAtendimento": "Seg a sab, 8h às 18h",
-    "faixaPreco": "R$ 80 a R$ 140 por sessão",
+    "horarioAtendimento": "Seg a sáb, 8h às 18h",
+    "faixaPreco": "R$ 80 a R$ 140 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 21,
     "verificado": true
   },
   {
     "id": "g18",
-    "nome": "Passeios Caninos Camboriú",
+    "nome": "Pedro Henrique Lima",
     "tipo": "Cuidador",
     "servicos": [
       "passeio"
@@ -306,27 +306,27 @@
     "faixaPreco": "R$ 35 a R$ 55 por passeio",
     "notaMedia": 4.6,
     "quantidadeAvaliacoes": 14,
-    "verificado": true
+    "verificado": false
   },
   {
     "id": "g19",
-    "nome": "Proteção Animal Camboriú",
-    "tipo": "ONG",
+    "nome": "Hotelzinho Rio Camboriú",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidados em casa"
     ],
     "cidade": "Camboriú",
     "whatsapp": "(47) 9000-0001",
-    "horarioAtendimento": "Seg a sab, 9h às 17h",
-    "faixaPreco": "R$ 75 a R$ 135 por sessão",
+    "horarioAtendimento": "Seg a sáb, 9h às 17h",
+    "faixaPreco": "R$ 75 a R$ 135 por diária",
     "notaMedia": 4.3,
     "quantidadeAvaliacoes": 6,
     "verificado": false
   },
   {
     "id": "g20",
-    "nome": "Cantinho do Pet Camboriú",
+    "nome": "Úrsula Medeiros",
     "tipo": "Cuidador",
     "servicos": [
       "cuidados em casa",
@@ -342,7 +342,7 @@
   },
   {
     "id": "g21",
-    "nome": "Brusque Pet Service",
+    "nome": "Ana Clara Schulz",
     "tipo": "Cuidador",
     "servicos": [
       "passeio",
@@ -365,8 +365,8 @@
     ],
     "cidade": "Brusque",
     "whatsapp": "(47) 9000-0004",
-    "horarioAtendimento": "Seg a sab, 9h às 19h",
-    "faixaPreco": "R$ 80 a R$ 150 por sessão",
+    "horarioAtendimento": "Seg a sáb, 9h às 19h",
+    "faixaPreco": "R$ 80 a R$ 150 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 19,
     "verificado": true
@@ -384,27 +384,27 @@
     "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 50 a R$ 95 por diária",
     "notaMedia": 4.6,
-    "quantidadeAvaliacoes": 16,
+    "quantidadeAvaliacoes": 87,
     "verificado": true
   },
   {
     "id": "g24",
-    "nome": "Patas & Afetos Brusque",
+    "nome": "Vítor Hugo Pereira",
     "tipo": "Cuidador",
     "servicos": [
       "cuidados em casa"
     ],
     "cidade": "Brusque",
     "whatsapp": "(47) 9000-0006",
-    "horarioAtendimento": "Seg a sab, 8h às 17h",
+    "horarioAtendimento": "Seg a sáb, 8h às 17h",
     "faixaPreco": "R$ 35 a R$ 55 por visita",
     "notaMedia": 4.5,
     "quantidadeAvaliacoes": 8,
-    "verificado": false
+    "verificado": true
   },
   {
     "id": "g25",
-    "nome": "Lar Temporal Brusque",
+    "nome": "Lar Temporário Brusque",
     "tipo": "ONG",
     "servicos": [
       "hospedagem",
@@ -413,14 +413,14 @@
     "cidade": "Brusque",
     "whatsapp": "(47) 9000-0007",
     "horarioAtendimento": "Seg a sex, 9h às 18h",
-    "faixaPreco": "R$ 70 a R$ 125 por sessão",
+    "faixaPreco": "R$ 70 a R$ 125 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 24,
     "verificado": true
   },
   {
     "id": "g26",
-    "nome": "Pet Sitter Brusque",
+    "nome": "Beatriz Lenz",
     "tipo": "Cuidador",
     "servicos": [
       "passeio",
@@ -430,28 +430,28 @@
     "whatsapp": "(47) 9000-0009",
     "horarioAtendimento": "Seg a sex, 8h às 19h",
     "faixaPreco": "R$ 40 a R$ 65 por serviço",
-    "notaMedia": 4.4,
-    "quantidadeAvaliacoes": 10,
+    "notaMedia": 3.8,
+    "quantidadeAvaliacoes": 3,
     "verificado": false
   },
   {
     "id": "g27",
-    "nome": "Amor de Patas Brusque",
-    "tipo": "ONG",
+    "nome": "Amanda Zimmermann",
+    "tipo": "Cuidador",
     "servicos": [
       "hospedagem"
     ],
     "cidade": "Brusque",
     "whatsapp": "(47) 9000-0009",
-    "horarioAtendimento": "Seg a sab, 8h às 18h",
-    "faixaPreco": "R$ 80 a R$ 140 por sessão",
+    "horarioAtendimento": "Seg a sáb, 8h às 18h",
+    "faixaPreco": "R$ 60 a R$ 95 por diária",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 15,
     "verificado": true
   },
   {
     "id": "g28",
-    "nome": "Caminhada & Cia Brusque",
+    "nome": "Ícaro Bauer",
     "tipo": "Cuidador",
     "servicos": [
       "passeio"
@@ -466,23 +466,23 @@
   },
   {
     "id": "g29",
-    "nome": "SOS Animais Brusque",
-    "tipo": "ONG",
+    "nome": "Bicharada Petshop",
+    "tipo": "Petshop",
     "servicos": [
       "hospedagem",
       "cuidados em casa"
     ],
     "cidade": "Brusque",
     "whatsapp": "(47) 9000-0001",
-    "horarioAtendimento": "Seg a sab, 9h às 17h",
-    "faixaPreco": "R$ 75 a R$ 130 por sessão",
-    "notaMedia": 4.3,
+    "horarioAtendimento": "Seg a sáb, 9h às 17h",
+    "faixaPreco": "R$ 75 a R$ 130 por diária",
+    "notaMedia": 4.5,
     "quantidadeAvaliacoes": 7,
-    "verificado": false
+    "verificado": true
   },
   {
     "id": "g30",
-    "nome": "Cuidados Caninos Brusque",
+    "nome": "Sônia Fischer",
     "tipo": "Cuidador",
     "servicos": [
       "cuidados em casa",
@@ -523,7 +523,7 @@
     ],
     "cidade": "Itajaí",
     "whatsapp": "(47) 9000-0004",
-    "horarioAtendimento": "Seg a sab, 8h às 19h",
+    "horarioAtendimento": "Seg a sáb, 8h às 19h",
     "faixaPreco": "R$ 60 a R$ 120 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 58,
@@ -561,7 +561,7 @@
   },
   {
     "id": "c05",
-    "nome": "Central dos Bichos",
+    "nome": "Fernanda Lopes",
     "tipo": "Cuidador",
     "servicos": [
       "hospedagem",
@@ -587,7 +587,7 @@
     "cidade": "Itajaí",
     "whatsapp": "(47) 9000-0009",
     "horarioAtendimento": "Seg a dom, 24h",
-    "faixaPreco": "R$ 50 a R$ 90 por diaria",
+    "faixaPreco": "R$ 50 a R$ 90 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 46,
     "verificado": true
@@ -618,7 +618,7 @@
     "whatsapp": "(47) 9000-0010",
     "horarioAtendimento": "Seg a sex, 13h às 19h",
     "faixaPreco": "R$ 35 a R$ 55 por passeio",
-    "notaMedia": 4.5,
+    "notaMedia": 3.7,
     "quantidadeAvaliacoes": 17,
     "verificado": false
   },
@@ -664,7 +664,7 @@
     ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "(47) 9000-0003",
-    "horarioAtendimento": "seg a sex, 8h às 18h",
+    "horarioAtendimento": "Seg a sex, 8h às 18h",
     "faixaPreco": "R$ 45 a R$ 70 por passeio",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 34,
@@ -727,7 +727,7 @@
     ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "(47) 9000-0007",
-    "horarioAtendimento": "Seg a sab, 9h às 19h",
+    "horarioAtendimento": "Seg a sáb, 9h às 19h",
     "faixaPreco": "R$ 70 a R$ 130 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 45,
@@ -790,7 +790,7 @@
     ],
     "cidade": "Balneário Camboriú",
     "whatsapp": "(47) 9000-0001",
-    "horarioAtendimento": "Seg a sab, 9h às 19h",
+    "horarioAtendimento": "Seg a sáb, 9h às 19h",
     "faixaPreco": "R$ 50 a R$ 80 por serviço",
     "notaMedia": 4.7,
     "quantidadeAvaliacoes": 33,
@@ -839,7 +839,7 @@
     ],
     "cidade": "Florianópolis",
     "whatsapp": "(47) 9000-0004",
-    "horarioAtendimento": "Seg a sab, 9h às 19h",
+    "horarioAtendimento": "Seg a sáb, 9h às 19h",
     "faixaPreco": "R$ 60 a R$ 120 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 54,
@@ -885,7 +885,7 @@
     ],
     "cidade": "Florianópolis",
     "whatsapp": "(47) 9000-0007",
-    "horarioAtendimento": "Seg a sab, 8h às 20h",
+    "horarioAtendimento": "Seg a sáb, 8h às 20h",
     "faixaPreco": "R$ 70 a R$ 130 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 41,
@@ -902,7 +902,7 @@
     ],
     "cidade": "Florianópolis",
     "whatsapp": "(47) 9000-0009",
-    "horarioAtendimento": "todos os dias, 24h",
+    "horarioAtendimento": "Todos os dias, 24h",
     "faixaPreco": "R$ 50 a R$ 90 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 60,
@@ -948,9 +948,9 @@
     ],
     "cidade": "Florianópolis",
     "whatsapp": "(47) 9000-0001",
-    "horarioAtendimento": "Seg a sab, 9h às 18h",
+    "horarioAtendimento": "Seg a sáb, 9h às 18h",
     "faixaPreco": "R$ 45 a R$ 75 por serviço",
-    "notaMedia": 4.5,
+    "notaMedia": 4.1,
     "quantidadeAvaliacoes": 27,
     "verificado": false
   },
@@ -989,14 +989,14 @@
   },
   {
     "id": "c32",
-    "nome": "Camila Cuidadora de Pets",
+    "nome": "Camila Rocha",
     "tipo": "Cuidador",
     "servicos": [
       "cuidados em casa"
     ],
     "cidade": "Itapema",
     "whatsapp": "(47) 9000-0004",
-    "horarioAtendimento": "Seg a sab, 7h às 19h",
+    "horarioAtendimento": "Seg a sáb, 7h às 19h",
     "faixaPreco": "R$ 45 a R$ 75 por visita",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 18,
@@ -1019,7 +1019,7 @@
   },
   {
     "id": "c34",
-    "nome": "Passeios Marítimos Pet",
+    "nome": "Gustavo Nunes",
     "tipo": "Cuidador",
     "servicos": [
       "passeio"
@@ -1042,7 +1042,7 @@
     ],
     "cidade": "Itapema",
     "whatsapp": "(47) 9000-0007",
-    "horarioAtendimento": "24h",
+    "horarioAtendimento": "Todos os dias, 24h",
     "faixaPreco": "R$ 85 a R$ 140 por diária",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 42,
@@ -1074,15 +1074,15 @@
     ],
     "cidade": "Itapema",
     "whatsapp": "(47) 9000-0009",
-    "horarioAtendimento": "Seg a sab, 9h às 17h",
-    "faixaPreco": "R$ 30 a R$ 50",
+    "horarioAtendimento": "Seg a sáb, 9h às 17h",
+    "faixaPreco": "R$ 30 a R$ 50 por diária",
     "notaMedia": 4.8,
     "quantidadeAvaliacoes": 31,
     "verificado": true
   },
   {
     "id": "c38",
-    "nome": "Mateus Dog Walker",
+    "nome": "Mateus Vieira",
     "tipo": "Cuidador",
     "servicos": [
       "passeio",
@@ -1094,7 +1094,7 @@
     "faixaPreco": "R$ 40 a R$ 60 por atendimento",
     "notaMedia": 4.9,
     "quantidadeAvaliacoes": 20,
-    "verificado": true
+    "verificado": false
   },
   {
     "id": "c39",
@@ -1113,7 +1113,7 @@
   },
   {
     "id": "c40",
-    "nome": "Juliana Pet Sitter",
+    "nome": "Juliana Ramos",
     "tipo": "Cuidador",
     "servicos": [
       "cuidados em casa"

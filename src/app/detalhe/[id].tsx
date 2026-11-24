@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
-import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Linking, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { PARCEIROS } from "@/dados";
 import { cores } from "@/estilos/cores";
@@ -12,7 +12,7 @@ import { TutorService } from "@/modelos/tutor";
 import { Servico, SERVICOS } from "@/modelos/servico";
 import { Linha } from "@/components/linha";
 import { Voltar } from "@/components/BtnVoltar";
-
+import { Tela } from "@/components/Tela";
 
 export default function TelaDetalhe() {
   const { id, servico } = useLocalSearchParams<{
@@ -31,25 +31,22 @@ export default function TelaDetalhe() {
         }
         setTutor(JSON.parse(dados.mensagem) as TutorDTO);
       })
-      .catch((_) => {
-        console.error("Ocorreu um problema consultando tutor");
+      .catch(() => {
+        // Sem perfil salvo, o botão do WhatsApp simplesmente não aparece.
       });
   }, []);
 
   if (!parceiro) {
     return (
-      <View style={[estilos.tela, estilos.conteudo]}>
+      <Tela>
         <Voltar />
         <Text style={estilos.mensagem}>Parceiro não encontrado</Text>
-      </View>
+      </Tela>
     );
   }
 
   return (
-    <ScrollView
-      style={estilos.tela}
-      contentContainerStyle={estilos.conteudo}
-    >
+    <Tela>
       <Voltar />
 
       <View style={estilos.cabecalho}>
@@ -93,7 +90,7 @@ export default function TelaDetalhe() {
           <Text style={estilos.whatsappTexto}>Chamar no WhatsApp</Text>
         </Pressable>
       )}
-    </ScrollView>
+    </Tela>
   );
 }
 
@@ -102,9 +99,6 @@ function servicoValido(valor?: string): Servico | undefined {
 }
 
 const estilos = StyleSheet.create({
-  tela: { flex: 1, backgroundColor: cores.creme },
-  conteudo: { padding: 20, paddingTop: 56, gap: 16 },
-  voltar: { color: cores.laranja, fontFamily: "AndikaRegular", fontSize: 16 },
   cabecalho: { flexDirection: "row", alignItems: "center", gap: 16 },
   avatar: {
     width: 72,
