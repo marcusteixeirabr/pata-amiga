@@ -36,11 +36,19 @@
           "photosPermission": "O aplicativo precisa de permissão para acessar as fotos",
           "cameraPermission": "O aplicativo precisa de acesso à camera",
           "colors": {
-            "cropToolbarColor": "#000000"
+            "cropToolbarColor": "#fd8932",
+            "cropToolbarIconColor": "#ffffff",
+            "cropToolbarActionTextColor": "#ffffff",
+            "cropBackButtonIconColor": "#ffffff",
+            "cropBackgroundColor": "#fcf4e8"
           },
           "dark": {
             "colors": {
-              "cropToolbarColor": "#000000"
+              "cropToolbarColor": "#fd8932",
+              "cropToolbarIconColor": "#ffffff",
+              "cropToolbarActionTextColor": "#ffffff",
+              "cropBackButtonIconColor": "#ffffff",
+              "cropBackgroundColor": "#000000"
             }
           }
         }
