@@ -9,6 +9,7 @@ import TelaPainel from "@/app/painel";
 
 // A galeria e a câmera não existem no Jest: aqui o usuário sempre cancela.
 jest.mock("expo-image-picker", () => ({
+  CameraType: { front: "front", back: "back" },
   requestMediaLibraryPermissionsAsync: jest.fn().mockResolvedValue({ granted: true }),
   launchImageLibraryAsync: jest.fn().mockResolvedValue({ canceled: true, assets: null }),
   requestCameraPermissionsAsync: jest.fn().mockResolvedValue({ granted: true }),
@@ -55,11 +56,59 @@ describe("Meu perfil: foto do tutor", () => {
     await salvarTutor();
     await abrirMeuPerfil();
     await fireEvent.press(screen.getByRole("button", { name: "Editar perfil" }));
-
     await fireEvent.press(screen.getByRole("button", { name: /foto de perfil/i }));
+
+    await fireEvent.press(screen.getByText("Escolher da galeria"));
 
     expect(ImagePicker.launchImageLibraryAsync).toHaveBeenCalled();
     expect(screen.queryByText("MT")).not.toBeOnTheScreen();
+  });
+});
+
+describe("Foto do tutor pela câmera (teste de aceitação de 25/11)", () => {
+  const TUTOR_SEM_FOTO = { ...TUTOR_SALVO, fotoTutor: null };
+
+  async function abrirFotoDoTutorNaEdicao() {
+    await salvarTutor(TUTOR_SEM_FOTO);
+    await abrirMeuPerfil();
+    await fireEvent.press(screen.getByRole("button", { name: "Editar perfil" }));
+    await fireEvent.press(screen.getByRole("button", { name: /foto de perfil/i }));
+  }
+
+  test("na edição, a foto do tutor pode ser tirada pela câmera, na posição selfie", async () => {
+    await abrirFotoDoTutorNaEdicao();
+
+    await fireEvent.press(screen.getByText("Tirar foto"));
+
+    expect(ImagePicker.launchCameraAsync).toHaveBeenCalledWith(
+      expect.objectContaining({ cameraType: ImagePicker.CameraType.front }),
+    );
+  });
+
+  test("a selfie tirada vira a foto do perfil no lugar das iniciais", async () => {
+    jest.mocked(ImagePicker.launchCameraAsync).mockResolvedValueOnce({
+      canceled: false,
+      assets: [{ uri: "file:///cache/selfie.jpg", width: 800, height: 800 }],
+    });
+    await abrirFotoDoTutorNaEdicao();
+    expect(screen.getByText("MT")).toBeOnTheScreen();
+
+    await fireEvent.press(screen.getByText("Tirar foto"));
+
+    expect(screen.queryByText("MT")).not.toBeOnTheScreen();
+  });
+
+  test("a foto do pet continua usando a câmera traseira", async () => {
+    await salvarTutor(TUTOR_SEM_FOTO);
+    await abrirMeuPerfil();
+    await fireEvent.press(screen.getByRole("button", { name: "Editar perfil" }));
+    await fireEvent.press(screen.getByRole("button", { name: "Adicionar foto do pet 1" }));
+
+    await fireEvent.press(screen.getByText("Tirar foto"));
+
+    expect(ImagePicker.launchCameraAsync).toHaveBeenCalledWith(
+      expect.objectContaining({ cameraType: ImagePicker.CameraType.back }),
+    );
   });
 });
 
