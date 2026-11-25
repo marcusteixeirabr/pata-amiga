@@ -18,6 +18,9 @@ import { gerarIniciais } from "@/regras/gerarIniciais";
 
 type CidadeOption = { label: string; value: CidadeTutor };
 
+/** De quem é a foto escolhida na folha: do tutor ou de um dos dois pets. */
+type AlvoFoto = "tutor" | 0 | 1;
+
 const OPCOES_CIDADE: CidadeOption[] = [
   ...CIDADES.map((cidade) => ({ label: cidade, value: cidade })),
   { label: "Outra", value: "Outra" },
@@ -43,7 +46,7 @@ export default function TelaCadastro() {
   const [mensagem, setMensagem] = useState<string>("");
   const [erro, setErro] = useState<string>("");
 
-  const [activePetSlot, setActivePetSlot] = useState<0 | 1 | null>(null);
+  const [alvoFoto, setAlvoFoto] = useState<AlvoFoto | null>(null);
 
   useEffect(() => {
     new TutorService().consultar().then((dadosSalvos: MensagemRetorno) => {
@@ -83,7 +86,8 @@ export default function TelaCadastro() {
     return null;
   }
 
-  async function tirarFoto(): Promise<string | null> {
+  /** selfie: abre a câmera frontal (foto do tutor); senão, a traseira (pets). */
+  async function tirarFoto(selfie: boolean): Promise<string | null> {
     const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
 
     if (!permissionResult.granted) {
@@ -94,6 +98,8 @@ export default function TelaCadastro() {
     const result = await ImagePicker.launchCameraAsync({
       allowsEditing: true,
       quality: 1,
+      // No Android é uma indicação: depende do app de câmera do aparelho.
+      cameraType: selfie ? ImagePicker.CameraType.front : ImagePicker.CameraType.back,
     });
 
     if (!result.canceled) {
@@ -102,11 +108,8 @@ export default function TelaCadastro() {
     return null;
   }
 
-  const handleAvatar = async () => {
-    const uri = await escolherImagem();
-    // null = nenhuma foto escolhida (cancelou, sem permissão ou fora da edição):
-    // mantém a foto atual, igual ao setPhotoAtSlot dos pets.
-    if (uri) setImagemTutor(uri);
+  const handleAvatar = () => {
+    if (editMode) setAlvoFoto("tutor");
   };
 
   async function handleSalvar() {
@@ -160,11 +163,11 @@ export default function TelaCadastro() {
   }
 
   const handleOpenPetPicker = (slotIndex: 0 | 1) => {
-    if (editMode) setActivePetSlot(slotIndex);
+    if (editMode) setAlvoFoto(slotIndex);
   };
 
   const handleClosePetPicker = () => {
-    setActivePetSlot(null);
+    setAlvoFoto(null);
   };
 
   const setPhotoAtSlot = (slotIndex: 0 | 1, uri: string | null) => {
@@ -176,22 +179,29 @@ export default function TelaCadastro() {
     });
   };
 
-  const handleTakePhoto = async () => {
-    if (activePetSlot === null) return;
-    const slotIndex = activePetSlot;
-    setActivePetSlot(null);
+  /** null = nenhuma foto escolhida (cancelou ou sem permissão): mantém a foto atual. */
+  const aplicarFoto = (alvo: AlvoFoto, uri: string | null) => {
+    if (!uri) return;
+    if (alvo === "tutor") setImagemTutor(uri);
+    else setPhotoAtSlot(alvo, uri);
+  };
 
-    const uri = await tirarFoto();
-    setPhotoAtSlot(slotIndex, uri);
+  const handleTakePhoto = async () => {
+    if (alvoFoto === null) return;
+    const alvo = alvoFoto;
+    setAlvoFoto(null);
+
+    const uri = await tirarFoto(alvo === "tutor");
+    aplicarFoto(alvo, uri);
   };
 
   const handlePickFromGallery = async () => {
-    if (activePetSlot === null) return;
-    const slotIndex = activePetSlot;
-    setActivePetSlot(null);
+    if (alvoFoto === null) return;
+    const alvo = alvoFoto;
+    setAlvoFoto(null);
 
     const uri = await escolherImagem();
-    setPhotoAtSlot(slotIndex, uri);
+    aplicarFoto(alvo, uri);
   };
 
   const titulo = !temPerfil ? "Cadastre seu perfil" : editMode ? "Editar perfil" : "Meu perfil";
@@ -318,8 +328,8 @@ export default function TelaCadastro() {
       )}
 
       <Folha
-        visivel={activePetSlot !== null}
-        titulo={`Foto do pet ${activePetSlot !== null ? activePetSlot + 1 : ""}`}
+        visivel={alvoFoto !== null}
+        titulo={alvoFoto === "tutor" ? "Sua foto" : `Foto do pet ${alvoFoto !== null ? alvoFoto + 1 : ""}`}
         aoFechar={handleClosePetPicker}
       >
         <Pressable
