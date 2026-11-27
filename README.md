@@ -1,8 +1,14 @@
 # 🐾 Pata Amiga
 
-Aplicativo Android que conecta **donos de pets** a **cuidadores, passeadores e petshops da vizinhança**, para que nenhum animal fique sem atenção enquanto o tutor está fora, no Vale do Itajaí e na Grande Florianópolis (SC).
+Aplicativo Android que conecta **donos de pets** a **cuidadores, petshops e ONGs da vizinhança**, para que nenhum animal fique sem atenção enquanto o tutor está fora, no Vale do Itajaí e na Grande Florianópolis (SC).
 
-> 🚧 **Em desenvolvimento.** MVP acadêmico do Projeto Integrador _Hands-on Work VIII_ do curso de Análise e Desenvolvimento de Sistemas da **UNIVALI** (2026), desenvolvido com **TDD (Test-Driven Development)**.
+> ✅ **Versão 1.0.0 (MVP) entregue em novembro de 2026.** Projeto acadêmico do Projeto Integrador _Hands-on Work VIII_ do curso de Análise e Desenvolvimento de Sistemas da **UNIVALI**, desenvolvido com **TDD (Test-Driven Development)** e validado com 12 usuários da comunidade.
+
+## 📲 Baixar o APK
+
+O APK está na página de [releases](https://github.com/marcusteixeirabr/pata-amiga/releases/latest) do repositório. Para instalar, permita a instalação de apps de fontes desconhecidas no Android.
+
+> ⚠️ Os parceiros do app são **fictícios**, e os números de WhatsApp deles também. Por isso, nesta versão pública, o botão "Chamar no WhatsApp" abre o WhatsApp, mas os números não pertencem a pessoas reais.
 
 ---
 
@@ -32,21 +38,26 @@ Um serviço **comunitário e gratuito**: o app apenas **conecta** as pessoas. N�
 **Incluído:**
 
 - Perfil do **tutor**, sem login: os dados ficam salvos no próprio celular.
-- Foto do tutor e de até **dois pets**, tiradas com a **câmera** do aparelho.
+- Foto do tutor (pela **câmera** ou pela **galeria**) e de até **dois pets**.
 - Busca de parceiros **por cidade** e **por tipo de serviço**.
 - Botão que abre uma conversa no **WhatsApp** com o parceiro escolhido.
-- **Nota e selo fictícios** dos parceiros.
+- **Nota e selo fictícios** dos parceiros, com um aviso de que os dados são de demonstração.
 - Regras de negócio desenvolvidas com **TDD**.
 
 **Limitação assumida:** nesta versão de demonstração, os parceiros vêm de uma **base de exemplo embutida no app**. Não há servidor. A tela de cadastro de parceiro aparece apenas como **prévia**, indicando que o cadastro chega na próxima versão.
 
 **Fora do escopo:** pagamentos, agendamentos, avaliações e verificação de parceiros.
 
+**Não entregue na v1:** as fotos do tutor e dos pets no topo do painel de busca (RF09). Ficou para a próxima versão.
+
 ## 🗺️ Próximas versões
 
 - [ ] Backend real com **Supabase** e **cadastro de parceiros**: quem se cadastra aparece para todos os tutores
 - [ ] Busca por **raio de distância** ajustável, a partir do CEP
 - [ ] **Avaliações** feitas pelos tutores e a **verificação real**
+- [ ] **Fotos do tutor e dos pets** no topo do painel de busca (RF09)
+- [ ] **Histórico** dos parceiros contatados
+- [ ] Opções de **enviar ou editar** a foto do perfil antes do recorte
 
 ---
 
@@ -66,18 +77,19 @@ Um serviço **comunitário e gratuito**: o app apenas **conecta** as pessoas. N�
 ```
 src/
   app/            → telas (somente telas: todo arquivo aqui vira uma rota)
-  armazenamento/  → leitura e gravação do perfil no celular
   components/     → componentes visuais reutilizáveis
   dados/          → dados fixos do app (parceiros fictícios)
   estilos/        → estilos compartilhados entre as telas
-  modelos/        → contratos de dados (tipos e listas fixas)
+  hooks/          → hooks reutilizáveis (ex.: voltar duas vezes para sair)
+  modelos/        → contratos de dados e o serviço que grava o perfil no celular
   regras/         → regras de negócio (funções puras, desenvolvidas com TDD)
+  utils/          → utilitários (ex.: gravar as fotos no celular)
 ```
 
 Os testes **espelham o caminho** do código que testam:
 
 ```
-src/regras/iniciais.ts   →   __tests__/regras/iniciais.test.ts
+src/regras/gerarIniciais.ts   →   __tests__/regras/gerarIniciais.test.ts
 ```
 
 ## 🛠️ Rodando localmente
@@ -133,16 +145,22 @@ npm run test:watch   # modo TDD: reexecuta os testes a cada salvamento
 
 O Jest não verifica tipos; por isso o `check` roda o `tsc` **e** os testes.
 
+Na versão 1.0.0 são **716 testes em 25 arquivos**, todos aprovados, com **100% de cobertura** nas regras de negócio. Para ver o relatório de cobertura:
+
+```bash
+npx jest --coverage
+```
+
 ## 🔀 Como contribuir
 
 1. **Ninguém mexe direto no `main`.** O `main` é a versão oficial do app.
 2. **Uma tarefa do Trello = um branch**, com nome no padrão `tipo/descricao-curta`:
-   - `feat/cadastro-animal` · `test/score-urgencia` · `fix/filtro-cidade` · `docs/readme-equipe`
+   - `feat/busca-parceiros` · `test/link-whatsapp` · `fix/bugs-teste-aceitacao` · `docs/readme-equipe`
 3. **Commits** no padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/):
    - `feat:` funcionalidade · `test:` testes · `fix:` correção · `docs:` documentação · `chore:` configuração
 4. Antes de abrir o PR, rode `npm run check`: **tudo verde**.
 5. Abra um **Pull Request** para o `main`, com o link do card do Trello na descrição.
-6. Outro integrante revisa e faz o merge.
+6. De preferência, outro integrante revisa antes do merge. Quando o merge for feito sem revisão, registre isso na mensagem do merge.
 
 ## 👥 Equipe
 
